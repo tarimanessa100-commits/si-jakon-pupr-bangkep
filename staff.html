@@ -71,7 +71,6 @@
     </table>
   </div>
 
-  <!-- Firebase Modular SDK -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
     import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
@@ -92,7 +91,7 @@
     const staffTableBody = document.querySelector("#staffTable tbody");
     const msg = document.getElementById("msg");
 
-    // Listener realtime untuk Firestore
+    // Listener realtime
     const q = query(staffRef, orderBy("nama"));
     onSnapshot(q, (snapshot) => {
       staffTableBody.innerHTML = "";
@@ -145,7 +144,7 @@
         msg.textContent = "";
       } catch(err){
         console.error(err);
-        msg.textContent = "Gagal menyimpan data!";
+        msg.textContent = "Gagal menyimpan data! Pastikan Firestore Rules memperbolehkan write.";
       }
     });
   </script>
