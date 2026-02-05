@@ -1,52 +1,148 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Pengajuan - SI-JAKON PUPR</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Alat - SI-JAKON PUPR</title>
+<style>
+body { font-family: 'Segoe UI', sans-serif; margin:0; background:#f4f7fa; color:#333; }
+header { background:#007acc; color:white; padding:1.5rem; text-align:center; }
+nav { display:flex; justify-content:center; gap:1rem; background:#005fa3; padding:0.5rem 0; flex-wrap:wrap; }
+nav a { color:white; text-decoration:none; padding:0.6rem 1.2rem; font-weight:bold; border-radius:5px; transition:all 0.3s; }
+nav a:hover { background:white; color:#005fa3; }
+main { max-width:700px; margin:2rem auto; padding:0 1rem; }
+
+/* Tabs */
+.tabs {
+    display:flex;
+    justify-content:center;
+    gap:1rem;
+    margin-bottom:2rem;
+}
+.tab {
+    padding:0.6rem 1.2rem;
+    background:#e0e0e0;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+.tab.active { background:#007acc; color:white; }
+
+/* Form Card */
+.form-card {
+    display:none;
+    background:white;
+    padding:2rem;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+form { display:flex; flex-direction:column; gap:1rem; }
+label { font-weight:bold; }
+input, select, textarea { padding:0.6rem; border:1px solid #ccc; border-radius:5px; width:100%; }
+button { padding:0.7rem; border:none; background:#007acc; color:white; font-weight:bold; border-radius:5px; cursor:pointer; transition:0.3s; }
+button:hover { background:#005fa3; }
+
+/* Footer */
+footer { text-align:center; padding:1rem; background:#007acc; color:white; margin-top:2rem; border-radius:0 0 10px 10px; }
+</style>
 </head>
 <body>
 
 <header>
-    <h1>Form Pengajuan Jasa Konstruksi</h1>
+    <h1>Form Alat - SI-JAKON PUPR</h1>
 </header>
 
 <nav>
     <a href="index.html">Beranda</a>
-    <a href="form.html">Form Pengajuan</a>
-    <a href="info.html">Informasi Jasa Konstruksi</a>
+    <a href="form.html">Form Alat</a>
+    <a href="staff.html">Nama Staff</a>
 </nav>
 
 <main>
+
+<!-- Tabs -->
+<div class="tabs">
+    <div class="tab active" onclick="showForm('peminjaman')">Peminjaman Alat</div>
+    <div class="tab" onclick="showForm('pengembalian')">Pengembalian Alat</div>
+</div>
+
+<!-- Form Peminjaman -->
+<div id="peminjaman" class="form-card" style="display:block;">
+    <h2>Peminjaman Alat</h2>
     <form action="#" method="POST">
-        <label for="nama">Nama Pemohon</label>
-        <input type="text" id="nama" name="nama" required>
+        <label for="nama_pinjam">Nama Pemohon</label>
+        <input type="text" id="nama_pinjam" name="nama_pinjam" required>
 
-        <label for="perusahaan">Nama Perusahaan / Kontraktor</label>
-        <input type="text" id="perusahaan" name="perusahaan">
+        <label for="alat_pinjam">Alat yang Dipinjam</label>
+        <input type="text" id="alat_pinjam" name="alat_pinjam" required>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <label for="jumlah_pinjam">Jumlah</label>
+        <input type="number" id="jumlah_pinjam" name="jumlah_pinjam" required min="1">
 
-        <label for="layanan">Jenis Layanan Konstruksi</label>
-        <select id="layanan" name="layanan">
-            <option value="">-- Pilih Layanan --</option>
-            <option value="bangunan">Bangunan</option>
-            <option value="jalan">Jalan & Infrastruktur</option>
-            <option value="irigasi">Irigasi & Drainase</option>
+        <label for="tanggal_pinjam">Tanggal Peminjaman</label>
+        <input type="date" id="tanggal_pinjam" name="tanggal_pinjam" required>
+
+        <label for="keterangan_pinjam">Keterangan</label>
+        <textarea id="keterangan_pinjam" name="keterangan_pinjam" rows="3"></textarea>
+
+        <button type="submit">Kirim Peminjaman</button>
+    </form>
+</div>
+
+<!-- Form Pengembalian -->
+<div id="pengembalian" class="form-card">
+    <h2>Pengembalian Alat</h2>
+    <form action="#" method="POST">
+        <label for="nama_kembali">Nama Pengembali</label>
+        <input type="text" id="nama_kembali" name="nama_kembali" required>
+
+        <label for="alat_kembali">Alat yang Dikembalikan</label>
+        <input type="text" id="alat_kembali" name="alat_kembali" required>
+
+        <label for="jumlah_kembali">Jumlah</label>
+        <input type="number" id="jumlah_kembali" name="jumlah_kembali" required min="1">
+
+        <label for="tanggal_kembali">Tanggal Pengembalian</label>
+        <input type="date" id="tanggal_kembali" name="tanggal_kembali" required>
+
+        <label for="kondisi">Kondisi Alat</label>
+        <select id="kondisi" name="kondisi">
+            <option value="baik">Baik</option>
+            <option value="rusak">Rusak</option>
+            <option value="hilang">Hilang</option>
         </select>
 
-        <label for="keterangan">Keterangan / Permintaan</label>
-        <textarea id="keterangan" name="keterangan" rows="4"></textarea>
-
-        <button type="submit">Kirim Pengajuan</button>
+        <button type="submit">Kirim Pengembalian</button>
     </form>
+</div>
+
 </main>
 
 <footer>
     &copy; 2026 PUPR Banggai Kepulauan
 </footer>
+
+<script>
+// Function untuk switch form berdasarkan tab
+function showForm(formId) {
+    const peminjaman = document.getElementById('peminjaman');
+    const pengembalian = document.getElementById('pengembalian');
+    const tabs = document.querySelectorAll('.tab');
+
+    if (formId === 'peminjaman') {
+        peminjaman.style.display = 'block';
+        pengembalian.style.display = 'none';
+        tabs[0].classList.add('active');
+        tabs[1].classList.remove('active');
+    } else {
+        peminjaman.style.display = 'none';
+        pengembalian.style.display = 'block';
+        tabs[0].classList.remove('active');
+        tabs[1].classList.add('active');
+    }
+}
+</script>
 
 </body>
 </html>
