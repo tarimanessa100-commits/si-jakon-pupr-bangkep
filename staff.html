@@ -75,6 +75,7 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
     import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
+    // 🔹 Konfigurasi Firebase
     const firebaseConfig = {
       apiKey: "AIzaSyB0v70yXQyZT064imYlOSXWWvzowxAS-yg",
       authDomain: "si-jakon-bangkep.firebaseapp.com",
@@ -91,7 +92,7 @@
     const staffTableBody = document.querySelector("#staffTable tbody");
     const msg = document.getElementById("msg");
 
-    // Listener realtime
+    // 🔹 Listener realtime Firestore
     const q = query(staffRef, orderBy("nama"));
     onSnapshot(q, (snapshot) => {
       staffTableBody.innerHTML = "";
@@ -112,42 +113,4 @@
 
       // Event listener hapus
       document.querySelectorAll(".delete-btn").forEach(btn => {
-        btn.addEventListener("click", async () => {
-          const id = btn.dataset.id;
-          if(confirm("Apakah yakin ingin menghapus staff ini?")) {
-            try {
-              await deleteDoc(doc(db, "staff", id));
-            } catch(err) {
-              console.error(err);
-              msg.textContent = "Gagal menghapus data!";
-            }
-          }
-        });
-      });
-    });
-
-    // Tambah staff
-    document.getElementById("staffForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const nama = document.getElementById("nama").value.trim();
-      const jabatan = document.getElementById("jabatan").value.trim();
-
-      if(!nama || !jabatan){
-        msg.textContent = "Harap isi semua kolom!";
-        return;
-      }
-
-      try {
-        await addDoc(staffRef, { nama, jabatan });
-        document.getElementById("nama").value = "";
-        document.getElementById("jabatan").value = "";
-        msg.textContent = "";
-      } catch(err){
-        console.error(err);
-        msg.textContent = "Gagal menyimpan data! Pastikan Firestore Rules memperbolehkan write.";
-      }
-    });
-  </script>
-
-</body>
-</html>
+        btn.addEventListener("cl
