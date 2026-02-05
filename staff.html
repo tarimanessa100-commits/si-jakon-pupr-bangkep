@@ -3,131 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bidang JAKON - Staff</title>
+  <title>Daftar Staff Bidang JAKON</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
       padding: 20px;
-      background-color: #f9f9f9;
+      background: #f9f9f9;
       color: #333;
     }
-
-    h2 {
-      text-align: center;
-      color: #007ACC;
+    h2 { text-align:center; color:#007ACC }
+    nav { text-align:center; margin-bottom:20px }
+    nav a { margin:0 10px; text-decoration:none; color:#007ACC;font-weight:bold }
+    nav a:hover { text-decoration:underline }
+    .form-container, .table-container {
+      background:white; padding:15px; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1);
+      max-width:800px; margin:15px auto;
     }
-
-    nav {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #007ACC;
-      margin: 0 10px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .form-container {
-      max-width: 500px;
-      margin: 20px auto;
-      padding: 15px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    }
-
     .form-container input {
-      width: 100%;
-      padding: 10px;
-      margin: 5px 0 15px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 16px;
+      width:100%; padding:10px; margin:5px 0 15px; border:1px solid #ccc; border-radius:4px;
     }
-
     .form-container button {
-      background-color: #007ACC;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
+      background:#007ACC; color:white; padding:10px 15px; border:none; border-radius:5px; cursor:pointer;
     }
-
-    .form-container button:hover {
-      background-color: #005a99;
+    .form-container button:hover { background:#005a99 }
+    table { width:100%; border-collapse:collapse }
+    th, td { padding:12px; border-bottom:1px solid #ddd }
+    th { background:#007ACC; color:white }
+    td button.delete-btn {
+      background:#e74c3c; color:white; border:none; border-radius:4px; padding:5px 8px; cursor:pointer;
     }
-
-    #msg {
-      text-align: center;
-      color: red;
-      margin-bottom: 10px;
+    td button.delete-btn:hover { background:#c0392b }
+    @media (max-width:600px) {
+      table, thead, tbody, th, td, tr { display:block }
+      td { padding-left:50%; position:relative }
+      td::before { position:absolute; left:15px; font-weight:bold; content: attr(data-label) }
     }
-
-    .table-container {
-      overflow-x: auto;
-      margin: 20px auto;
-      max-width: 800px;
-    }
-
-    table.staff-table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    }
-
-    table.staff-table th, table.staff-table td {
-      padding: 12px 15px;
-      text-align: left;
-    }
-
-    table.staff-table th {
-      background-color: #007ACC;
-      color: white;
-    }
-
-    table.staff-table tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-
-    table.staff-table tr:hover {
-      background-color: #e0f0ff;
-    }
-
-    @media screen and (max-width: 600px) {
-      table.staff-table, table.staff-table thead, table.staff-table tbody, table.staff-table th, table.staff-table td, table.staff-table tr {
-        display: block;
-      }
-
-      table.staff-table tr {
-        margin-bottom: 15px;
-      }
-
-      table.staff-table td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-      }
-
-      table.staff-table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 15px;
-        font-weight: bold;
-        text-align: left;
-      }
-    }
+    #msg { color:red; text-align:center; margin-bottom:10px }
   </style>
 </head>
 <body>
@@ -152,71 +63,96 @@
   </div>
 
   <div class="table-container">
-    <table class="staff-table" id="staffTable">
+    <table id="staffTable">
       <thead>
-        <tr>
-          <th>No</th>
-          <th>Nama</th>
-          <th>Jabatan</th>
-        </tr>
+        <tr><th>No</th><th>Nama</th><th>Jabatan</th><th>Aksi</th></tr>
       </thead>
-      <tbody>
-        <!-- Data staff muncul di sini -->
-      </tbody>
+      <tbody></tbody>
     </table>
   </div>
 
-  <script>
-    // Load data dari LocalStorage atau data awal
-    let staffList = JSON.parse(localStorage.getItem('staffList')) || [
-      {nama: "Ahmad Fauzi", jabatan: "Kepala Seksi"},
-      {nama: "Siti Rahma", jabatan: "Staff Administrasi"},
-      {nama: "Budi Santoso", jabatan: "Teknisi Lapangan"}
-    ];
+  <!-- Firebase Modular SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, query, orderBy, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
-    function simpanKeLocalStorage() {
-      localStorage.setItem('staffList', JSON.stringify(staffList));
-    }
+    const firebaseConfig = {
+      apiKey: "AIzaSyB0v70yXQyZT064imYlOSXWWvzowxAS-yg",
+      authDomain: "si-jakon-bangkep.firebaseapp.com",
+      projectId: "si-jakon-bangkep",
+      storageBucket: "si-jakon-bangkep.firebasestorage.app",
+      messagingSenderId: "917774222951",
+      appId: "1:917774222951:web:2dc3c5d7be61d0d274f6c2",
+      measurementId: "G-KJYZVSPX47"
+    };
 
-    function tampilkanStaff() {
-      const tbody = document.getElementById('staffTable').querySelector('tbody');
-      tbody.innerHTML = '';
-      staffList.forEach((staff, index) => {
-        const row = document.createElement('tr');
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const staffRef = collection(db, "staff");
+
+    const staffTableBody = document.querySelector("#staffTable tbody");
+    const msg = document.getElementById("msg");
+
+    // Tampilkan data dari Firestore
+    async function tampilkanStaff() {
+      staffTableBody.innerHTML = "";
+      const q = query(staffRef, orderBy("nama"));
+      const snapshot = await getDocs(q);
+      let no = 1;
+      snapshot.forEach(docSnap => {
+        const data = docSnap.data();
+        const row = document.createElement("tr");
         row.innerHTML = `
-          <td data-label="No">${index + 1}</td>
-          <td data-label="Nama">${staff.nama}</td>
-          <td data-label="Jabatan">${staff.jabatan}</td>
+          <td data-label="No">${no++}</td>
+          <td data-label="Nama">${data.nama}</td>
+          <td data-label="Jabatan">${data.jabatan}</td>
+          <td data-label="Aksi">
+            <button class="delete-btn" data-id="${docSnap.id}">Hapus</button>
+          </td>
         `;
-        tbody.appendChild(row);
+        staffTableBody.appendChild(row);
+      });
+
+      // Tambahkan event listener untuk tombol hapus
+      document.querySelectorAll(".delete-btn").forEach(btn => {
+        btn.addEventListener("click", async () => {
+          const id = btn.dataset.id;
+          if (confirm("Apakah yakin ingin menghapus staff ini?")) {
+            try {
+              await deleteDoc(doc(db, "staff", id));
+              tampilkanStaff();
+            } catch(err) {
+              console.error(err);
+              msg.textContent = "Gagal menghapus data!";
+            }
+          }
+        });
       });
     }
 
-    function tambahStaff(nama, jabatan) {
-      staffList.push({nama, jabatan});
-      simpanKeLocalStorage();
-      tampilkanStaff();
-    }
-
-    // Form submit
-    document.getElementById('staffForm').addEventListener('submit', function(e){
+    // Tambah staff
+    document.getElementById("staffForm").addEventListener("submit", async (e) => {
       e.preventDefault();
-      const nama = document.getElementById('nama').value.trim();
-      const jabatan = document.getElementById('jabatan').value.trim();
-      const msg = document.getElementById('msg');
+      const nama = document.getElementById("nama").value.trim();
+      const jabatan = document.getElementById("jabatan").value.trim();
 
-      if(!nama || !jabatan){
-        msg.textContent = 'Harap isi nama dan jabatan!';
+      if (!nama || !jabatan) {
+        msg.textContent = "Harap isi semua kolom!";
         return;
       }
 
-      tambahStaff(nama, jabatan);
-      document.getElementById('nama').value = '';
-      document.getElementById('jabatan').value = '';
-      msg.textContent = '';
+      try {
+        await addDoc(staffRef, { nama, jabatan });
+        document.getElementById("nama").value = "";
+        document.getElementById("jabatan").value = "";
+        msg.textContent = "";
+        tampilkanStaff();
+      } catch (err) {
+        console.error(err);
+        msg.textContent = "Gagal menyimpan data!";
+      }
     });
 
-    // Tampilkan staf saat load
     tampilkanStaff();
   </script>
 
