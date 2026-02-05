@@ -7,7 +7,8 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 20px;
+      margin: 0;
+      padding: 20px;
       background-color: #f9f9f9;
       color: #333;
     }
@@ -15,6 +16,22 @@
     h2 {
       text-align: center;
       color: #007ACC;
+    }
+
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #007ACC;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     .form-container {
@@ -49,10 +66,20 @@
       background-color: #005a99;
     }
 
-    table.staff-table {
-      width: 90%;
-      max-width: 800px;
+    #msg {
+      text-align: center;
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    .table-container {
+      overflow-x: auto;
       margin: 20px auto;
+      max-width: 800px;
+    }
+
+    table.staff-table {
+      width: 100%;
       border-collapse: collapse;
       background-color: #fff;
       border-radius: 8px;
@@ -107,32 +134,49 @@
 
   <h2>Daftar Staff SI-JAKON PUPR Bangkep</h2>
 
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="staff.html">Staff</a> |
+    <a href="data.html">Data</a> |
+    <a href="info.html">Info</a>
+  </nav>
+
   <div class="form-container">
     <h3>Tambah Staff Baru</h3>
-    <input type="text" id="nama" placeholder="Nama Lengkap" required>
-    <input type="text" id="jabatan" placeholder="Jabatan" required>
-    <button onclick="tambahStaff()">Tambah Staff</button>
+    <p id="msg"></p>
+    <form id="staffForm">
+      <input type="text" id="nama" placeholder="Nama Lengkap" required>
+      <input type="text" id="jabatan" placeholder="Jabatan" required>
+      <button type="submit">Tambah Staff</button>
+    </form>
   </div>
 
-  <table class="staff-table" id="staffTable">
-    <thead>
-      <tr>
-        <th>No</th>
-        <th>Nama</th>
-        <th>Jabatan</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Staff akan muncul di sini -->
-    </tbody>
-  </table>
+  <div class="table-container">
+    <table class="staff-table" id="staffTable">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Jabatan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data staff muncul di sini -->
+      </tbody>
+    </table>
+  </div>
 
   <script>
-    let staffList = [
+    // Load data dari LocalStorage atau data awal
+    let staffList = JSON.parse(localStorage.getItem('staffList')) || [
       {nama: "Ahmad Fauzi", jabatan: "Kepala Seksi"},
       {nama: "Siti Rahma", jabatan: "Staff Administrasi"},
       {nama: "Budi Santoso", jabatan: "Teknisi Lapangan"}
     ];
+
+    function simpanKeLocalStorage() {
+      localStorage.setItem('staffList', JSON.stringify(staffList));
+    }
 
     function tampilkanStaff() {
       const tbody = document.getElementById('staffTable').querySelector('tbody');
@@ -148,20 +192,31 @@
       });
     }
 
-    function tambahStaff() {
-      const nama = document.getElementById('nama').value.trim();
-      const jabatan = document.getElementById('jabatan').value.trim();
-      if(nama && jabatan){
-        staffList.push({nama, jabatan});
-        tampilkanStaff();
-        document.getElementById('nama').value = '';
-        document.getElementById('jabatan').value = '';
-      } else {
-        alert('Harap isi nama dan jabatan!');
-      }
+    function tambahStaff(nama, jabatan) {
+      staffList.push({nama, jabatan});
+      simpanKeLocalStorage();
+      tampilkanStaff();
     }
 
-    // Tampilkan staf awal
+    // Form submit
+    document.getElementById('staffForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const nama = document.getElementById('nama').value.trim();
+      const jabatan = document.getElementById('jabatan').value.trim();
+      const msg = document.getElementById('msg');
+
+      if(!nama || !jabatan){
+        msg.textContent = 'Harap isi nama dan jabatan!';
+        return;
+      }
+
+      tambahStaff(nama, jabatan);
+      document.getElementById('nama').value = '';
+      document.getElementById('jabatan').value = '';
+      msg.textContent = '';
+    });
+
+    // Tampilkan staf saat load
     tampilkanStaff();
   </script>
 
