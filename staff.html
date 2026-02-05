@@ -74,7 +74,7 @@
   <!-- Firebase Modular SDK -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs, query, orderBy, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyB0v70yXQyZT064imYlOSXWWvzowxAS-yg",
@@ -89,15 +89,13 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const staffRef = collection(db, "staff");
-
     const staffTableBody = document.querySelector("#staffTable tbody");
     const msg = document.getElementById("msg");
 
-    // Tampilkan data dari Firestore
-    async function tampilkanStaff() {
+    // Listener realtime untuk Firestore
+    const q = query(staffRef, orderBy("nama"));
+    onSnapshot(q, (snapshot) => {
       staffTableBody.innerHTML = "";
-      const q = query(staffRef, orderBy("nama"));
-      const snapshot = await getDocs(q);
       let no = 1;
       snapshot.forEach(docSnap => {
         const data = docSnap.data();
@@ -113,14 +111,13 @@
         staffTableBody.appendChild(row);
       });
 
-      // Tambahkan event listener untuk tombol hapus
+      // Event listener hapus
       document.querySelectorAll(".delete-btn").forEach(btn => {
         btn.addEventListener("click", async () => {
           const id = btn.dataset.id;
-          if (confirm("Apakah yakin ingin menghapus staff ini?")) {
+          if(confirm("Apakah yakin ingin menghapus staff ini?")) {
             try {
               await deleteDoc(doc(db, "staff", id));
-              tampilkanStaff();
             } catch(err) {
               console.error(err);
               msg.textContent = "Gagal menghapus data!";
@@ -128,7 +125,7 @@
           }
         });
       });
-    }
+    });
 
     // Tambah staff
     document.getElementById("staffForm").addEventListener("submit", async (e) => {
@@ -136,7 +133,7 @@
       const nama = document.getElementById("nama").value.trim();
       const jabatan = document.getElementById("jabatan").value.trim();
 
-      if (!nama || !jabatan) {
+      if(!nama || !jabatan){
         msg.textContent = "Harap isi semua kolom!";
         return;
       }
@@ -146,14 +143,11 @@
         document.getElementById("nama").value = "";
         document.getElementById("jabatan").value = "";
         msg.textContent = "";
-        tampilkanStaff();
-      } catch (err) {
+      } catch(err){
         console.error(err);
         msg.textContent = "Gagal menyimpan data!";
       }
     });
-
-    tampilkanStaff();
   </script>
 
 </body>
