@@ -4,171 +4,107 @@
     <meta charset="UTF-8">
     <title>Informasi Jasa Konstruksi | SI-JAKON</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #F5F7FA;
+            color: #263238;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #0D47A1, #1565C0);
+            color: white;
+            padding: 60px 30px;
+            border-radius: 14px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px;
+            font-size: 34px;
+        }
+
+        .hero p {
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
+        /* GRID */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 22px;
+            margin: 45px 0;
+        }
+
+        /* CARD */
+        .info-card {
+            background: white;
+            border-radius: 14px;
+            padding: 28px 22px;
+            box-shadow: 0 8px 20px rgba(13, 71, 161, 0.08);
+            border-top: 5px solid #FBC02D;
+            transition: all 0.25s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 28px rgba(13, 71, 161, 0.15);
+        }
+
+        .info-card h3 {
+            color: #0D47A1;
+            margin: 12px 0 8px;
+        }
+
+        .info-card ul {
+            padding-left: 18px;
+            margin: 8px 0 0;
+        }
+
+        /* ICON */
+        .icon {
+            font-size: 38px;
+            color: #FBC02D;
+        }
+
+        /* MANFAAT */
+        .benefit {
+            background: white;
+            border-left: 6px solid #FBC02D;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .benefit h2 {
+            color: #0D47A1;
+            margin-top: 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<!-- NAVBAR (SAMAKAN DENGAN HALAMAN LAIN) -->
-<nav class="navbar">
-    <div class="nav-brand">SI-JAKON</div>
-    <ul class="nav-menu">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="profil.html">Profil</a></li>
-        <li><a href="data.html">Data Jasa Konstruksi</a></li>
-        <li><a href="info.html" class="active">Informasi</a></li>
-        <li><a href="kontak.html">Kontak</a></li>
-    </ul>
+<!-- ===== NAVBAR (GANTI DENGAN PUNYAMU) ===== -->
+<nav style="background:#0D47A1; padding:12px 20px; color:white;">
+    <strong>SI-JAKON</strong>
 </nav>
 
-<!-- KONTEN UTAMA -->
-<main class="container">
-
-    <!-- HERO -->
-    <section class="hero">
-        <h1>Informasi Jasa Konstruksi</h1>
-        <p>
-            Sistem Informasi Jasa Konstruksi (SI-JAKON)  
-            Dinas PUPR Kabupaten Banggai Kepulauan
-        </p>
-    </section>
-
-    <!-- GRID INFORMASI -->
-    <section class="info-grid">
-
-        <div class="info-card">
-            <div class="icon">🏗️</div>
-            <h3>Pengertian</h3>
-            <p>
-                Jasa konstruksi merupakan layanan jasa yang meliputi
-                perencanaan, pelaksanaan, dan pengawasan pekerjaan konstruksi.
-            </p>
-        </div>
-
-        <div class="info-card">
-            <div class="icon">📋</div>
-            <h3>Jenis Jasa</h3>
-            <ul>
-                <li>Konsultansi Konstruksi</li>
-                <li>Pekerjaan Konstruksi</li>
-                <li>Konsultansi Non-Konstruksi</li>
-            </ul>
-        </div>
-
-        <div class="info-card">
-            <div class="icon">👷‍♂️</div>
-            <h3>Pelaku</h3>
-            <ul>
-                <li>Pengguna Jasa</li>
-                <li>Penyedia Jasa</li>
-                <li>Subpenyedia Jasa</li>
-            </ul>
-        </div>
-
-        <div class="info-card">
-            <div class="icon">⚖️</div>
-            <h3>Dasar Hukum</h3>
-            <ul>
-                <li>UU No. 2 Tahun 2017</li>
-                <li>PP No. 22 Tahun 2020</li>
-                <li>Permen PUPR</li>
-            </ul>
-        </div>
-
-    </section>
-
-    <!-- MANFAAT -->
-    <section class="benefit">
-        <h2>Manfaat SI-JAKON</h2>
-        <p>
-            Mendukung pengelolaan data jasa konstruksi yang transparan,
-            akuntabel, dan terintegrasi dalam rangka peningkatan
-            kualitas pelayanan publik.
-        </p>
-    </section>
-
-</main>
-
-<!-- FOOTER (SAMAKAN DENGAN HALAMAN LAIN) -->
-<footer class="footer">
-    <p>© 2026 Dinas PUPR Kabupaten Banggai Kepulauan</p>
-</footer>
-
-</body>
-.body {
-    background-color: #F5F7FA;
-    color: #263238;
-}
-
-/* HERO */
-.hero {
-    background: linear-gradient(135deg, #0D47A1, #1565C0);
-    color: #fff;
-    padding: 55px 30px;
-    border-radius: 14px;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.hero h1 {
-    font-size: 34px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 15px;
-    opacity: 0.95;
-}
-
-/* GRID */
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 22px;
-    margin: 45px 0;
-}
-
-/* CARD */
-.info-card {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 28px 22px;
-    box-shadow: 0 8px 20px rgba(13, 71, 161, 0.08);
-    transition: all 0.25s ease;
-    border-top: 5px solid #FBC02D;
-}
-
-.info-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 28px rgba(13, 71, 161, 0.15);
-}
-
-.info-card h3 {
-    color: #0D47A1;
-    margin: 12px 0 8px;
-}
-
-.info-card ul {
-    padding-left: 18px;
-    margin: 8px 0 0;
-}
-
-/* ICON */
-.icon {
-    font-size: 38px;
-    color: #FBC02D;
-}
-
-/* MANFAAT */
-.benefit {
-    background: #ffffff;
-    border-left: 6px solid #FBC02D;
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 45px;
-}
-
-.benefit h2 {
-    color: #0D47A1;
-    margin-top: 0;
-}
-</html>
+<main
