@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Jasa Konstruksi</title>
+<style>
+body { font-family: Arial; padding:20px; }
+table { width:100%; border-collapse:collapse; }
+th, td { border:1px solid #ccc; padding:8px; }
+th { background:#0a4a8f; color:white; }
+</style>
+</head>
+<body>
+
+<h2>Data Jasa Konstruksi</h2>
+
+<table>
+<thead>
+<tr>
+  <th>Nama</th>
+  <th>NIB</th>
+  <th>Kualifikasi</th>
+  <th>Jenis</th>
+</tr>
+</thead>
+<tbody id="tabel"></tbody>
+</table>
+
+<a href="index.html">⬅ Kembali</a>
+
+<script>
+let data = JSON.parse(localStorage.getItem("jakon")) || [];
+let tabel = document.getElementById("tabel");
+
+data.forEach(d => {
+  tabel.innerHTML += `
+    <tr>
+      <td>${d.nama}</td>
+      <td>${d.nib}</td>
+      <td>${d.kualifikasi}</td>
+      <td>${d.jenis}</td>
+    </tr>`;
+});
+</script>
+
+</body>
+</html>
