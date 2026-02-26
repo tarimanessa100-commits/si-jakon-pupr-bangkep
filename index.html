@@ -11,16 +11,17 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); }
         
-        /* Accordion CSS */
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.6s cubic-bezier(0, 1, 0, 1); }
         .item-active .accordion-content { max-height: 1000px; transition: max-height 1s ease-in-out; }
         .item-active .chevron-icon { transform: rotate(180deg); }
         .chevron-icon { transition: transform 0.3s ease; }
 
-        /* Table Styling */
         table { width: 100%; border-collapse: separate; border-spacing: 0 8px; }
-        tr { transition: all 0.2s; }
         .table-container { padding: 1.5rem; background: #f8fafc; border-top: 1px solid #e2e8f0; }
+        
+        /* Efek Zoom Foto Kegiatan */
+        .img-zoom { transition: transform 0.5s ease; }
+        .img-zoom:hover { transform: scale(1.05); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -28,58 +29,40 @@
     <nav class="bg-white sticky top-0 z-50 shadow-md border-b-4 border-yellow-400">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" alt="Logo SIJAKON" class="h-10 w-10 object-cover rounded-lg shadow-sm">
-                <div class="border-l-2 border-slate-200 pl-3">
-                    <span class="text-sm font-black text-blue-900 block uppercase italic">SIJAKON</span>
-                    <span class="text-[8px] text-slate-400 font-bold uppercase">PUPR Banggai Kepulauan</span>
+                <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" alt="Logo SIJAKON" class="h-10 w-10 object-cover rounded-lg">
+                <div class="border-l-2 border-slate-200 pl-3 uppercase font-black text-blue-900 italic">
+                    <span class="text-sm block">SIJAKON</span>
+                    <span class="text-[8px] text-slate-400 tracking-tighter">PUPR Banggai Kepulauan</span>
                 </div>
             </div>
-            <ul class="flex space-x-4 text-[10px] font-black uppercase tracking-widest text-blue-900">
-                <li><a href="#personel" class="hover:text-yellow-600">Personel</a></li>
-                <li><a href="#sewa" class="text-orange-600">Sewa Alat</a></li>
-                <li><a href="#kontak" class="hidden md:block bg-blue-900 text-white px-4 py-2 rounded-full">Kontak</a></li>
+            <ul class="flex space-x-3 text-[9px] font-black uppercase text-blue-900">
+                <li><a href="#personel">Personel</a></li>
+                <li><a href="#sewa">Sewa Alat</a></li>
+                <li><a href="#kegiatan">Kegiatan</a></li>
+                <li><a href="#kontak" class="text-orange-600">Kontak</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero-gradient text-white py-20 relative overflow-hidden">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
-            <div class="space-y-6 text-center md:text-left">
-                <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" alt="Logo Sijakon Besar" class="h-20 w-20 mx-auto md:mx-0 rounded-2xl shadow-2xl mb-4 border-2 border-white/20">
-                <h1 class="text-6xl font-black italic uppercase italic leading-none">SI-<span class="text-yellow-400">JAKON</span></h1>
-                <p class="text-lg opacity-80 italic">Portal Terpadu Informasi Jasa Konstruksi & Persewaan Alat Berat.</p>
-            </div>
-            <div class="flex justify-center">
-                <img src="logo-pupr.png" class="h-40 opacity-20 filter brightness-200">
-            </div>
+    <header class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" class="h-20 w-20 mx-auto rounded-2xl mb-6 border-2 border-white/20 shadow-2xl">
+            <h1 class="text-5xl font-black italic uppercase italic leading-none">SI-<span class="text-yellow-400">JAKON</span></h1>
+            <p class="text-sm opacity-80 mt-4 italic tracking-widest uppercase font-bold">Infrastruktur Berkualitas • Pelayanan Profesional</p>
         </div>
     </header>
 
-    <section id="personel" class="py-20 bg-white">
+    <section id="personel" class="py-16 bg-white">
         <div class="container mx-auto px-6 max-w-4xl">
-            <div class="accordion-item border-2 border-slate-100 rounded-[32px] overflow-hidden shadow-sm hover:shadow-md transition-all">
-                <button onclick="toggleAccordion(this)" class="w-full px-8 py-7 flex justify-between items-center bg-white group">
-                    <div class="text-left">
-                        <h2 class="text-2xl font-black text-blue-900 uppercase italic">Daftar Personel Bidang</h2>
-                        <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1 italic">Klik untuk melihat struktur organisasi</p>
-                    </div>
-                    <div class="bg-blue-50 text-blue-900 w-12 h-12 rounded-2xl flex items-center justify-center group-hover:bg-blue-900 group-hover:text-white transition-all">
-                        <i class="fas fa-chevron-down chevron-icon"></i>
-                    </div>
+            <div class="accordion-item border-2 border-slate-100 rounded-[30px] overflow-hidden shadow-sm">
+                <button onclick="toggleAccordion(this)" class="w-full px-8 py-6 flex justify-between items-center bg-white group">
+                    <h2 class="text-xl font-black text-blue-900 uppercase italic">Daftar Personel Bidang</h2>
+                    <i class="fas fa-chevron-down chevron-icon text-blue-900"></i>
                 </button>
-                
                 <div class="accordion-content">
                     <div class="table-container">
                         <table>
-                            <thead>
-                                <tr class="text-[10px] font-black text-slate-400 uppercase italic border-b">
-                                    <th class="py-3 px-4 text-left">No</th>
-                                    <th class="py-3 px-4 text-left">Nama Lengkap & NIP</th>
-                                    <th class="py-3 px-4 text-left">Jabatan</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tabel-staf" class="text-xs font-bold text-blue-900 uppercase italic tracking-tighter">
-                                </tbody>
+                            <tbody id="tabel-staf" class="text-xs font-bold text-blue-900 uppercase italic tracking-tighter"></tbody>
                         </table>
                     </div>
                 </div>
@@ -87,31 +70,17 @@
         </div>
     </section>
 
-    <section id="sewa" class="py-20 bg-slate-50">
+    <section id="sewa" class="py-16 bg-slate-50">
         <div class="container mx-auto px-6 max-w-4xl">
-            <div class="accordion-item border-2 border-orange-100 rounded-[32px] overflow-hidden shadow-sm hover:shadow-md transition-all">
-                <button onclick="toggleAccordion(this)" class="w-full px-8 py-7 flex justify-between items-center bg-white group">
-                    <div class="text-left">
-                        <h2 class="text-2xl font-black text-orange-600 uppercase italic">Daftar Harga Sewa Alat</h2>
-                        <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1 italic">Klik untuk melihat tarif retribusi</p>
-                    </div>
-                    <div class="bg-orange-50 text-orange-600 w-12 h-12 rounded-2xl flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition-all">
-                        <i class="fas fa-chevron-down chevron-icon"></i>
-                    </div>
+            <div class="accordion-item border-2 border-orange-100 rounded-[30px] overflow-hidden shadow-sm">
+                <button onclick="toggleAccordion(this)" class="w-full px-8 py-6 flex justify-between items-center bg-white group">
+                    <h2 class="text-xl font-black text-orange-600 uppercase italic">Daftar Harga Sewa Alat</h2>
+                    <i class="fas fa-chevron-down chevron-icon text-orange-600"></i>
                 </button>
-                
                 <div class="accordion-content">
                     <div class="table-container bg-orange-50/30">
                         <table>
-                            <thead>
-                                <tr class="text-[10px] font-black text-orange-400 uppercase italic border-b">
-                                    <th class="py-3 px-4 text-left">Alat / Kendaraan</th>
-                                    <th class="py-3 px-4 text-center">Satuan</th>
-                                    <th class="py-3 px-4 text-right">Harga (Rp)</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tabel-sewa" class="text-xs font-bold text-slate-700 uppercase italic">
-                                </tbody>
+                            <tbody id="tabel-sewa" class="text-xs font-bold text-slate-700 uppercase italic"></tbody>
                         </table>
                     </div>
                 </div>
@@ -119,36 +88,55 @@
         </div>
     </section>
 
-    <section id="kontak" class="py-20 bg-blue-900 text-white">
-        <div class="container mx-auto px-6 max-w-4xl grid md:grid-cols-2 gap-12">
-            <div>
-                <h3 class="text-2xl font-black uppercase italic mb-6">Kontak Pengajuan</h3>
-                <p class="text-sm opacity-70 mb-8 italic">Hubungi kami untuk informasi lebih lanjut mengenai pengajuan sewa atau regulasi konstruksi.</p>
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-4 bg-white/5 p-4 rounded-2xl">
-                        <i class="fas fa-phone-alt text-yellow-400"></i>
-                        <span class="font-bold text-sm">+62 8XX XXXX XXXX</span>
-                    </div>
-                    <div class="flex items-center space-x-4 bg-white/5 p-4 rounded-2xl">
-                        <i class="fas fa-map-marker-alt text-yellow-400"></i>
-                        <span class="font-bold text-sm uppercase text-[10px]">Kantor Dinas PUPR Banggai Kepulauan</span>
+    <section id="kegiatan" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-black text-blue-900 uppercase italic">Dokumentasi Kegiatan</h2>
+                <div class="h-1.5 w-20 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-[32px] shadow-xl aspect-square bg-slate-200">
+                    <img src="kegiatan1.jpg" alt="Kegiatan" class="w-full h-full object-cover img-zoom">
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-all p-6 flex flex-col justify-end">
+                        <p class="text-white font-black uppercase italic text-xs">Pengecekan Alat Berat Lapangan</p>
                     </div>
                 </div>
-            </div>
-            <div class="bg-white/10 p-8 rounded-[40px] border border-white/10 flex flex-col justify-center text-center">
-                <i class="fas fa-clock text-4xl text-yellow-400 mb-4"></i>
-                <h4 class="font-black uppercase italic mb-2">Jam Pelayanan</h4>
-                <p class="text-xs opacity-60">Senin - Jumat<br>08:00 - 16:00 WITA</p>
+                <div class="group relative overflow-hidden rounded-[32px] shadow-xl aspect-square bg-slate-200">
+                    <img src="kegiatan2.jpg" alt="Kegiatan" class="w-full h-full object-cover img-zoom">
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-all p-6 flex flex-col justify-end">
+                        <p class="text-white font-black uppercase italic text-xs">Rapat Koordinasi Jakon</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-[32px] shadow-xl aspect-square bg-slate-200">
+                    <img src="kegiatan3.jpg" alt="Kegiatan" class="w-full h-full object-cover img-zoom">
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-all p-6 flex flex-col justify-end">
+                        <p class="text-white font-black uppercase italic text-xs">Sertifikasi Tenaga Kerja</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-10 bg-slate-950 text-center opacity-30 text-[9px] font-bold text-white tracking-[0.5em] uppercase">
+    <section id="kontak" class="py-20 bg-slate-900 text-white">
+        <div class="container mx-auto px-6 max-w-4xl grid md:grid-cols-2 gap-10">
+            <div class="space-y-6">
+                <h3 class="text-2xl font-black uppercase italic text-yellow-400">Hubungi Kami</h3>
+                <p class="text-sm font-bold italic opacity-60 uppercase">Dinas PUPR Banggai Kepulauan<br>Kompleks Perkantoran Pemda, Salakan.</p>
+                <div class="flex items-center space-x-4"><i class="fas fa-phone-alt"></i><span>+62 8XX XXXX XXXX</span></div>
+            </div>
+            <div class="bg-white/5 p-8 rounded-[32px] border border-white/10 text-center">
+                <p class="text-[10px] uppercase font-black tracking-widest mb-4 italic opacity-50">Link Cepat</p>
+                <a href="https://maps.google.com" class="inline-block bg-yellow-400 text-blue-900 px-8 py-3 rounded-2xl font-black uppercase text-[10px] italic shadow-lg">Petunjuk Lokasi</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 bg-black text-center opacity-30 text-[9px] font-bold text-white tracking-[0.4em] uppercase">
         © 2026 SIJAKON • Dinas PUPR Banggai Kepulauan
     </footer>
 
     <script>
-        // --- DATA GAMPANG DIGANTI ---
         const listStaf = [
             { no: 1, nama: "NAMA KEPALA BIDANG", nip: "19XXXXXXXXXXXXXX", jabatan: "KEPALA BIDANG" },
             { no: 2, nama: "STAF TEKNIS 1", nip: "19XXXXXXXXXXXXXX", jabatan: "PENATA JAKON" },
@@ -161,16 +149,12 @@
             { alat: "Vibratory Roller", satuan: "Shift", harga: "3.500.000" }
         ];
 
-        // --- RENDER FUNGSI ---
         function renderTabel() {
             document.getElementById('tabel-staf').innerHTML = listStaf.map(s => `
                 <tr class="bg-white border-b border-slate-100 hover:bg-blue-50">
-                    <td class="py-4 px-4 text-slate-300">${s.no}</td>
-                    <td class="py-4 px-4">
-                        <div class="leading-tight">${s.nama}</div>
-                        <div class="text-[8px] text-slate-400 mt-1 uppercase tracking-widest italic">NIP. ${s.nip}</div>
-                    </td>
-                    <td class="py-4 px-4 text-blue-600">${s.jabatan}</td>
+                    <td class="py-4 px-4 text-slate-300 w-10">${s.no}</td>
+                    <td class="py-4 px-4"><div class="leading-tight">${s.nama}</div><div class="text-[8px] text-slate-400 mt-1 uppercase italic tracking-widest font-bold">NIP. ${s.nip}</div></td>
+                    <td class="py-4 px-4 text-blue-600 text-right uppercase">${s.jabatan}</td>
                 </tr>
             `).join('');
 
@@ -178,15 +162,13 @@
                 <tr class="bg-white border-b border-orange-50 hover:bg-orange-50">
                     <td class="py-4 px-4 font-black text-slate-800 tracking-tighter">${a.alat}</td>
                     <td class="py-4 px-4 text-center text-slate-400 text-[10px]">${a.satuan}</td>
-                    <td class="py-4 px-4 text-right text-orange-600 font-black">${a.harga}</td>
+                    <td class="py-4 px-4 text-right text-orange-600 font-black italic tracking-tighter">${a.harga}</td>
                 </tr>
             `).join('');
         }
 
-        // --- ACCORDION LOGIC ---
         function toggleAccordion(btn) {
-            const item = btn.parentElement;
-            item.classList.toggle('item-active');
+            btn.parentElement.classList.toggle('item-active');
         }
 
         window.onload = renderTabel;
