@@ -3,27 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SI-JAKON | Dinas PUPR Kab. Banggai Kepulauan</title>
+    <title>SIJAKON | Dinas PUPR Banggai Kepulauan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         html { scroll-behavior: smooth; }
-        .hero-gradient {
-            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .circle-dec {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+        .hero-gradient { background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%); }
+        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); }
+        
+        /* Dropdown Styling */
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: white; min-width: 200px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-radius: 8px; padding: 10px 0; z-index: 100; border-top: 3px solid #fbbf24; }
+        .dropdown-menu a { display: block; padding: 8px 20px; color: #1e3a8a; font-size: 11px; font-weight: bold; transition: 0.3s; }
+        .dropdown-menu a:hover { background: #f8fafc; color: #fbbf24; }
+        .nav-item { position: relative; }
+        .nav-item.active .dropdown-menu { display: block; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 font-sans">
@@ -34,112 +27,121 @@
                 <img src="images.png" alt="Logo Bangkep" class="h-10">
                 <img src="logo-pupr.png" alt="Logo PUPR" class="h-10">
                 <div class="hidden sm:block border-l-2 border-slate-200 pl-3">
-                    <span class="text-xs font-bold block leading-none text-blue-900 uppercase">Platform Konstruksi</span>
-                    <span class="text-[10px] font-bold text-slate-500 uppercase">PUPR Bangkep</span>
+                    <span class="text-[10px] font-black block leading-none text-blue-900 uppercase tracking-tighter">SIJAKON</span>
+                    <span class="text-[9px] font-bold text-slate-500 uppercase">PUPR Banggai Kepulauan</span>
                 </div>
             </div>
-            
-            <ul class="hidden lg:flex space-x-6 text-[11px] font-extrabold uppercase tracking-wider items-center">
-                <li><a href="#beranda" class="hover:text-blue-600 transition">Beranda</a></li>
-                <li><a href="#profil" class="hover:text-blue-600 transition">Profil</a></li>
-                <li><a href="#layanan" class="hover:text-blue-600 transition">Layanan</a></li>
-                <li><a href="#data" class="hover:text-blue-600 transition">Data Konstruksi</a></li>
-                <li><a href="#staff" class="bg-yellow-400 text-blue-900 px-4 py-2 rounded font-black hover:bg-yellow-500 transition shadow-sm">Data Staff</a></li>
+
+            <ul class="hidden lg:flex space-x-2 text-[10px] font-black uppercase tracking-widest">
+                <li class="nav-item">
+                    <button class="px-3 py-2 flex items-center hover:text-blue-700">Beranda <i class="fas fa-chevron-down ml-1 text-[8px]"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="#beranda">Highlight Info</a>
+                        <a href="#beranda">Pengumuman</a>
+                        <a href="#beranda">Akses Cepat</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button class="px-3 py-2 flex items-center hover:text-blue-700">Profil <i class="fas fa-chevron-down ml-1 text-[8px]"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="#profil">Tentang Bidang</a>
+                        <a href="#profil">Visi & Misi</a>
+                        <a href="#profil">Struktur Organisasi</a>
+                        <a href="#profil">Dasar Hukum</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button class="px-3 py-2 flex items-center hover:text-blue-700">Layanan <i class="fas fa-chevron-down ml-1 text-[8px]"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="#layanan">Informasi SBU</a>
+                        <a href="#layanan">Informasi SKK</a>
+                        <a href="#layanan">Registrasi</a>
+                        <a href="#layanan">SOP & Alur</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button class="px-3 py-2 flex items-center hover:text-blue-700">Data <i class="fas fa-chevron-down ml-1 text-[8px]"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="#data">Paket Pekerjaan</a>
+                        <a href="#data">Penyedia Jasa</a>
+                        <a href="#data">Tenaga Kerja</a>
+                        <a href="#data">Statistik</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button class="px-3 py-2 flex items-center hover:text-blue-700">Kegiatan <i class="fas fa-chevron-down ml-1 text-[8px]"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="#kegiatan">Pembinaan</a>
+                        <a href="#kegiatan">Sosialisasi</a>
+                        <a href="#kegiatan">Monitoring</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button class="px-3 py-2 flex items-center hover:text-blue-700">Regulasi <i class="fas fa-chevron-down ml-1 text-[8px]"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="#regulasi">Undang-Undang</a>
+                        <a href="#regulasi">Peraturan Menteri</a>
+                        <a href="#regulasi">Perda / SE</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button class="px-3 py-2 flex items-center text-red-600">Aduan <i class="fas fa-chevron-down ml-1 text-[8px]"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="#pengaduan">Form Online</a>
+                        <a href="#pengaduan">Kontak Admin</a>
+                        <a href="#pengaduan">FAQ</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
 
-    <header id="beranda" class="hero-gradient min-h-screen flex flex-col items-center justify-center text-center text-white px-6 pt-20 pb-12">
-        <div class="circle-dec w-64 h-64 -left-20 top-20"></div>
-        <div class="circle-dec w-96 h-96 -right-32 bottom-10"></div>
-        
-        <div class="max-w-5xl z-10">
-            <div class="mb-6 transform hover:scale-105 transition duration-500">
-                <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" alt="Logo SI-JAKON" class="h-40 md:h-56 mx-auto drop-shadow-2xl rounded-3xl">
-            </div>
-            
-            <h1 class="text-4xl md:text-6xl font-black mb-2 tracking-tighter uppercase">
-                SI-<span class="text-yellow-400">JAKON</span>
-            </h1>
-            <p class="text-yellow-400 font-bold tracking-[0.2em] uppercase mb-6 text-xs md:text-sm">
-                Sistem Informasi Jasa Konstruksi
-            </p>
-
-            <div class="max-w-3xl mx-auto mb-10">
-                <p class="text-lg md:text-xl font-light leading-relaxed opacity-90 mb-6">
-                    Bidang Jasa Konstruksi Dinas PUPR Kabupaten Banggai Kepulauan bertugas menyelenggarakan pembinaan, pengawasan, dan pengaturan subsektor jasa konstruksi guna menjamin terciptanya tertib usaha, tertib penyelenggaraan, dan tertib pemanfaatan produk jasa konstruksi.
-                </p>
-                
-                <div class="glass-card rounded-2xl p-6 inline-block text-left">
-                    <h3 class="text-yellow-400 font-bold uppercase text-xs tracking-widest mb-3 flex items-center">
-                        <i class="fas fa-gavel mr-2"></i> Landasan Hukum Utama:
-                    </h3>
-                    <ul class="text-sm space-y-2 opacity-90">
-                        <li class="flex items-start">
-                            <span class="text-yellow-400 mr-2">●</span> 
-                            <span><strong>UU No. 2 Tahun 2017</strong> tentang Jasa Konstruksi.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-yellow-400 mr-2">●</span> 
-                            <span><strong>UU No. 6 Tahun 2023</strong> (Cipta Kerja) terkait perizinan berusaha sektor konstruksi.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-yellow-400 mr-2">●</span> 
-                            <span><strong>PP No. 14 Tahun 2021</strong> tentang Perubahan atas PP No. 22 Tahun 2020.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
+    <header id="beranda" class="hero-gradient min-h-screen flex items-center justify-center text-center text-white px-6">
+        <div class="max-w-4xl">
+            <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" alt="Logo SIJAKON" class="h-48 md:h-64 mx-auto mb-8 drop-shadow-2xl rounded-3xl">
+            <h1 class="text-5xl md:text-7xl font-black mb-4 tracking-tighter uppercase italic">SI-<span class="text-yellow-400">JAKON</span></h1>
+            <p class="text-lg md:text-xl mb-10 opacity-90 italic">Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Banggai Kepulauan</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#layanan" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-8 py-3 rounded-full font-bold flex items-center shadow-lg transition transform hover:-translate-y-1">
-                    <i class="fas fa-th-large mr-2"></i> E-LAYANAN
-                </a>
-                <a href="#data" class="border-2 border-white/50 hover:bg-white hover:text-blue-900 px-8 py-3 rounded-full font-bold flex items-center shadow-lg transition transform hover:-translate-y-1">
-                    <i class="fas fa-file-invoice mr-2"></i> DATA PROYEK
-                </a>
+                <a href="#layanan" class="bg-yellow-400 text-blue-900 px-8 py-3 rounded-full font-black uppercase text-xs shadow-lg">Shortcut Layanan</a>
             </div>
         </div>
     </header>
 
-    <section id="profil" class="py-20 bg-white text-center">
-        <div class="container mx-auto px-6">
-             <h2 class="text-3xl font-black text-blue-950 uppercase inline-block border-b-8 border-yellow-400 pb-2">Profil Bidang</h2>
-             <p class="mt-8 text-slate-600 max-w-2xl mx-auto italic">Mewujudkan infrastruktur Banggai Kepulauan yang berkualitas melalui tata kelola jasa konstruksi yang profesional.</p>
-        </div>
-    </section>
+    <script>
+        // Mengatur fungsi klik pada menu
+        const navItems = document.querySelectorAll('.nav-item');
 
-    <section id="staff" class="py-24 bg-slate-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-black text-blue-950 uppercase inline-block border-b-8 border-yellow-400 pb-2 mb-12">Daftar Staf Bidang</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="bg-white border-t-4 border-blue-900 rounded-xl p-10 text-center shadow-md">
-                    <div class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-6 flex items-center justify-center text-3xl text-blue-900"><i class="fas fa-user"></i></div>
-                    <h3 class="font-bold text-xl uppercase">Kepala Bidang</h3>
-                    <p class="text-slate-500 text-sm mt-2">NIP. 198XXXXXXXXXXXXX</p>
-                </div>
-                <div class="bg-white border-t-4 border-blue-900 rounded-xl p-10 text-center shadow-md">
-                    <div class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-6 flex items-center justify-center text-3xl text-blue-900"><i class="fas fa-user-gear"></i></div>
-                    <h3 class="font-bold text-xl uppercase">Pejabat Fungsional</h3>
-                    <p class="text-slate-500 text-sm mt-2">NIP. 199XXXXXXXXXXXXX</p>
-                </div>
-                <div class="bg-white border-t-4 border-blue-900 rounded-xl p-10 text-center shadow-md">
-                    <div class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-6 flex items-center justify-center text-3xl text-blue-900"><i class="fas fa-user-pen"></i></div>
-                    <h3 class="font-bold text-xl uppercase">Staf Admin</h3>
-                    <p class="text-slate-500 text-sm mt-2">NIP. 199XXXXXXXXXXXXX</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        navItems.forEach(item => {
+            const button = item.querySelector('button');
+            
+            button.addEventListener('click', (e) => {
+                // Tutup dropdown lain yang sedang terbuka
+                navItems.forEach(otherItem => {
+                    if (otherItem !== item) otherItem.classList.remove('active');
+                });
+                
+                // Toggle dropdown menu ini
+                item.classList.toggle('active');
+                e.stopPropagation();
+            });
+        });
 
-    <footer class="bg-blue-950 text-white py-12 border-t-4 border-yellow-400">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center items-center space-x-4 mb-6">
-                <img src="images.png" alt="Bangkep" class="h-12 bg-white p-1 rounded">
-                <img src="logo-pupr.png" alt="PUPR" class="h-12 bg-white p-1 rounded">
-            </div>
-            <p class="text-xs font-bold uppercase tracking-[0.3em] opacity-60">© 2026 SI-JAKON Dinas PUPR Kabupaten Banggai Kepulauan</p>
-        </div>
+        // Menutup dropdown jika klik di luar area menu
+        window.addEventListener('click', () => {
+            navItems.forEach(item => item.classList.remove('active'));
+        });
+    </script>
+
+    <section id="profil" class="py-24 bg-white text-center"><h2 class="text-3xl font-black uppercase">Profil Terbuka</h2></section>
+    <section id="layanan" class="py-24 bg-slate-100 text-center"><h2 class="text-3xl font-black uppercase">Layanan Terbuka</h2></section>
+    <section id="data" class="py-24 bg-white text-center"><h2 class="text-3xl font-black uppercase">Data Terbuka</h2></section>
+    <section id="kegiatan" class="py-24 bg-slate-100 text-center"><h2 class="text-3xl font-black uppercase">Kegiatan Terbuka</h2></section>
+    <section id="regulasi" class="py-24 bg-white text-center"><h2 class="text-3xl font-black uppercase">Regulasi Terbuka</h2></section>
+    <section id="pengaduan" class="py-24 bg-blue-900 text-white text-center"><h2 class="text-3xl font-black uppercase text-yellow-400">Pengaduan Terbuka</h2></section>
+
+    <footer id="kontak" class="bg-[#000d1a] text-white py-10 border-t border-white/10 text-center">
+        <p class="text-[10px] font-bold uppercase tracking-widest">© 2026 SI-JAKON PUPR BANGKEP</p>
+        <p class="text-[10px] opacity-50 mt-2">Kompleks Perkantoran Trikora, Salakan</p>
     </footer>
 
 </body>
