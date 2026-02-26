@@ -4,173 +4,243 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIJAKON | PUPR Banggai Kepulauan</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        
+        /* Hero Background */
         .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); }
+        
+        /* Dropdown Navigation */
         .dropdown-menu { display: none; }
-        .nav-item.active .dropdown-menu { display: block; animation: slideIn 0.3s ease; }
-        @keyframes slideIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-        .card-anim { transition: all 0.5s ease; opacity: 0; transform: translateY(20px); }
-        .card-anim.show { opacity: 1; transform: translateY(0); }
+        .nav-item.active .dropdown-menu { display: block; animation: slideDown 0.3s ease; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Modal Staf Styles */
+        #modal-staf { display: none; }
+        #modal-staf.active { display: flex; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Image Hover Effect */
+        .img-hover { transition: transform 0.5s ease; }
+        .img-hover:hover { transform: scale(1.05); }
     </style>
 </head>
-<body class="bg-slate-50">
+<body class="bg-slate-50 text-slate-900">
 
     <nav class="bg-white sticky top-0 z-50 shadow-md border-b-4 border-yellow-400">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-3">
                 <img src="logo-bangkep.png" alt="Logo Pemda" class="h-10">
                 <img src="logo-pupr.png" alt="Logo PUPR" class="h-10">
-                <div class="hidden md:block border-l-2 border-slate-200 pl-3">
-                    <span class="text-sm font-black text-blue-900 block leading-none">SIJAKON</span>
-                    <span class="text-[9px] font-bold text-slate-500 uppercase">PUPR Banggai Kepulauan</span>
+                <div class="hidden md:block border-l-2 border-slate-200 pl-3 uppercase font-black text-blue-900">
+                    <span class="text-sm block leading-none">SIJAKON</span>
+                    <span class="text-[9px] text-slate-500">PUPR Banggai Kepulauan</span>
                 </div>
             </div>
+
             <ul class="hidden lg:flex space-x-2 text-[10px] font-black uppercase tracking-widest">
                 <li class="nav-item relative">
-                    <button class="px-4 py-2 hover:text-blue-700">Profil <i class="fas fa-chevron-down ml-1 text-[8px]"></i></button>
-                    <div class="dropdown-menu absolute bg-white shadow-xl w-56 rounded-lg mt-2 border-t-4 border-blue-900">
+                    <button class="px-4 py-2 hover:text-blue-700 flex items-center">Profil <i class="fas fa-chevron-down ml-1 text-[8px]"></i></button>
+                    <div class="dropdown-menu absolute bg-white shadow-xl w-56 rounded-lg mt-2 border-t-4 border-blue-900 overflow-hidden">
                         <a href="#visi" class="block px-4 py-3 hover:bg-slate-50 border-b">Visi & Misi</a>
-                        <a href="#personel" class="block px-4 py-3 hover:bg-slate-50 border-b">Personel Bidang</a>
-                        <a href="#kegiatan" class="block px-4 py-3 hover:bg-slate-50">Kegiatan</a>
+                        <button onclick="toggleModal()" class="w-full text-left block px-4 py-3 hover:bg-slate-50 border-b">Staf Bidang</button>
+                        <a href="#kegiatan" class="block px-4 py-3 hover:bg-slate-50">Dokumentasi</a>
                     </div>
                 </li>
-                <li><a href="#proyek" class="px-4 py-2 block hover:text-blue-700 uppercase">Data Proyek</a></li>
-                <li><a href="#kontak" class="ml-4 bg-blue-900 text-white px-6 py-2 rounded-full shadow-lg">Hubungi Kami</a></li>
+                <li><a href="#proyek" class="px-4 py-2 block hover:text-blue-700">Data Proyek</a></li>
+                <li><a href="#kontak" class="ml-4 bg-blue-900 text-white px-6 py-2 rounded-full shadow-lg hover:bg-blue-800 transition">Hubungi Kami</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero-gradient text-white py-20 lg:py-32 overflow-hidden">
+    <header id="beranda" class="hero-gradient text-white py-20 lg:py-32">
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <h1 class="text-6xl lg:text-7xl font-black italic uppercase leading-none tracking-tighter">SI-<span class="text-yellow-400">JAKON</span></h1>
-                <p class="text-lg opacity-80 italic">Portal Digital Jasa Konstruksi Kabupaten Banggai Kepulauan.</p>
-                <div class="pt-4"><a href="#visi" class="bg-yellow-400 text-blue-900 px-8 py-3 rounded-xl font-black uppercase text-xs">Mulai Jelajah</a></div>
+            <div class="space-y-6 text-center md:text-left">
+                <h1 class="text-6xl lg:text-8xl font-black italic uppercase leading-none tracking-tighter">SI-<span class="text-yellow-400">JAKON</span></h1>
+                <p class="text-lg opacity-80 italic max-w-md">Sistem Informasi Jasa Konstruksi Mandiri Kabupaten Banggai Kepulauan.</p>
+                <div class="pt-4">
+                    <a href="#proyek" class="bg-yellow-400 text-blue-900 px-8 py-4 rounded-2xl font-black uppercase text-xs shadow-xl inline-block hover:scale-105 transition">Cek Data Proyek</a>
+                </div>
             </div>
             <div class="flex justify-center">
-                <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" alt="Logo SIJAKON" class="w-full max-w-sm rounded-[40px] shadow-2xl border-4 border-white/20 transform rotate-3">
+                <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" alt="Logo Utama" class="w-full max-w-sm rounded-[40px] shadow-2xl border-4 border-white/20 transform rotate-3">
             </div>
         </div>
     </header>
 
     <section id="visi" class="py-24 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-black text-blue-900 uppercase italic mb-12 text-center">Visi & Misi</h2>
-            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-                <div class="bg-slate-50 p-8 rounded-3xl border-l-8 border-blue-900 shadow-sm">
-                    <h4 class="font-bold text-blue-900 uppercase mb-3">Visi</h4>
-                    <p class="text-sm italic text-slate-600">"Mewujudkan infrastruktur daerah yang berkualitas melalui tata kelola jasa konstruksi yang profesional."</p>
-                </div>
-                <div class="bg-blue-900 p-8 rounded-3xl text-white shadow-xl">
-                    <h4 class="font-bold uppercase mb-3 text-yellow-400">Misi Utama</h4>
-                    <ul class="text-xs space-y-2 opacity-90">
-                        <li>• Pembinaan tenaga kerja konstruksi.</li>
-                        <li>• Pengelolaan data proyek digital.</li>
-                        <li>• Pengawasan mutu fisik bangunan.</li>
-                    </ul>
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-black text-blue-900 uppercase italic mb-12">Visi & Misi</h2>
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <div class="bg-slate-50 p-8 rounded-3xl border-b-8 border-blue-900 shadow-sm">
+                        <i class="fas fa-eye text-2xl text-blue-600 mb-4"></i>
+                        <h4 class="font-bold text-blue-900 uppercase mb-2 text-sm">Visi</h4>
+                        <p class="text-sm italic text-slate-600">"Mewujudkan infrastruktur daerah yang berkualitas melalui tata kelola jasa konstruksi yang profesional."</p>
+                    </div>
+                    <div class="bg-blue-900 p-8 rounded-3xl text-white shadow-xl">
+                        <i class="fas fa-bullseye text-2xl text-yellow-400 mb-4"></i>
+                        <h4 class="font-bold uppercase mb-2 text-yellow-400 text-sm">Misi Utama</h4>
+                        <ul class="text-[11px] space-y-2 opacity-90">
+                            <li>• Pembinaan kompetensi tenaga kerja lokal.</li>
+                            <li>• Digitalisasi sistem data proyek fisik.</li>
+                            <li>• Pengawasan mutu dan regulasi konstruksi.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="personel" class="py-24 bg-slate-100">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-black text-blue-900 uppercase italic">Personel Bidang</h2>
-                <div class="h-1.5 w-20 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
-            </div>
-            <div id="staff-container" class="grid grid-cols-2 lg:grid-cols-4 gap-8"></div>
-        </div>
-    </section>
-
-    <section id="kegiatan" class="py-24 bg-white">
+    <section id="kegiatan" class="py-24 bg-slate-100">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-black text-blue-900 uppercase italic mb-12 text-center">Dokumentasi Kegiatan</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="rounded-3xl overflow-hidden shadow-xl bg-white border">
-                    <img src="kegiatan1.jpg" alt="Kegiatan 1" class="w-full h-56 object-cover">
-                    <div class="p-4 text-center"><p class="font-bold text-[10px] uppercase">Rapat Koordinasi</p></div>
+                <div class="group rounded-[32px] overflow-hidden shadow-xl bg-white border border-gray-100">
+                    <div class="overflow-hidden h-60">
+                        <img src="kegiatan1.jpg" alt="Kegiatan 1" class="w-full h-full object-cover img-hover">
+                    </div>
+                    <div class="p-5 text-center"><p class="font-black text-[10px] uppercase text-slate-400">Rapat Koordinasi Jakon</p></div>
                 </div>
-                <div class="rounded-3xl overflow-hidden shadow-xl bg-white border">
-                    <img src="kegiatan2.jpg" alt="Kegiatan 2" class="w-full h-56 object-cover">
-                    <div class="p-4 text-center"><p class="font-bold text-[10px] uppercase">Monitoring Proyek</p></div>
+                <div class="group rounded-[32px] overflow-hidden shadow-xl bg-white border border-gray-100">
+                    <div class="overflow-hidden h-60">
+                        <img src="kegiatan2.jpg" alt="Kegiatan 2" class="w-full h-full object-cover img-hover">
+                    </div>
+                    <div class="p-5 text-center"><p class="font-black text-[10px] uppercase text-slate-400">Monitoring Lapangan</p></div>
                 </div>
-                <div class="rounded-3xl overflow-hidden shadow-xl bg-white border">
-                    <img src="kegiatan3.jpg" alt="Kegiatan 3" class="w-full h-56 object-cover">
-                    <div class="p-4 text-center"><p class="font-bold text-[10px] uppercase">Sosialisasi Jakon</p></div>
+                <div class="group rounded-[32px] overflow-hidden shadow-xl bg-white border border-gray-100">
+                    <div class="overflow-hidden h-60">
+                        <img src="kegiatan3.jpg" alt="Kegiatan 3" class="w-full h-full object-cover img-hover">
+                    </div>
+                    <div class="p-5 text-center"><p class="font-black text-[10px] uppercase text-slate-400">Sosialisasi Regulasi</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="proyek" class="py-24 bg-slate-50">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <img src="proyek-bangkep.jpg" alt="Proyek Bangkep" class="rounded-[40px] shadow-2xl border-8 border-white">
+    <section id="proyek" class="py-24 bg-white">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <img src="proyek-bangkep.jpg" alt="Proyek" class="rounded-[40px] shadow-2xl border-8 border-white">
+                <div class="absolute -bottom-6 -right-6 bg-yellow-400 p-6 rounded-2xl shadow-xl font-black text-blue-900">
+                    <span class="block text-3xl italic leading-none">2026</span>
+                    <span class="text-[10px] uppercase opacity-60">Tahun Proyek</span>
+                </div>
+            </div>
             <div class="space-y-6">
-                <h2 class="text-4xl font-black text-blue-900 uppercase italic leading-tight">Data Proyek Strategis</h2>
-                <p class="text-sm text-slate-500 italic leading-relaxed">Informasi progres pembangunan fisik di seluruh wilayah Kabupaten Banggai Kepulauan TA 2026.</p>
-                <div class="bg-blue-900 p-6 rounded-3xl text-white inline-block">
-                    <h4 class="text-3xl font-black text-yellow-400">142 Proyek</h4>
-                    <p class="text-[9px] uppercase font-bold opacity-50">Terdaftar di SIJAKON</p>
+                <h2 class="text-4xl font-black text-blue-900 uppercase italic">Informasi Proyek</h2>
+                <p class="text-sm text-slate-500 italic leading-relaxed">Visualisasi progres pembangunan infrastruktur fisik di Kabupaten Banggai Kepulauan yang terintegrasi secara digital.</p>
+                <div class="flex space-x-4">
+                    <div class="bg-blue-900 p-6 rounded-3xl text-white flex-1 text-center">
+                        <span class="block text-3xl font-black text-yellow-400">142</span>
+                        <span class="text-[9px] uppercase font-bold opacity-50">Total Paket</span>
+                    </div>
+                    <div class="bg-slate-100 p-6 rounded-3xl flex-1 text-center border">
+                        <span class="block text-3xl font-black text-blue-900">92%</span>
+                        <span class="text-[9px] uppercase font-bold text-slate-400">Penyelesaian</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="kontak" class="bg-slate-950 text-white py-12">
+    <footer id="kontak" class="bg-slate-950 text-white py-16">
         <div class="container mx-auto px-6 text-center">
             <div class="flex justify-center space-x-4 mb-8">
-                <img src="logo-bangkep.png" class="h-10 bg-white p-1 rounded">
-                <img src="logo-pupr.png" class="h-10 bg-white p-1 rounded">
+                <img src="logo-bangkep.png" class="h-10 bg-white p-1 rounded-lg">
+                <img src="logo-pupr.png" class="h-10 bg-white p-1 rounded-lg">
             </div>
-            <p class="text-[10px] font-bold uppercase tracking-[0.5em] opacity-30">© 2026 SIJAKON • Dinas PUPR Banggai Kepulauan</p>
+            <p class="text-[10px] font-bold uppercase tracking-[0.5em] opacity-30 italic">© 2026 SIJAKON • Dinas PUPR Banggai Kepulauan</p>
         </div>
     </footer>
 
+    <div id="modal-staf" class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm items-center justify-center p-4">
+        <div class="bg-white w-full max-w-4xl rounded-[32px] shadow-2xl overflow-hidden transform transition-all scale-100">
+            <div class="bg-blue-900 p-6 flex justify-between items-center text-white">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-yellow-400 p-2 rounded-lg text-blue-900"><i class="fas fa-users-cog"></i></div>
+                    <h3 class="font-black uppercase tracking-tight text-sm italic">Personel Bidang Jasa Konstruksi</h3>
+                </div>
+                <button onclick="toggleModal()" class="hover:text-yellow-400 transition text-2xl font-black">&times;</button>
+            </div>
+            
+            <div class="p-4 md:p-8 overflow-x-auto max-h-[60vh]">
+                <table class="w-full text-left text-[11px] md:text-sm border-separate border-spacing-y-2">
+                    <thead>
+                        <tr class="text-slate-400 uppercase font-black italic">
+                            <th class="pb-4 px-4">No</th>
+                            <th class="pb-4 px-4">Nama Lengkap</th>
+                            <th class="pb-4 px-4">Jabatan</th>
+                            <th class="pb-4 px-4 text-right">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabel-staf-body">
+                        </tbody>
+                </table>
+            </div>
+
+            <div class="p-6 border-t bg-slate-50 flex justify-end">
+                <button onclick="toggleModal()" class="bg-blue-900 text-white px-10 py-3 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-blue-800 transition">Tutup Detail</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // 1. DATA STAF (ARRAY)
-        const daftarStaf = [
-            { nama: "Kepala Bidang", jabatan: "Kabid Jasa Konstruksi", nip: "19XXXXXXXXXXXXXX", warna: "1e3a8a" },
-            { nama: "Staf Teknis 1", jabatan: "Pembina Jakon", nip: "19XXXXXXXXXXXXXX", warna: "fbbf24" },
-            { nama: "Staf Teknis 2", jabatan: "Pengelola Data", nip: "19XXXXXXXXXXXXXX", warna: "1e3a8a" },
-            { nama: "Operator", jabatan: "Admin SIJAKON", nip: "19XXXXXXXXXXXXXX", warna: "fbbf24" }
+        // 1. DATA STAF (Ganti nama-nama ini sesuai kebutuhan Anda)
+        const dataStaf = [
+            { no: 1, nama: "NAMA KEPALA BIDANG", jabatan: "KEPALA BIDANG", status: "AKTIF" },
+            { no: 2, nama: "STAF TEKNIS 1", jabatan: "PENATA JASA KONSTRUKSI", status: "AKTIF" },
+            { no: 3, nama: "STAF TEKNIS 2", jabatan: "PENGELOLA DATA", status: "AKTIF" },
+            { no: 4, nama: "ADMIN SISTEM", jabatan: "OPERATOR SIJAKON", status: "AKTIF" }
         ];
 
-        // 2. MUNCULKAN STAF SAAT DIBUKA
-        window.addEventListener('DOMContentLoaded', () => {
-            const container = document.getElementById('staff-container');
+        // 2. LOGIKA POPUP (MODAL)
+        function toggleModal() {
+            const modal = document.getElementById('modal-staf');
+            modal.classList.toggle('active');
             
-            daftarStaf.forEach((staf, index) => {
-                const card = document.createElement('div');
-                card.className = `card-anim bg-white p-6 rounded-[35px] shadow-lg text-center border`;
-                card.innerHTML = `
-                    <img src="https://ui-avatars.com/api/?name=${staf.nama.replace(' ', '+')}&background=${staf.warna}&color=${staf.warna === '1e3a8a' ? 'fff' : '1e3a8a'}" class="w-20 h-20 mx-auto rounded-full mb-4 border-4 border-slate-100">
-                    <h4 class="font-black text-blue-900 uppercase text-[11px]">${staf.nama}</h4>
-                    <p class="text-[9px] font-bold text-slate-400 uppercase mt-1">${staf.jabatan}</p>
-                `;
-                container.appendChild(card);
-                
-                // Animasi bertahap
-                setTimeout(() => card.classList.add('show'), index * 150);
-            });
-        });
+            if(modal.classList.contains('active')) {
+                renderTabel();
+            }
+        }
 
-        // 3. LOGIKA DROPDOWN MENU
+        // 3. LOGIKA ISI TABEL
+        function renderTabel() {
+            const tbody = document.getElementById('tabel-staf-body');
+            tbody.innerHTML = dataStaf.map(staf => `
+                <tr class="bg-slate-50 hover:bg-yellow-50 transition duration-200">
+                    <td class="py-4 px-4 rounded-l-2xl font-black text-slate-300 text-[10px]">${staf.no}</td>
+                    <td class="py-4 px-4 font-black text-blue-900 uppercase italic">${staf.nama}</td>
+                    <td class="py-4 px-4 font-bold text-slate-500 uppercase text-[9px] tracking-wider">${staf.jabatan}</td>
+                    <td class="py-4 px-4 rounded-r-2xl text-right">
+                        <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-[9px] font-black italic uppercase">Aktif</span>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        // 4. LOGIKA DROPDOWN MENU
         const navItems = document.querySelectorAll('.nav-item');
         navItems.forEach(item => {
-            const button = item.querySelector('button');
-            button.addEventListener('click', (e) => {
+            const btn = item.querySelector('button');
+            btn.addEventListener('click', (e) => {
                 navItems.forEach(other => { if(other !== item) other.classList.remove('active'); });
                 item.classList.toggle('active');
                 e.stopPropagation();
             });
         });
-        window.onclick = () => navItems.forEach(item => item.classList.remove('active'));
+
+        // Klik di mana saja untuk tutup menu/modal
+        window.onclick = (e) => {
+            navItems.forEach(item => item.classList.remove('active'));
+            const modal = document.getElementById('modal-staf');
+            if (e.target == modal) toggleModal();
+        };
     </script>
 </body>
 </html>
