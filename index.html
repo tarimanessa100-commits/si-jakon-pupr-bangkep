@@ -9,12 +9,16 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-        .hero-bg { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); }
+        .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); }
+        
+        /* Dropdown Logic */
         .dropdown-menu { display: none; }
-        .nav-item.active .dropdown-menu { display: block; animation: slideDown 0.2s ease-out; }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-        .img-card { transition: transform 0.4s ease; }
-        .img-card:hover { transform: translateY(-8px); }
+        .nav-item.active .dropdown-menu { display: block; animation: slideIn 0.3s ease; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Image Hover Effect */
+        .hover-scale { transition: all 0.4s ease; }
+        .hover-scale:hover { transform: scale(1.05); shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
     </style>
 </head>
 <body class="bg-slate-50">
@@ -25,103 +29,134 @@
                 <img src="logo-bangkep.png" alt="Logo Pemda" class="h-10">
                 <img src="logo-pupr.png" alt="Logo PUPR" class="h-10">
                 <div class="hidden md:block border-l-2 border-slate-200 pl-3">
-                    <span class="text-sm font-black text-blue-900 block leading-none uppercase">SIJAKON</span>
+                    <span class="text-sm font-black text-blue-900 block leading-none">SIJAKON</span>
                     <span class="text-[9px] font-bold text-slate-500 uppercase">PUPR Banggai Kepulauan</span>
                 </div>
             </div>
+
             <ul class="hidden lg:flex space-x-2 text-[10px] font-black uppercase tracking-widest">
                 <li class="nav-item relative">
-                    <button class="px-3 py-2 hover:text-blue-700 uppercase">Beranda <i class="fas fa-chevron-down ml-1"></i></button>
-                    <div class="dropdown-menu absolute bg-white shadow-xl w-48 rounded-lg mt-2 border-t-4 border-blue-900">
-                        <a href="#beranda" class="block px-4 py-3 hover:bg-slate-50 border-b">Top Menu</a>
+                    <button class="px-4 py-2 hover:text-blue-700">Beranda <i class="fas fa-chevron-down ml-1"></i></button>
+                    <div class="dropdown-menu absolute bg-white shadow-xl w-56 rounded-lg mt-2 border-t-4 border-blue-900">
+                        <a href="#visi" class="block px-4 py-3 hover:bg-slate-50 border-b">Visi & Misi</a>
+                        <a href="#personel" class="block px-4 py-3 hover:bg-slate-50 border-b">Personel Bidang</a>
+                        <a href="#kegiatan" class="block px-4 py-3 hover:bg-slate-50">Dokumentasi Kegiatan</a>
                     </div>
                 </li>
-                <li class="nav-item relative">
-                    <button class="px-3 py-2 hover:text-blue-700 uppercase">Profil <i class="fas fa-chevron-down ml-1"></i></button>
-                    <div class="dropdown-menu absolute bg-white shadow-xl w-48 rounded-lg mt-2 border-t-4 border-blue-900">
-                        <a href="#visi" class="block px-4 py-3 hover:bg-slate-50 border-b">Visi Misi</a>
-                        <a href="#staf" class="block px-4 py-3 hover:bg-slate-50">Staf Bidang</a>
-                    </div>
-                </li>
-                <li class="nav-item relative">
-                    <button class="px-3 py-2 hover:text-blue-700 uppercase">Kegiatan <i class="fas fa-chevron-down ml-1"></i></button>
-                    <div class="dropdown-menu absolute bg-white shadow-xl w-48 rounded-lg mt-2 border-t-4 border-blue-900">
-                        <a href="#kegiatan" class="block px-4 py-3 hover:bg-slate-50 border-b">Dokumentasi</a>
-                    </div>
-                </li>
-                <li class="nav-item relative">
-                    <button class="px-3 py-2 hover:text-blue-700 uppercase">Data <i class="fas fa-chevron-down ml-1"></i></button>
-                    <div class="dropdown-menu absolute bg-white shadow-xl w-48 rounded-lg mt-2 border-t-4 border-blue-900">
-                        <a href="#proyek" class="block px-4 py-3 hover:bg-slate-50">Info Proyek</a>
-                    </div>
-                </li>
-                <li><a href="#kontak" class="ml-4 bg-blue-900 text-white px-6 py-2 rounded-full shadow-lg">Kontak</a></li>
+                <li><a href="#proyek" class="px-4 py-2 block hover:text-blue-700">Data Proyek</a></li>
+                <li><a href="#kontak" class="ml-4 bg-blue-900 text-white px-6 py-2 rounded-full">Hubungi Kami</a></li>
             </ul>
         </div>
     </nav>
 
-    <header id="beranda" class="hero-bg text-white py-20">
+    <header id="beranda" class="hero-gradient text-white py-20 lg:py-32 overflow-hidden">
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
-                <h1 class="text-6xl font-black italic uppercase leading-none">SI-<span class="text-yellow-400">JAKON</span></h1>
-                <p class="text-lg opacity-90 italic">Portal Digital Jasa Konstruksi Kabupaten Banggai Kepulauan.</p>
+                <h1 class="text-6xl lg:text-7xl font-black italic uppercase leading-none tracking-tighter">SI-<span class="text-yellow-400">JAKON</span></h1>
+                <p class="text-lg opacity-80 italic max-w-md">Sistem Informasi Jasa Konstruksi Mandiri. Data Akurat untuk Pembangunan Banggai Kepulauan yang Lebih Baik.</p>
+                <div class="pt-4"><a href="#visi" class="bg-yellow-400 text-blue-900 px-8 py-3 rounded-xl font-black uppercase text-xs">Jelajahi Portal</a></div>
             </div>
             <div class="flex justify-center">
-                <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" alt="Logo SIJAKON" class="max-w-xs rounded-3xl shadow-2xl border-4 border-white/20 transform rotate-3">
+                <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" alt="Logo Utama" class="w-full max-w-sm rounded-[40px] shadow-2xl border-4 border-white/20 transform rotate-3">
             </div>
         </div>
     </header>
 
-    <section id="kegiatan" class="py-20 bg-white">
+    <section id="visi" class="py-24 bg-white">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-black text-blue-900 uppercase italic mb-10 text-center">Dokumentasi Kegiatan</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="img-card bg-slate-100 rounded-2xl overflow-hidden shadow-lg">
-                    <img src="kegiatan1.jpg" alt="Kegiatan 1" class="w-full h-56 object-cover">
-                    <div class="p-4"><p class="font-bold text-xs uppercase">Pembinaan Jasa Konstruksi</p></div>
-                </div>
-                <div class="img-card bg-slate-100 rounded-2xl overflow-hidden shadow-lg">
-                    <img src="kegiatan2.jpg" alt="Kegiatan 2" class="w-full h-56 object-cover">
-                    <div class="p-4"><p class="font-bold text-xs uppercase">Rapat Koordinasi Teknis</p></div>
-                </div>
-                <div class="img-card bg-slate-100 rounded-2xl overflow-hidden shadow-lg">
-                    <img src="kegiatan3.jpg" alt="Kegiatan 3" class="w-full h-56 object-cover">
-                    <div class="p-4"><p class="font-bold text-xs uppercase">Sosialisasi Regulasi Jakon</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="proyek" class="py-20 bg-slate-50">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="order-2 md:order-1">
-                <img src="proyek-bangkep.jpg" alt="Proyek Bangkep" class="rounded-3xl shadow-2xl border-8 border-white">
-            </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <h2 class="text-3xl font-black text-blue-900 uppercase italic">Data Proyek Strategis</h2>
-                <div class="h-1.5 w-20 bg-yellow-400 rounded-full"></div>
-                <p class="text-sm text-slate-600 leading-relaxed italic">Visualisasi progres pembangunan infrastruktur fisik di wilayah Kabupaten Banggai Kepulauan tahun anggaran 2026.</p>
-                <div class="grid grid-cols-2 gap-4 pt-4">
-                    <div class="bg-blue-900 p-4 rounded-xl text-white text-center">
-                        <span class="block text-2xl font-bold">142</span>
-                        <span class="text-[9px] uppercase font-bold opacity-60">Paket Proyek</span>
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-black text-blue-900 uppercase italic mb-8 underline decoration-yellow-400 decoration-4 underline-offset-8">Visi & Misi</h2>
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                        <i class="fas fa-eye text-blue-600 mb-4 text-2xl"></i>
+                        <h4 class="font-bold text-blue-900 uppercase mb-2">Visi</h4>
+                        <p class="text-sm italic text-slate-600">"Mewujudkan infrastruktur daerah yang berkualitas melalui tata kelola jasa konstruksi yang profesional dan berkelanjutan."</p>
                     </div>
-                    <div class="bg-yellow-400 p-4 rounded-xl text-blue-900 text-center font-bold">
-                        <span class="block text-2xl">92%</span>
-                        <span class="text-[9px] uppercase opacity-60">Tuntas Fisik</span>
+                    <div class="bg-blue-900 p-8 rounded-3xl text-white shadow-xl">
+                        <i class="fas fa-bullseye text-yellow-400 mb-4 text-2xl"></i>
+                        <h4 class="font-bold uppercase mb-2 text-yellow-400">Misi Utama</h4>
+                        <ul class="text-xs space-y-2 opacity-90">
+                            <li>• Meningkatkan kompetensi tenaga kerja konstruksi lokal.</li>
+                            <li>• Digitalisasi sistem informasi dan data proyek.</li>
+                            <li>• Pengawasan ketat standar mutu fisik pembangunan.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="kontak" class="bg-slate-950 text-white py-10">
+    <section id="personel" class="py-24 bg-slate-100">
         <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center space-x-4 mb-6">
-                <img src="logo-bangkep.png" class="h-8 bg-white p-1 rounded">
-                <img src="logo-pupr.png" class="h-8 bg-white p-1 rounded">
+            <h2 class="text-3xl font-black text-blue-900 uppercase italic mb-12">Personel Bidang</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-[35px] shadow-lg border border-gray-100 hover-scale">
+                    <img src="https://ui-avatars.com/api/?name=Kabid+Jakon&background=1e3a8a&color=fff" class="w-24 h-24 mx-auto rounded-full mb-4 border-4 border-yellow-400">
+                    <h4 class="font-black text-blue-900 uppercase text-[11px]">Kepala Bidang</h4>
+                    <p class="text-[9px] font-bold text-slate-400 uppercase mt-1">Pembina Jasa Konstruksi</p>
+                </div>
+                <div class="bg-white p-6 rounded-[35px] shadow-lg border border-gray-100 hover-scale">
+                    <img src="https://ui-avatars.com/api/?name=Staf+Teknis&background=fbbf24&color=1e3a8a" class="w-24 h-24 mx-auto rounded-full mb-4 border-4 border-blue-900">
+                    <h4 class="font-black text-blue-900 uppercase text-[11px]">Staf Bidang</h4>
+                    <p class="text-[9px] font-bold text-slate-400 uppercase mt-1">Pengelola Data</p>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="kegiatan" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-black text-blue-900 uppercase italic mb-12 text-center">Dokumentasi Kegiatan</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="group rounded-3xl overflow-hidden shadow-xl hover-scale">
+                    <img src="kegiatan1.jpg" alt="Kegiatan 1" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white text-center border-t"><p class="font-bold text-[10px] uppercase">Rapat Koordinasi Jakon</p></div>
+                </div>
+                <div class="group rounded-3xl overflow-hidden shadow-xl hover-scale">
+                    <img src="kegiatan2.jpg" alt="Kegiatan 2" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white text-center border-t"><p class="font-bold text-[10px] uppercase">Monitoring Lapangan</p></div>
+                </div>
+                <div class="group rounded-3xl overflow-hidden shadow-xl hover-scale">
+                    <img src="kegiatan3.jpg" alt="Kegiatan 3" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white text-center border-t"><p class="font-bold text-[10px] uppercase">Bimbingan Teknis SBU</p></div>
+                </div>
             </div>
-            <p class="text-[9px] font-bold uppercase tracking-[0.4em] opacity-40">© 2026 SIJAKON PUPR BANGGAI KEPULAUAN</p>
+        </div>
+    </section>
+
+    <section id="proyek" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <img src="proyek-bangkep.jpg" alt="Proyek Bangkep" class="rounded-[40px] shadow-2xl border-8 border-white">
+                <div class="absolute -bottom-6 -right-6 bg-yellow-400 p-6 rounded-2xl shadow-xl font-black text-blue-900 text-center">
+                    <span class="block text-3xl italic leading-none">2026</span>
+                    <span class="text-[10px] uppercase opacity-70">Tahun Anggaran</span>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h2 class="text-4xl font-black text-blue-900 uppercase italic">Progres Infrastruktur</h2>
+                <p class="text-sm text-slate-500 italic leading-relaxed">Visualisasi hasil pembangunan jasa konstruksi fisik di seluruh wilayah Kabupaten Banggai Kepulauan yang terintegrasi secara digital.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-blue-900 p-6 rounded-3xl text-white">
+                        <h4 class="text-3xl font-black text-yellow-400 leading-none">142</h4>
+                        <p class="text-[9px] uppercase font-bold mt-2 opacity-50">Total Paket</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl border shadow-sm">
+                        <h4 class="text-3xl font-black text-blue-900 leading-none">92%</h4>
+                        <p class="text-[9px] uppercase font-bold mt-2 text-slate-400">Penyelesaian</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontak" class="bg-slate-950 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-4 mb-8">
+                <img src="logo-bangkep.png" class="h-10 bg-white p-1 rounded-lg">
+                <img src="logo-pupr.png" class="h-10 bg-white p-1 rounded-lg">
+            </div>
+            <p class="text-[10px] font-bold uppercase tracking-[0.5em] opacity-40">© 2026 SIJAKON • Dinas PUPR Banggai Kepulauan</p>
         </div>
     </footer>
 
