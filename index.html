@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIJAKON | PUPR Banggai Kepulauan</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); }
         
-        /* Accordion Logic */
-        .content-hidden { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
-        .item-active .content-hidden { max-height: 500px; padding-bottom: 1.5rem; }
-        .item-active .chevron-icon { transform: rotate(180deg); }
+        /* Animasi Accordion (Buka Tutup) */
+        .content-hidden { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); }
+        .item-active .content-hidden { max-height: 1000px; transition: max-height 1s ease-in-out; }
+        .item-active .chevron-icon { transform: rotate(180deg); color: #eab308; }
         .chevron-icon { transition: transform 0.3s ease; }
+
+        /* Hover Effect untuk Kartu */
+        .hover-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        .transition-all { transition: all 0.3s ease; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -23,147 +29,208 @@
     <nav class="bg-white sticky top-0 z-50 shadow-md border-b-4 border-yellow-400">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <img src="logo-bangkep.png" alt="Logo" class="h-10">
-                <img src="logo-pupr.png" alt="Logo" class="h-10">
+                <img src="logo-bangkep.png" alt="Logo Bangkep" class="h-10">
+                <img src="logo-pupr.png" alt="Logo PUPR" class="h-10">
                 <div class="hidden md:block border-l-2 border-slate-200 pl-3">
-                    <span class="text-xs font-black text-blue-900 block uppercase">SIJAKON</span>
-                    <span class="text-[8px] text-slate-400 font-bold uppercase">Kab. Banggai Kepulauan</span>
+                    <span class="text-xs font-black text-blue-900 block uppercase tracking-tighter">SIJAKON</span>
+                    <span class="text-[8px] text-slate-400 font-bold uppercase">PUPR Banggai Kepulauan</span>
                 </div>
             </div>
-            <ul class="flex space-x-4 text-[9px] font-black uppercase tracking-widest text-blue-900">
-                <li><a href="#personel" class="hover:text-yellow-500">Personel</a></li>
-                <li><a href="#sewa" class="hover:text-orange-500">Sewa Alat</a></li>
-                <li><a href="#kontak" class="bg-blue-900 text-white px-4 py-2 rounded-full shadow-lg">Hubungi Kami</a></li>
+            <ul class="flex space-x-3 md:space-x-6 text-[10px] font-black uppercase tracking-widest text-blue-900">
+                <li><a href="#personel" class="hover:text-yellow-600 transition">Personel</a></li>
+                <li><a href="#sewa" class="text-orange-600 hover:text-orange-800 transition">Sewa Alat</a></li>
+                <li><a href="#kontak" class="hidden md:block bg-blue-900 text-white px-4 py-2 rounded-full shadow-lg">Kontak</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero-gradient text-white py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-6xl font-black italic uppercase italic mb-4">SI-<span class="text-yellow-400">JAKON</span></h1>
-            <p class="text-lg opacity-80 italic">Layanan Informasi Jasa Konstruksi & Persewaan Alat Berat.</p>
+    <header class="hero-gradient text-white py-20 lg:py-28 relative overflow-hidden">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-6 text-center md:text-left">
+                <h1 class="text-5xl lg:text-7xl font-black italic uppercase leading-none tracking-tighter">SI-<span class="text-yellow-400">JAKON</span></h1>
+                <p class="text-lg opacity-90 italic max-w-md mx-auto md:mx-0 font-medium">Sistem Informasi Jasa Konstruksi & Portal Persewaan Alat Berat Daerah.</p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
+                    <a href="#sewa" class="bg-yellow-400 text-blue-900 px-8 py-3 rounded-2xl font-black uppercase text-xs shadow-xl hover:bg-white transition-all">Cek Tarif Sewa</a>
+                    <a href="#kontak" class="bg-transparent border-2 border-white/30 px-8 py-3 rounded-2xl font-black uppercase text-xs hover:bg-white/10 transition-all">Lokasi Kantor</a>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-yellow-400 rounded-[40px] rotate-6 opacity-20 blur-2xl"></div>
+                    <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" alt="Logo Utama" class="relative z-10 max-w-xs rounded-[40px] shadow-2xl border-4 border-white/20 transform rotate-3 transition-all hover:rotate-0 duration-500">
+                </div>
+            </div>
         </div>
+        <i class="fas fa-hard-hat absolute -bottom-10 -left-10 text-white/5 text-[200px] -rotate-12"></i>
     </header>
 
-    <section id="personel" class="py-16 bg-white border-b">
-        <div class="container mx-auto px-6 max-w-2xl text-center">
-            <h2 class="text-2xl font-black text-blue-900 uppercase italic mb-8 italic">Personel Bidang</h2>
-            <div id="wadah-personel" class="space-y-3"></div>
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                <div class="bg-slate-50 p-8 rounded-3xl border-b-8 border-blue-900 transition-all hover:shadow-lg">
+                    <div class="bg-blue-900 w-12 h-12 rounded-2xl flex items-center justify-center text-white mb-6">
+                        <i class="fas fa-eye text-xl"></i>
+                    </div>
+                    <h3 class="font-black text-blue-900 uppercase text-sm mb-4 tracking-widest italic">Visi Kami</h3>
+                    <p class="text-sm font-bold italic text-slate-500 leading-relaxed">"Mewujudkan tata kelola jasa konstruksi yang transparan, profesional, dan berdaya saing untuk pembangunan daerah."</p>
+                </div>
+                <div class="bg-blue-900 p-8 rounded-3xl text-white shadow-2xl relative overflow-hidden">
+                    <div class="bg-yellow-400 w-12 h-12 rounded-2xl flex items-center justify-center text-blue-900 mb-6 relative z-10">
+                        <i class="fas fa-bullseye text-xl"></i>
+                    </div>
+                    <h3 class="font-black text-yellow-400 uppercase text-sm mb-4 tracking-widest italic relative z-10">Misi Utama</h3>
+                    <ul class="text-[11px] font-bold space-y-3 opacity-90 relative z-10 italic uppercase tracking-tighter">
+                        <li>• Digitalisasi Data & Layanan Konstruksi.</li>
+                        <li>• Optimalisasi Pendayagunaan Alat Berat.</li>
+                        <li>• Peningkatan Kompetensi Tenaga Kerja.</li>
+                    </ul>
+                    <i class="fas fa-drafting-compass absolute -bottom-10 -right-10 text-white/10 text-9xl"></i>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="sewa" class="py-16 bg-slate-50 border-b">
-        <div class="container mx-auto px-6 max-w-2xl text-center">
-            <h2 class="text-2xl font-black text-orange-600 uppercase italic mb-8 italic">Sewa Alat & Kendaraan</h2>
-            <div id="wadah-sewa" class="space-y-3"></div>
-        </div>
-    </section>
-
-    <section id="kontak" class="py-20 bg-white">
-        <div class="container mx-auto px-6 max-w-5xl">
+    <section id="personel" class="py-20 bg-slate-100 border-y">
+        <div class="container mx-auto px-6 max-w-2xl">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-black text-blue-900 uppercase italic">Kontak & Lokasi Kantor</h2>
-                <div class="h-1.5 w-24 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
+                <h2 class="text-3xl font-black text-blue-900 uppercase italic">Personel Bidang</h2>
+                <div class="h-1.5 w-20 bg-blue-900 mx-auto mt-4 rounded-full"></div>
+                <p class="text-[10px] font-bold text-slate-400 mt-4 uppercase tracking-[0.3em] italic">Klik Jabatan Untuk Detail</p>
             </div>
-
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="space-y-6">
-                    <div class="bg-blue-50 p-8 rounded-3xl border-l-8 border-blue-900 shadow-sm">
-                        <h4 class="font-black text-blue-900 uppercase text-sm mb-6 italic tracking-widest">Informasi Pengajuan</h4>
-                        
-                        <div class="space-y-4 text-sm font-bold text-slate-600">
-                            <div class="flex items-center space-x-4">
-                                <div class="bg-blue-900 text-white p-3 rounded-2xl"><i class="fas fa-phone-alt"></i></div>
-                                <div><p class="text-[10px] uppercase opacity-50">Telepon / WhatsApp</p><p>+62 8XX XXXX XXXX</p></div>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <div class="bg-blue-900 text-white p-3 rounded-2xl"><i class="fas fa-envelope"></i></div>
-                                <div><p class="text-[10px] uppercase opacity-50">Email Resmi</p><p>jakon.pupr@bangkepkab.go.id</p></div>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <div class="bg-blue-900 text-white p-3 rounded-2xl"><i class="fas fa-clock"></i></div>
-                                <div><p class="text-[10px] uppercase opacity-50">Jam Pelayanan</p><p>Senin - Jumat (08:00 - 16:00 WITA)</p></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-900 text-white p-8 rounded-3xl shadow-2xl relative overflow-hidden">
-                    <div class="relative z-10">
-                        <h4 class="font-black text-yellow-400 uppercase text-sm mb-6 italic tracking-widest">Lokasi Kantor</h4>
-                        <div class="space-y-4">
-                            <p class="text-sm font-bold italic leading-relaxed">
-                                Dinas Pekerjaan Umum dan Penataan Ruang (PUPR)<br>
-                                Kompleks Perkantoran Pemda Banggai Kepulauan,<br>
-                                Salakan, Sulawesi Tengah.
-                            </p>
-                            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center bg-white text-blue-900 px-6 py-3 rounded-2xl font-black uppercase text-[10px] tracking-widest shadow-xl hover:bg-yellow-400 transition transform hover:scale-105 mt-4">
-                                <i class="fas fa-map-marked-alt mr-2"></i> Petunjuk Arah Google Maps
-                            </a>
-                        </div>
-                    </div>
-                    <i class="fas fa-city absolute -bottom-10 -right-10 text-white/5 text-9xl"></i>
-                </div>
-            </div>
+            <div id="wadah-personel" class="space-y-4"></div>
         </div>
     </section>
 
-    <footer class="bg-slate-950 text-white py-12 text-center opacity-40 text-[9px] font-bold tracking-[0.5em] uppercase border-t border-white/10">
-        © 2026 SIJAKON • Dinas PUPR Banggai Kepulauan
+    <section id="sewa" class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-2xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-black text-orange-600 uppercase italic">Sewa Alat & Kendaraan</h2>
+                <div class="h-1.5 w-20 bg-orange-600 mx-auto mt-4 rounded-full"></div>
+                <p class="text-[10px] font-bold text-slate-400 mt-4 uppercase tracking-[0.3em] italic">Klik Nama Alat Untuk Harga</p>
+            </div>
+            <div id="wadah-sewa" class="space-y-4"></div>
+        </div>
+    </section>
+
+    <section id="kontak" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="container mx-auto px-6 max-w-5xl relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-10">
+                    <div>
+                        <h2 class="text-4xl font-black uppercase italic tracking-tighter mb-4">Butuh Layanan <span class="text-yellow-400">Konstruksi?</span></h2>
+                        <p class="text-sm opacity-60 font-bold italic uppercase tracking-widest">Silakan hubungi kontak resmi kami untuk pengajuan sewa alat atau konsultasi data.</p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-5 group">
+                            <div class="bg-yellow-400 text-blue-900 w-12 h-12 rounded-2xl flex items-center justify-center transition-all group-hover:rotate-12"><i class="fas fa-phone-alt"></i></div>
+                            <div><p class="text-[9px] uppercase font-black text-yellow-400/50">WhatsApp / Call</p><p class="font-black text-lg">+62 8XX XXXX XXXX</p></div>
+                        </div>
+                        <div class="flex items-center space-x-5 group">
+                            <div class="bg-yellow-400 text-blue-900 w-12 h-12 rounded-2xl flex items-center justify-center transition-all group-hover:rotate-12"><i class="fas fa-envelope"></i></div>
+                            <div><p class="text-[9px] uppercase font-black text-yellow-400/50">Official Email</p><p class="font-black text-lg">jakon@bangkepkab.go.id</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-lg p-10 rounded-[40px] border border-white/10 shadow-2xl">
+                    <h3 class="text-yellow-400 font-black uppercase text-sm mb-6 tracking-[0.2em] italic">Kantor Dinas PUPR</h3>
+                    <p class="font-bold italic text-sm leading-relaxed mb-8 opacity-80 uppercase tracking-tighter">
+                        Jl. Kompleks Perkantoran Pemda Banggai Kepulauan, Kelurahan Salakan, Kec. Tinangkung, Sulawesi Tengah.
+                    </p>
+                    <a href="https://maps.google.com" target="_blank" class="flex items-center justify-center space-x-3 bg-yellow-400 text-blue-900 w-full py-4 rounded-2xl font-black uppercase text-xs shadow-xl hover:bg-white transition-all">
+                        <i class="fas fa-map-marked-alt text-lg"></i>
+                        <span>Buka Google Maps</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <i class="fas fa-map-marker-alt absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/5 text-[400px]"></i>
+    </section>
+
+    <footer class="bg-black text-white py-12 border-t border-white/5">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-4 mb-8">
+                <img src="logo-bangkep.png" class="h-8 grayscale opacity-50 hover:grayscale-0 transition cursor-pointer">
+                <img src="logo-pupr.png" class="h-8 grayscale opacity-50 hover:grayscale-0 transition cursor-pointer">
+            </div>
+            <p class="text-[9px] font-bold text-white/20 uppercase tracking-[0.5em]">© 2026 SIJAKON • Dinas Pekerjaan Umum Dan Penataan Ruang Banggai Kepulauan</p>
+        </div>
     </footer>
 
     <script>
-        // 1. DATA PERSONEL
-        const dataStaf = [
+        // 1. DATA PERSONEL (List Nama & NIP)
+        const daftarStaf = [
             { jabatan: "Kepala Bidang", nama: "NAMA KEPALA BIDANG", nip: "19XXXXXXXXXXXXXX" },
-            { jabatan: "Penata Jasa Konstruksi", nama: "NAMA STAF 1", nip: "19XXXXXXXXXXXXXX" },
-            { jabatan: "Pengelola Data", nama: "NAMA STAF 2", nip: "19XXXXXXXXXXXXXX" }
+            { jabatan: "Penata Jasa Konstruksi", nama: "NAMA STAF TEKNIS 1", nip: "19XXXXXXXXXXXXXX" },
+            { jabatan: "Pengelola Data", nama: "NAMA STAF TEKNIS 2", nip: "19XXXXXXXXXXXXXX" },
+            { jabatan: "Admin SIJAKON", nama: "NAMA ADMIN OPERATOR", nip: "19XXXXXXXXXXXXXX" }
         ];
 
-        // 2. DATA SEWA
-        const dataSewa = [
-            { alat: "Excavator PC200", detail: "Rp 4.500.000 / Shift (8 Jam)", ikon: "fa-truck-pickup" },
-            { alat: "Dump Truck 8 Ton", detail: "Rp 1.200.000 / Hari", ikon: "fa-truck-moving" },
-            { alat: "Vibratory Roller", detail: "Rp 3.500.000 / Shift", ikon: "fa-hammer" }
+        // 2. DATA SEWA ALAT (List Nama & Harga)
+        const daftarSewa = [
+            { alat: "Excavator PC200", harga: "Rp 4.500.000 / Shift (8 Jam)", ikon: "fa-truck-pickup" },
+            { alat: "Dump Truck 8 Ton", harga: "Rp 1.200.000 / Hari", ikon: "fa-truck-moving" },
+            { alat: "Vibratory Roller", harga: "Rp 3.500.000 / Shift", ikon: "fa-hammer" },
+            { alat: "Bulldozer D6G", harga: "Rp 5.000.000 / Shift", ikon: "fa-snowplow" }
         ];
 
-        function renderKonten() {
-            // Render Personel
-            document.getElementById('wadah-personel').innerHTML = dataStaf.map((s, i) => `
-                <div class="item-personel bg-white rounded-2xl border shadow-sm overflow-hidden text-left">
-                    <button onclick="toggleItem('item-personel', ${i})" class="w-full px-6 py-5 flex justify-between items-center">
-                        <span class="font-black text-blue-900 uppercase text-[10px] tracking-widest">${s.jabatan}</span>
+        // FUNGSI RENDER OTOMATIS KE LAYAR
+        function renderAll() {
+            // Render Bagian Personel
+            document.getElementById('wadah-personel').innerHTML = daftarStaf.map((s, i) => `
+                <div class="item-personel bg-white rounded-3xl border shadow-sm transition-all overflow-hidden">
+                    <button onclick="toggleAccordion('item-personel', ${i})" class="w-full px-8 py-6 flex justify-between items-center hover:bg-slate-50 transition">
+                        <span class="font-black text-blue-900 uppercase text-[11px] tracking-widest italic">${s.jabatan}</span>
                         <i class="fas fa-chevron-down text-blue-900 chevron-icon"></i>
                     </button>
-                    <div class="content-hidden px-6 bg-slate-50 border-t"><div class="pt-4">
-                        <h4 class="font-black text-blue-950 text-xs italic uppercase">${s.nama}</h4>
-                        <p class="text-[9px] font-bold text-slate-400 mt-1 uppercase">NIP. ${s.nip}</p>
-                    </div></div>
+                    <div class="content-hidden px-8 bg-slate-50 border-t border-slate-100">
+                        <div class="pt-6">
+                            <h4 class="font-black text-blue-950 text-sm uppercase italic mb-1">${s.nama}</h4>
+                            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">NIP. ${s.nip}</p>
+                            <div class="mt-4 flex space-x-2">
+                                <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-[8px] font-black uppercase italic">Aktif</span>
+                                <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-[8px] font-black uppercase italic tracking-tighter">Personel Jakon</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             `).join('');
 
-            // Render Sewa
-            document.getElementById('wadah-sewa').innerHTML = dataSewa.map((a, i) => `
-                <div class="item-sewa bg-white rounded-2xl border shadow-sm overflow-hidden text-left">
-                    <button onclick="toggleItem('item-sewa', ${i})" class="w-full px-6 py-5 flex justify-between items-center">
-                        <span class="font-black text-slate-700 uppercase text-[10px] tracking-widest">
-                            <i class="fas ${a.ikon} mr-2 text-orange-500"></i> ${a.alat}
+            // Render Bagian Sewa Alat
+            document.getElementById('wadah-sewa').innerHTML = daftarSewa.map((a, i) => `
+                <div class="item-sewa bg-white rounded-3xl border shadow-sm transition-all overflow-hidden">
+                    <button onclick="toggleAccordion('item-sewa', ${i})" class="w-full px-8 py-6 flex justify-between items-center hover:bg-orange-50/50 transition">
+                        <span class="font-black text-slate-700 uppercase text-[11px] tracking-widest flex items-center italic">
+                            <i class="fas ${a.ikon} mr-4 text-orange-500 text-lg"></i> ${a.alat}
                         </span>
                         <i class="fas fa-chevron-down text-orange-500 chevron-icon"></i>
                     </button>
-                    <div class="content-hidden px-6 bg-orange-50/30 border-t border-orange-100"><div class="pt-4">
-                        <h4 class="font-black text-orange-600 text-lg italic uppercase">${a.detail}</h4>
-                    </div></div>
+                    <div class="content-hidden px-8 bg-orange-50/20 border-t border-orange-100">
+                        <div class="pt-6">
+                            <p class="text-[9px] font-black text-slate-400 uppercase mb-2">Tarif Sewa Berdasarkan Standar Biaya:</p>
+                            <h4 class="font-black text-orange-600 text-2xl uppercase italic leading-none">${a.harga}</h4>
+                            <p class="text-[8px] text-slate-400 font-bold uppercase mt-4 italic">* Harga belum termasuk biaya mobilisasi ke lokasi proyek.</p>
+                        </div>
+                    </div>
                 </div>
             `).join('');
         }
 
-        function toggleItem(className, index) {
-            const items = document.querySelectorAll('.' + className);
-            items.forEach((item, i) => { if(i === index) item.classList.toggle('item-active'); else item.classList.remove('item-active'); });
+        // FUNGSI BUKA TUTUP (ACCORDION)
+        function toggleAccordion(className, index) {
+            const elements = document.querySelectorAll('.' + className);
+            elements.forEach((el, i) => {
+                if (i === index) {
+                    el.classList.toggle('item-active');
+                } else {
+                    el.classList.remove('item-active');
+                }
+            });
         }
 
-        window.onload = renderKonten;
+        // Jalankan render saat website dibuka
+        window.onload = renderAll;
     </script>
 </body>
 </html>
