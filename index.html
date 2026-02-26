@@ -11,7 +11,7 @@
         
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background: #f8fafc;
+            background: #f1f5f9;
             color: #0f172a;
             scroll-behavior: smooth;
         }
@@ -28,43 +28,50 @@
             background: radial-gradient(circle at top right, #1e3a8a, #0f172a);
         }
 
-        /* Accordion Logic untuk Staf */
-        .staff-content {
+        /* Accordion Logic */
+        .acc-content {
             max-height: 0;
             overflow: hidden;
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 0;
         }
 
-        .staff-active .staff-content {
-            max-height: 1500px;
+        .item-active .acc-content {
+            max-height: 1000px;
             opacity: 1;
-            padding-top: 25px;
-            padding-bottom: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
 
-        /* Foto Dokumentasi (Selalu Berwarna) */
-        .img-container {
+        /* Documentation - Always Color */
+        .img-premium {
             border-radius: 25px;
             overflow: hidden;
             aspect-ratio: 16/9;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             border: 4px solid white;
-            position: relative;
         }
-        .img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: none !important; /* Mematikan filter abu-abu */
-            transition: transform 0.6s ease;
+        .img-premium img {
+            width: 100%; height: 100%; object-fit: cover;
+            filter: saturate(1.2); /* Warna lebih tajam */
         }
-        .img-container:hover img { transform: scale(1.1); }
 
-        .premium-card {
-            background: white;
-            border-radius: 40px;
+        .year-grid button {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
             transition: all 0.3s ease;
+        }
+        .year-grid button:hover {
+            background: #1e3a8a;
+            color: white;
+            border-color: #facc15;
+        }
+
+        .map-container {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 5px solid white;
         }
     </style>
 </head>
@@ -74,183 +81,163 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-4">
                 <img src="logo-bangkep.png" class="h-10 w-auto">
-                <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" class="h-10 w-auto rounded-lg shadow-sm border border-slate-100">
+                <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" class="h-10 w-auto rounded-lg">
                 <div class="hidden lg:block border-l pl-4 border-slate-200">
                     <h1 class="heading-font font-extrabold text-blue-900 text-lg uppercase tracking-tighter">SIJAKON</h1>
-                    <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none">PUPR Banggai Kepulauan</p>
+                    <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest">PUPR Banggai Kepulauan</p>
                 </div>
             </div>
-            <a href="#staf" class="bg-blue-900 text-white px-6 py-2 rounded-full text-[9px] font-black uppercase italic tracking-widest shadow-lg hover:bg-yellow-500 transition-all">Struktur Organisasi</a>
+            <div class="flex space-x-3">
+                <a href="#arsip" class="bg-blue-900 text-white px-5 py-2 rounded-full text-[9px] font-black uppercase italic tracking-widest">Database</a>
+            </div>
         </div>
     </nav>
 
     <header class="hero-gradient text-white py-24 px-6 text-center">
-        <div class="container mx-auto">
-            <h1 class="heading-font text-6xl md:text-8xl font-black italic uppercase tracking-tighter leading-none mb-4">
-                SI-<span class="text-yellow-400">JAKON</span>
-            </h1>
-            <p class="text-[10px] md:text-sm font-bold uppercase tracking-[0.5em] opacity-60 italic leading-none">Sistem Informasi Jasa Konstruksi</p>
-        </div>
+        <h1 class="heading-font text-6xl md:text-8xl font-black italic uppercase tracking-tighter mb-2">SI-<span class="text-yellow-400">JAKON</span></h1>
+        <p class="text-[10px] md:text-sm font-bold uppercase tracking-[0.5em] opacity-60 italic leading-none">Sistem Informasi Jasa Konstruksi</p>
     </header>
 
-    <section class="py-20 container mx-auto px-6 max-w-6xl">
-        <div class="grid lg:grid-cols-2 gap-10">
-            <div class="premium-card p-10 shadow-sm border-t-8 border-yellow-400 bg-white">
-                <h3 class="heading-font font-black uppercase italic text-blue-900 text-xl mb-8 flex items-center">
-                    <i class="fas fa-bullseye mr-4 text-yellow-500 text-2xl"></i> Visi & Misi Bidang
-                </h3>
-                <div class="space-y-8">
+    <section class="py-16 container mx-auto px-6 max-w-6xl">
+        <div class="grid lg:grid-cols-2 gap-8">
+            <div class="bg-white p-10 rounded-[40px] shadow-sm border-l-8 border-yellow-500">
+                <h3 class="heading-font font-black uppercase italic text-blue-900 text-xl mb-6">Visi & Misi</h3>
+                <div class="space-y-6">
                     <div>
-                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2 italic">Visi:</p>
-                        <p class="text-sm font-bold text-slate-600 uppercase italic leading-relaxed">
-                            "Terwujudnya Penyelenggaraan Jasa Konstruksi yang Handal, Berdaya Saing, dan Berkualitas guna mendukung Pembangunan Infrastruktur di Kabupaten Banggai Kepulauan."
-                        </p>
+                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1 italic">Visi:</p>
+                        <p class="text-sm font-bold text-slate-600 uppercase italic">Terwujudnya Jasa Konstruksi yang Kompetitif dan Berkualitas di Banggai Kepulauan.</p>
                     </div>
                     <div>
-                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2 italic">Misi Utama:</p>
-                        <ul class="text-[11px] font-bold text-slate-500 uppercase italic space-y-3">
-                            <li class="flex items-start"><i class="fas fa-check-circle text-blue-900 mr-3 mt-1"></i> Meningkatkan kompetensi tenaga kerja konstruksi daerah.</li>
-                            <li class="flex items-start"><i class="fas fa-check-circle text-blue-900 mr-3 mt-1"></i> Mewujudkan tertib penyelenggaraan dan tertib pemanfaatan jasa konstruksi.</li>
-                            <li class="flex items-start"><i class="fas fa-check-circle text-blue-900 mr-3 mt-1"></i> Mengoptimalkan pengelolaan peralatan konstruksi secara profesional.</li>
+                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1 italic">Misi Utama:</p>
+                        <ul class="text-[11px] font-bold text-slate-500 uppercase italic space-y-2">
+                            <li>• Meningkatkan Mutu SDM Konstruksi Lokal</li>
+                            <li>• Penguatan Tata Kelola & Pengawasan Proyek</li>
+                            <li>• Optimalisasi Pemanfaatan Alat Berat Daerah</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="premium-card p-10 bg-blue-950 text-white shadow-2xl relative overflow-hidden">
-                <h3 class="heading-font font-black uppercase italic text-yellow-400 text-xl mb-8 flex items-center">
-                    <i class="fas fa-gavel mr-4 text-2xl"></i> Informasi & Regulasi
-                </h3>
-                <div class="space-y-6">
-                    <div>
-                        <p class="text-[11px] font-bold text-white/80 uppercase italic leading-relaxed">
-                            Jasa Konstruksi adalah layanan jasa konsultansi konstruksi dan/atau pekerjaan konstruksi. Meliputi pengkajian, perencanaan, perancangan, pengawasan, dan manajemen penyelenggaraan konstruksi.
-                        </p>
+            <div class="bg-blue-950 p-10 rounded-[40px] text-white shadow-2xl relative overflow-hidden">
+                <h3 class="heading-font font-black uppercase italic text-yellow-400 text-xl mb-6">Regulasi Dasar</h3>
+                <p class="text-[11px] font-bold text-white/70 uppercase italic leading-relaxed mb-6">
+                    Penyelenggaraan jasa konstruksi berlandaskan pada azas kejujuran, keadilan, manfaat, keserasian, keseimbangan, kemandirian, keterbukaan, kemitraan, keamanan, dan keselamatan.
+                </p>
+                <div class="space-y-3 pt-6 border-t border-white/10">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-file-alt text-yellow-500"></i>
+                        <span class="text-[10px] font-black uppercase italic tracking-widest">UU Nomor 2 Tahun 2017 (Jasa Konstruksi)</span>
                     </div>
-                    <div class="pt-8 border-t border-white/10">
-                        <p class="text-[9px] font-black text-yellow-500 uppercase tracking-widest mb-4 italic">Landasan Hukum Dasar:</p>
-                        <div class="space-y-4">
-                            <div class="flex items-center space-x-4 group">
-                                <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-yellow-500 transition-colors">
-                                    <i class="fas fa-file-contract"></i>
-                                </div>
-                                <span class="text-[10px] font-black uppercase italic tracking-widest">UU Nomor 2 Tahun 2017 (Tentang Jasa Konstruksi)</span>
-                            </div>
-                            <div class="flex items-center space-x-4 group">
-                                <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-yellow-500 transition-colors">
-                                    <i class="fas fa-balance-scale"></i>
-                                </div>
-                                <span class="text-[10px] font-black uppercase italic tracking-widest">UU Nomor 6 Tahun 2023 (Cipta Kerja)</span>
-                            </div>
-                        </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-file-alt text-yellow-500"></i>
+                        <span class="text-[10px] font-black uppercase italic tracking-widest">UU Nomor 6 Tahun 2023 (Cipta Kerja)</span>
                     </div>
                 </div>
-                <i class="fas fa-building absolute -right-6 -bottom-6 text-9xl opacity-5"></i>
             </div>
         </div>
     </section>
 
-    <section id="staf" class="bg-slate-50 py-20">
-        <div class="container mx-auto px-6 max-w-3xl">
-            <div id="staffAccordion" class="bg-white rounded-[45px] shadow-sm overflow-hidden border border-slate-100">
-                <button onclick="toggleStaff()" class="w-full px-10 py-10 flex justify-between items-center group">
-                    <div class="flex items-center space-x-6 text-left">
-                        <div class="w-14 h-14 bg-blue-900 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg">
-                            <i class="fas fa-users"></i>
+    <section id="arsip" class="bg-slate-200 py-20">
+        <div class="container mx-auto px-6 max-w-4xl space-y-4">
+            
+            <div class="accordion-item bg-white rounded-[35px] overflow-hidden shadow-sm">
+                <button onclick="toggleAcc(this)" class="w-full px-10 py-8 flex justify-between items-center group">
+                    <div class="flex items-center space-x-6">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-900 rounded-2xl flex items-center justify-center text-xl">
+                            <i class="fas fa-user-friends"></i>
                         </div>
-                        <div>
-                            <span class="font-black uppercase italic text-sm tracking-widest text-blue-950 block leading-none">Personel Bidang</span>
-                            <span class="text-[9px] font-bold text-slate-400 uppercase mt-2 block tracking-widest italic">Klik untuk melihat daftar staf</span>
-                        </div>
+                        <span class="font-black uppercase italic text-sm tracking-widest text-blue-950">Personel Bidang</span>
                     </div>
-                    <i id="staffChevron" class="fas fa-chevron-down text-slate-300 transition-transform duration-500"></i>
+                    <i class="fas fa-chevron-down text-slate-300 transition-transform"></i>
                 </button>
-                
-                <div id="staffContent" class="staff-content px-10">
-                    <div class="space-y-4">
-                        <div class="flex items-center p-6 bg-slate-50 rounded-[30px] border border-slate-100">
-                            <div class="w-12 h-12 bg-blue-950 text-white rounded-full flex items-center justify-center text-xl mr-5 shadow-md">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
+                <div class="acc-content px-10">
+                    <div class="grid gap-3">
+                        <div class="flex items-center p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                            <div class="w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center mr-4"><i class="fas fa-user-tie"></i></div>
                             <div>
-                                <p class="text-[12px] font-black text-blue-950 uppercase italic leading-none">Jasrun Hasan, S.T., M.Ap</p>
-                                <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-2">Kepala Bidang Jasa Konstruksi</p>
+                                <p class="text-[11px] font-black text-blue-950 uppercase italic">Jasrun Hasan, S.T., M.Ap</p>
+                                <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-1">Kepala Bidang Jasa Konstruksi</p>
                             </div>
                         </div>
-                        <div class="flex items-center p-6 bg-slate-50 rounded-[30px] border border-slate-100">
-                            <div class="w-12 h-12 bg-slate-200 text-slate-500 rounded-full flex items-center justify-center text-xl mr-5">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div>
-                                <p class="text-[12px] font-black text-blue-950 uppercase italic leading-none">Staf Bidang Konstruksi 1</p>
-                                <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-2">Jabatan Fungsional Tertentu</p>
-                            </div>
                         </div>
+                </div>
+            </div>
+
+            <div class="accordion-item bg-white rounded-[35px] overflow-hidden shadow-sm">
+                <button onclick="toggleAcc(this)" class="w-full px-10 py-8 flex justify-between items-center group">
+                    <div class="flex items-center space-x-6">
+                        <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center text-xl">
+                            <i class="fas fa-truck-monster"></i>
+                        </div>
+                        <span class="font-black uppercase italic text-sm tracking-widest text-blue-950">Peminjaman & Pengembalian</span>
+                    </div>
+                    <i class="fas fa-chevron-down text-slate-300 transition-transform"></i>
+                </button>
+                <div class="acc-content px-10">
+                    <div class="year-grid grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <button class="py-4 rounded-2xl font-black italic text-xs uppercase tracking-widest">2023</button>
+                        <button class="py-4 rounded-2xl font-black italic text-xs uppercase tracking-widest">2024</button>
+                        <button class="py-4 rounded-2xl font-black italic text-xs uppercase tracking-widest">2025</button>
+                        <button class="py-4 rounded-2xl font-black italic text-xs uppercase tracking-widest border-2 border-blue-900 text-blue-900">2026</button>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <section class="py-24 container mx-auto px-6 max-w-6xl">
-        <h2 class="heading-font text-center text-3xl font-black text-blue-950 uppercase italic mb-12 tracking-tight">Dokumentasi Kegiatan</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="img-container group">
+    <section class="py-20 container mx-auto px-6 max-w-6xl">
+        <h2 class="heading-font text-center text-3xl font-black text-blue-950 uppercase italic mb-12">Dokumentasi & Lokasi</h2>
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="img-premium lg:col-span-1">
                 <img src="kegiatan1.jpg" alt="Foto">
-                <div class="absolute bottom-0 inset-x-0 bg-blue-900/80 p-4 text-center">
-                    <span class="text-[9px] text-white font-black uppercase italic tracking-[0.2em]">Monitoring Proyek Lapangan</span>
+                <div class="absolute bottom-4 left-4 right-4 bg-blue-900/90 p-3 rounded-xl text-center">
+                    <span class="text-[8px] text-white font-black uppercase italic tracking-widest">Arsip Kegiatan Lapangan</span>
                 </div>
             </div>
-            <div class="img-container group">
-                <img src="kegiatan2.jpg" alt="Foto">
-                <div class="absolute bottom-0 inset-x-0 bg-blue-900/80 p-4 text-center">
-                    <span class="text-[9px] text-white font-black uppercase italic tracking-[0.2em]">Rapat Koordinasi Teknis</span>
+            
+            <div class="lg:col-span-2 space-y-6">
+                <div class="bg-white p-6 rounded-[30px] border border-slate-100 flex items-center space-x-6">
+                    <div class="w-14 h-14 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-2xl shadow-inner">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <p class="text-[12px] font-black text-blue-950 uppercase italic leading-none">Alamat Kantor:</p>
+                        <p class="text-[10px] font-bold text-slate-500 uppercase italic mt-2 tracking-widest">Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Banggai Kepulauan, Sulawesi Tengah.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="img-container group">
-                <img src="kegiatan3.jpg" alt="Foto">
-                <div class="absolute bottom-0 inset-x-0 bg-blue-900/80 p-4 text-center">
-                    <span class="text-[9px] text-white font-black uppercase italic tracking-[0.2em]">Pelatihan Tenaga Konstruksi</span>
+                <div class="map-container h-[300px]">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.176045887204!2d123.49017267568102!3d-1.2452393987428808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d870f7e6e58f27b%3A0xc3c6b2b5d7a8e0f6!2sSalakan%2C%20Banggai%20Kepulauan!5e0!3m2!1sid!2sid!4v1707111000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-blue-950 text-white pt-24 pb-12 text-center relative overflow-hidden">
-        <div class="container mx-auto px-6">
-            <p class="text-yellow-400 font-black uppercase italic text-[10px] tracking-[0.5em] mb-4 italic text-center leading-none">Admin Support</p>
-            
-            <h4 class="heading-font text-3xl md:text-5xl font-black uppercase italic mb-10 tracking-tighter opacity-90 leading-none">TARI MANESSA</h4>
-            
-            <a href="https://wa.me/6285394940435" target="_blank" class="inline-flex items-center space-x-4 bg-green-500 hover:bg-green-600 px-12 py-5 rounded-full shadow-2xl transition transform hover:scale-105 active:scale-95 group">
-                <i class="fab fa-whatsapp text-2xl group-hover:rotate-12 transition-transform"></i>
-                <span class="font-black uppercase italic text-xs tracking-widest text-white">Hubungi WhatsApp</span>
-            </a>
-
-            <div class="mt-24 pt-10 border-t border-white/5 opacity-20 flex justify-center space-x-12">
-                <img src="logo-bangkep.png" class="h-10 grayscale brightness-200" alt="Bangkep">
-                <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" class="h-10 rounded-md grayscale brightness-200" alt="PUPR">
-            </div>
-            <p class="mt-10 text-[8px] font-bold opacity-20 uppercase tracking-[0.8em]">© 2026 SIJAKON • DINAS PUPR KABUPATEN BANGGAI KEPULAUAN</p>
-        </div>
+    <footer class="bg-blue-950 text-white pt-20 pb-12 text-center">
+        <p class="text-yellow-400 font-black uppercase italic text-[9px] tracking-[0.6em] mb-4 opacity-70">Admin Support</p>
+        <h4 class="heading-font text-3xl md:text-5xl font-black uppercase italic mb-10 tracking-tighter text-white/90">TARI MANESSA</h4>
+        <a href="https://wa.me/6285394940435" target="_blank" class="inline-flex items-center space-x-4 bg-green-500 px-10 py-4 rounded-full shadow-2xl transition hover:scale-105">
+            <i class="fab fa-whatsapp text-2xl"></i>
+            <span class="font-black uppercase italic text-xs tracking-widest">Layanan Informasi</span>
+        </a>
+        <p class="mt-20 text-[7px] font-bold opacity-20 uppercase tracking-[1em]">© 2026 SIJAKON • PUPR BANGGAI KEPULAUAN</p>
     </footer>
 
     <script>
-        function toggleStaff() {
-            const container = document.getElementById('staffAccordion');
-            const chevron = document.getElementById('staffChevron');
-            const isActive = container.classList.contains('staff-active');
+        function toggleAcc(btn) {
+            const item = btn.parentElement;
+            const isActive = item.classList.contains('item-active');
             
-            if (isActive) {
-                container.classList.remove('staff-active');
-                chevron.style.transform = 'rotate(0deg)';
-            } else {
-                container.classList.add('staff-active');
-                chevron.style.transform = 'rotate(180deg)';
-                // Scroll smooth ke area staf
+            // Tutup yang lain
+            document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('item-active'));
+            document.querySelectorAll('.accordion-item i.fas').forEach(i => i.style.transform = 'rotate(0deg)');
+
+            if (!isActive) {
+                item.classList.add('item-active');
+                btn.querySelector('i.fas').style.transform = 'rotate(180deg)';
                 setTimeout(() => {
-                    container.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 300);
+                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 400);
             }
         }
     </script>
