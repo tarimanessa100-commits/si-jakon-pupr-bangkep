@@ -1,102 +1,118 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SI-JAKON PUPR Banggai Kepulauan</title>
-<style>
-body { font-family: Arial, sans-serif; margin:0; background:#ffffff; color:#333; }
-header { background:#005fa3; color:white; padding:1.5rem; text-align:center; border-radius:0 0 10px 10px;}
-main { max-width:900px; margin:2rem auto; padding:0 1rem; }
-.card-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
-.card { background:white; padding:1.5rem; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); text-align:center; transition:transform 0.3s; border-top:4px solid #FFC107; }
-.card:hover { transform: translateY(-5px); }
-.card h3 { color:#007acc; margin-bottom:1rem; }
-.card p { font-size:0.95rem; margin-bottom:1rem; }
-.card a { display:inline-block; padding:0.5rem 1rem; background:#007acc; color:white; text-decoration:none; border-radius:5px; transition:0.3s; }
-.card a:hover { background:#FFC107; color:#007acc; }
-footer { text-align:center; padding:1rem; background:#005fa3; color:white; margin-top:2rem; border-radius:0 0 10px 10px; }
-
-/* Menu Modern Biru-Kuning */
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  background: #007acc;
-  padding: 0.5rem 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  border-radius: 10px;
-  margin: 1rem auto;
-  max-width: 900px;
-}
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 0.6rem 1.5rem;
-  font-weight: bold;
-  border-radius: 8px;
-  position: relative;
-  transition: all 0.3s ease;
-}
-nav a::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 3px;
-  bottom: 0;
-  left: 0;
-  background-color: #FFC107;
-  transition: 0.3s;
-  border-radius: 2px;
-}
-nav a:hover::after { width: 100%; }
-nav a:hover { background: #FFC107; color: #007acc; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SI-JAKON | Dinas PUPR Banggai Kepulauan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-slate-50 text-gray-800">
 
-<header>
-    <h1>SI-JAKON PUPR Banggai Kepulauan</h1>
-</header>
+    <nav class="bg-blue-900 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-yellow-400 p-2 rounded-full text-blue-900 font-bold text-xs uppercase">PUPR</div>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight">SI-JAKON</h1>
+                    <p class="text-xs text-blue-200">Kabupaten Banggai Kepulauan</p>
+                </div>
+            </div>
+            <ul class="hidden md:flex space-x-6 text-sm font-medium uppercase tracking-wide">
+                <li><a href="#beranda" class="hover:text-yellow-400 transition">Beranda</a></li>
+                <li><a href="#tentang" class="hover:text-yellow-400 transition">Tentang Kami</a></li>
+                <li><a href="#layanan" class="hover:text-yellow-400 transition">Layanan</a></li>
+                <li><a href="#proyek" class="hover:text-yellow-400 transition">Proyek</a></li>
+                <li><a href="#kontak" class="hover:text-yellow-400 transition">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<nav>
-  <a href="index.html">Beranda</a>
-  <a href="form.html">Form Alat</a>
-  <a href="staff.html">Nama Staff</a>
-  <a href="data.html">Data</a>
-  <a href="info.html">Informasi</a>
-</nav>
+    <header id="beranda" class="relative bg-blue-800 text-white py-24 px-6 overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="container mx-auto relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Membangun Infrastruktur Bangkep</h2>
+            <p class="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-8">
+                Sistem Informasi Jasa Konstruksi (SI-JAKON) - Mewujudkan transparansi dan kualitas pembangunan di Kabupaten Banggai Kepulauan.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#proyek" class="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-8 py-3 rounded-lg font-bold shadow-lg transition">Lihat Proyek</a>
+                <a href="#layanan" class="border border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-bold transition">Layanan Publik</a>
+            </div>
+        </div>
+    </header>
 
-<main>
-<h2 style="text-align:center; margin-bottom:2rem;">Selamat Datang di Sistem Informasi Jasa Konstruksi</h2>
-<div class="card-container">
-    <div class="card">
-        <h3>Form Peminjaman & Pengembalian Alat</h3>
-        <p>Ajukan peminjaman alat atau lakukan pengembalian dengan mudah melalui form online.</p>
-        <a href="form.html">Buka Form</a>
+    <div class="container mx-auto -mt-12 px-6 relative z-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-xl border-b-4 border-yellow-500 text-center">
+                <h3 class="text-3xl font-bold text-blue-900">120+</h3>
+                <p class="text-gray-500 uppercase text-xs tracking-widest mt-2">Proyek Selesai</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-xl border-b-4 border-blue-600 text-center">
+                <h3 class="text-3xl font-bold text-blue-900">45</h3>
+                <p class="text-gray-500 uppercase text-xs tracking-widest mt-2">Mitra Konstruksi</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-xl border-b-4 border-green-500 text-center">
+                <h3 class="text-3xl font-bold text-blue-900">100%</h3>
+                <p class="text-gray-500 uppercase text-xs tracking-widest mt-2">Transparansi Data</p>
+            </div>
+        </div>
     </div>
-    <div class="card">
-        <h3>Nama Staff</h3>
-        <p>Lihat daftar staf PUPR yang bertanggung jawab atas peminjaman dan pengelolaan alat.</p>
-        <a href="staff.html">Lihat Staff</a>
-    </div>
-    <div class="card">
-        <h3>Data Peminjaman Alat</h3>
-        <p>Informasi lengkap mengenai peminjaman dan pengembalian alat konstruksi.</p>
-        <a href="data.html">Lihat Data</a>
-    </div>
-    <div class="card">
-        <h3>Informasi Jasa Konstruksi</h3>
-        <p>Informasi lengkap mengenai jasa konstruksi yang tersedia di PUPR Banggai Kepulauan.</p>
-        <a href="info.html">Lihat Informasi</a>
-    </div>
-</div>
-</main>
 
-<footer>
-    &copy; 2026 PUPR Banggai Kepulauan
-</footer>
+    <section id="tentang" class="py-20 px-6 container mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=800" alt="Konstruksi" class="rounded-2xl shadow-2xl">
+            </div>
+            <div class="md:w-1/2">
+                <span class="text-blue-600 font-bold uppercase tracking-widest text-sm">Profil Dinas</span>
+                <h2 class="text-3xl font-bold text-blue-900 mt-2 mb-4">Visi & Misi Bidang Jasa Konstruksi</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Mewujudkan penyelenggaraan Jasa Konstruksi yang tertib, berkualitas, dan berkelanjutan guna mendukung pembangunan daerah Banggai Kepulauan yang lebih maju.
+                </p>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <span>Meningkatkan kompetensi tenaga kerja konstruksi lokal.</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-700">
+                        <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                        <span>Menjamin kepastian hukum dan tata kelola proyek.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontak" class="bg-blue-950 text-white py-12 px-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-sm">
+            <div>
+                <h4 class="text-lg font-bold mb-4 border-b border-blue-700 pb-2 uppercase tracking-wider">Kontak Kami</h4>
+                <p class="mb-2"><i class="fas fa-map-marker-alt text-yellow-500 mr-2"></i> Jl. Kompleks Perkantoran Salakan, Banggai Kepulauan</p>
+                <p class="mb-2"><i class="fas fa-phone text-yellow-500 mr-2"></i> (0462) 123456</p>
+                <p><i class="fas fa-envelope text-yellow-500 mr-2"></i> pupr@bangkepkab.go.id</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4 border-b border-blue-700 pb-2 uppercase tracking-wider">Tautan Cepat</h4>
+                <ul class="space-y-2 opacity-80">
+                    <li><a href="#" class="hover:text-yellow-400">Regulasi Konstruksi</a></li>
+                    <li><a href="#" class="hover:text-yellow-400">Informasi Lelang</a></li>
+                    <li><a href="#" class="hover:text-yellow-400">Standar Biaya Umum</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4 border-b border-blue-700 pb-2 uppercase tracking-wider">Sosial Media</h4>
+                <div class="flex gap-4 text-2xl">
+                    <a href="#" class="hover:text-yellow-400"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-yellow-400"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12 pt-8 border-t border-blue-800 text-blue-400 text-xs uppercase tracking-widest">
+            &copy; 2024 SI-JAKON Kabupaten Banggai Kepulauan. All Rights Reserved.
+        </div>
+    </footer>
 
 </body>
 </html>
