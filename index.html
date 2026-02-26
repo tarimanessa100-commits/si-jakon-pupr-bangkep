@@ -11,18 +11,11 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); }
         
-        /* Dropdown Nav */
-        .dropdown-menu { display: none; }
-        .nav-item.active .dropdown-menu { display: block; animation: slideDown 0.3s ease; }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* Accordion Staf */
-        .staff-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
-        .staff-item.active .staff-content { max-height: 200px; padding-top: 1rem; }
-        .staff-item.active .chevron-icon { transform: rotate(180deg); }
-        
-        /* Table Style */
-        .table-zebra tr:nth-child(even) { background-color: #f8fafc; }
+        /* Efek Transisi Membuka (Accordion) */
+        .content-hidden { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
+        .item-active .content-hidden { max-height: 1000px; padding-bottom: 1.5rem; }
+        .item-active .chevron-icon { transform: rotate(180deg); }
+        .chevron-icon { transition: transform 0.3s ease; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -32,182 +25,114 @@
             <div class="flex items-center space-x-3">
                 <img src="logo-bangkep.png" alt="Logo" class="h-10">
                 <img src="logo-pupr.png" alt="Logo" class="h-10">
-                <div class="hidden md:block border-l-2 border-slate-200 pl-3 uppercase font-black text-blue-900">
-                    <span class="text-sm block">SIJAKON</span>
-                    <span class="text-[9px] text-slate-500">PUPR Banggai Kepulauan</span>
+                <div class="hidden md:block border-l-2 border-slate-200 pl-3">
+                    <span class="text-xs font-black text-blue-900 block uppercase">SIJAKON</span>
+                    <span class="text-[8px] text-slate-400 font-bold uppercase">Kab. Banggai Kepulauan</span>
                 </div>
             </div>
-            <ul class="hidden lg:flex space-x-2 text-[10px] font-black uppercase tracking-widest">
-                <li class="nav-item relative">
-                    <button class="px-4 py-2 hover:text-blue-700">Profil <i class="fas fa-chevron-down ml-1"></i></button>
-                    <div class="dropdown-menu absolute bg-white shadow-xl w-48 rounded-lg mt-2 border-t-4 border-blue-900">
-                        <a href="#visi" class="block px-4 py-3 hover:bg-slate-50 border-b">Visi Misi</a>
-                        <a href="#personel" class="block px-4 py-3 hover:bg-slate-50">Personel</a>
-                    </div>
-                </li>
-                <li><a href="#sewa" class="px-4 py-2 block text-orange-600 font-black">Sewa Alat</a></li>
-                <li><a href="#kegiatan" class="px-4 py-2 block hover:text-blue-700">Kegiatan</a></li>
-                <li><a href="#kontak" class="ml-4 bg-blue-900 text-white px-6 py-2 rounded-full shadow-lg">Kontak</a></li>
+            <ul class="flex space-x-4 text-[10px] font-black uppercase tracking-widest text-blue-900">
+                <li><a href="#personel" class="hover:text-yellow-500">Personel</a></li>
+                <li><a href="#sewa" class="text-orange-600">Sewa Alat</a></li>
             </ul>
         </div>
     </nav>
 
     <header class="hero-gradient text-white py-20 lg:py-32">
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <h1 class="text-6xl font-black italic uppercase italic">SI-<span class="text-yellow-400">JAKON</span></h1>
-                <p class="text-lg opacity-80 italic">Portal Layanan Jasa Konstruksi & Penyewaan Alat Berat.</p>
-                <a href="#sewa" class="inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-2xl font-black uppercase text-xs shadow-xl transition">Lihat Harga Sewa</a>
+            <div class="space-y-6 text-center md:text-left">
+                <h1 class="text-6xl font-black italic uppercase leading-none">SI-<span class="text-yellow-400">JAKON</span></h1>
+                <p class="text-lg opacity-80 italic max-w-md mx-auto md:mx-0">Portal Informasi Jasa Konstruksi & Layanan Sewa Alat Berat.</p>
             </div>
             <div class="flex justify-center">
-                <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" alt="Logo" class="max-w-xs rounded-[40px] shadow-2xl border-4 border-white/20 transform rotate-3">
+                <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" class="max-w-xs rounded-[40px] shadow-2xl border-4 border-white/20 transform rotate-3">
             </div>
         </div>
     </header>
 
-    <section id="visi" class="py-20 bg-white">
-        <div class="container mx-auto px-6 max-w-4xl text-center">
-            <h2 class="text-3xl font-black text-blue-900 uppercase italic mb-10">Visi & Misi</h2>
-            <div class="grid md:grid-cols-2 gap-6 text-left font-bold italic">
-                <div class="p-6 bg-slate-50 rounded-2xl border-l-4 border-blue-900">Visi: Mewujudkan infrastruktur daerah berkualitas.</div>
-                <div class="p-6 bg-blue-900 text-white rounded-2xl shadow-lg text-[10px]">Misi: Digitalisasi data & Pembinaan tenaga kerja.</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="personel" class="py-20 bg-slate-50">
-        <div class="container mx-auto px-6 max-w-xl text-center">
+    <section id="personel" class="py-20 bg-white border-b">
+        <div class="container mx-auto px-6 max-w-2xl text-center">
             <h2 class="text-3xl font-black text-blue-900 uppercase italic mb-8">Personel Bidang</h2>
-            <div id="accordion-container" class="space-y-3"></div>
+            <div id="wadah-personel" class="space-y-3"></div>
         </div>
     </section>
 
-    <section id="sewa" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-black text-blue-900 uppercase italic">Sewa Kendaraan & Alat Berat</h2>
-                <div class="h-1.5 w-24 bg-orange-500 mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
-                <div class="bg-blue-900 p-6 flex items-center justify-between">
-                    <h3 class="text-white font-black uppercase text-sm tracking-widest flex items-center">
-                        <i class="fas fa-list-alt mr-3 text-yellow-400"></i> Daftar Tarif Sewa Per Hari
-                    </h3>
-                    <span class="text-[10px] bg-yellow-400 text-blue-900 px-3 py-1 rounded-full font-black uppercase italic tracking-tighter">TA 2026</span>
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse table-zebra">
-                        <thead>
-                            <tr class="bg-slate-50 text-blue-900 uppercase text-[10px] font-black italic border-b">
-                                <th class="py-5 px-6">Jenis Alat / Kendaraan</th>
-                                <th class="py-5 px-6 text-center">Satuan</th>
-                                <th class="py-5 px-6 text-right">Harga Sewa (Rp)</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-sm font-bold text-slate-600">
-                            <tr class="border-b border-slate-50">
-                                <td class="py-5 px-6 flex items-center"><i class="fas fa-truck-pickup mr-3 text-orange-500"></i> Excavator PC200</td>
-                                <td class="py-5 px-6 text-center">Shift / Hari</td>
-                                <td class="py-5 px-6 text-right text-blue-900">4.500.000</td>
-                            </tr>
-                            <tr class="border-b border-slate-50">
-                                <td class="py-5 px-6 flex items-center"><i class="fas fa-truck-moving mr-3 text-orange-500"></i> Dump Truck 8 Ton</td>
-                                <td class="py-5 px-6 text-center">Hari</td>
-                                <td class="py-5 px-6 text-right text-blue-900">1.200.000</td>
-                            </tr>
-                            <tr class="border-b border-slate-50">
-                                <td class="py-5 px-6 flex items-center"><i class="fas fa-hammer mr-3 text-orange-500"></i> Vibratory Roller</td>
-                                <td class="py-5 px-6 text-center">Shift</td>
-                                <td class="py-5 px-6 text-right text-blue-900">3.500.000</td>
-                            </tr>
-                            <tr class="border-b border-slate-50">
-                                <td class="py-5 px-6 flex items-center"><i class="fas fa-car mr-3 text-orange-500"></i> Mobil Pick Up Operasional</td>
-                                <td class="py-5 px-6 text-center">Hari</td>
-                                <td class="py-5 px-6 text-right text-blue-900">600.000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="bg-slate-50 p-4 text-center">
-                    <p class="text-[9px] font-bold text-slate-400 italic uppercase">* Harga belum termasuk mobilisasi dan operator di luar wilayah Bangkep.</p>
-                </div>
-            </div>
+    <section id="sewa" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6 max-w-2xl text-center">
+            <h2 class="text-3xl font-black text-orange-600 uppercase italic mb-8">Sewa Alat & Kendaraan</h2>
+            <div id="wadah-sewa" class="space-y-3"></div>
         </div>
     </section>
 
-    <section id="kegiatan" class="py-20 bg-slate-100 text-center">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-black text-blue-900 uppercase italic mb-10">Dokumentasi Kegiatan</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <img src="kegiatan1.jpg" class="h-60 w-full object-cover rounded-3xl shadow-lg border-4 border-white">
-                <img src="kegiatan2.jpg" class="h-60 w-full object-cover rounded-3xl shadow-lg border-4 border-white">
-                <img src="kegiatan3.jpg" class="h-60 w-full object-cover rounded-3xl shadow-lg border-4 border-white">
-            </div>
-        </div>
-    </section>
-
-    <section id="proyek" class="py-24 bg-white">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <img src="proyek-bangkep.jpg" class="rounded-[40px] shadow-2xl border-8 border-slate-50">
-            <div class="space-y-4">
-                <h2 class="text-4xl font-black text-blue-900 uppercase italic italic">Data Proyek</h2>
-                <p class="text-sm font-bold text-slate-400 italic">Monitoring Pembangunan Fisik Bangkep 2026.</p>
-                <div class="bg-blue-900 p-6 rounded-3xl text-white inline-block">
-                    <span class="block text-3xl font-black">142 Paket</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="kontak" class="bg-slate-950 text-white py-12 text-center opacity-40 text-[9px] font-bold tracking-[0.5em] uppercase">
+    <footer class="bg-slate-950 text-white py-12 text-center opacity-40 text-[9px] font-bold tracking-[0.5em] uppercase">
         © 2026 SIJAKON • Dinas PUPR Banggai Kepulauan
     </footer>
 
     <script>
-        // DATA STAF
-        const daftarStaf = [
+        // 1. DATA PERSONEL (List Nama)
+        const dataStaf = [
             { jabatan: "Kepala Bidang", nama: "NAMA KEPALA BIDANG", nip: "19XXXXXXXXXXXXXX" },
-            { jabatan: "Penata Jasa Konstruksi", nama: "NAMA STAF TEKNIS 1", nip: "19XXXXXXXXXXXXXX" },
-            { jabatan: "Pengelola Data", nama: "NAMA STAF TEKNIS 2", nip: "19XXXXXXXXXXXXXX" }
+            { jabatan: "Penata Jasa Konstruksi", nama: "NAMA STAF 1", nip: "19XXXXXXXXXXXXXX" },
+            { jabatan: "Pengelola Data", nama: "NAMA STAF 2", nip: "19XXXXXXXXXXXXXX" }
         ];
 
-        function renderPersonel() {
-            const container = document.getElementById('accordion-container');
-            container.innerHTML = daftarStaf.map((staf, index) => `
-                <div class="staff-item bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden text-left">
-                    <button onclick="toggleStaff(${index})" class="w-full px-6 py-4 flex justify-between items-center">
-                        <span class="font-black text-blue-900 uppercase text-[10px] tracking-widest">${staf.jabatan}</span>
-                        <i class="fas fa-chevron-down text-blue-900 chevron-icon transition-transform"></i>
+        // 2. DATA SEWA (List Harga)
+        const dataSewa = [
+            { alat: "Excavator PC200", detail: "Rp 4.500.000 / Shift (8 Jam)", ikon: "fa-truck-pickup" },
+            { alat: "Dump Truck 8 Ton", detail: "Rp 1.200.000 / Hari", ikon: "fa-truck-moving" },
+            { alat: "Vibratory Roller", detail: "Rp 3.500.000 / Shift", ikon: "fa-hammer" },
+            { alat: "Mobil Pick Up", detail: "Rp 600.000 / Hari", ikon: "fa-car" }
+        ];
+
+        // FUNGSI RENDER OTOMATIS
+        function renderKonten() {
+            // Render Personel
+            document.getElementById('wadah-personel').innerHTML = dataStaf.map((s, i) => `
+                <div class="item-personel bg-white rounded-2xl border shadow-sm overflow-hidden text-left">
+                    <button onclick="toggleItem('item-personel', ${i})" class="w-full px-6 py-5 flex justify-between items-center hover:bg-slate-50 transition">
+                        <span class="font-black text-blue-900 uppercase text-xs tracking-widest">${s.jabatan}</span>
+                        <i class="fas fa-chevron-down text-blue-900 chevron-icon"></i>
                     </button>
-                    <div class="staff-content px-6 bg-slate-50">
-                        <div class="pb-6">
-                            <h4 class="font-black text-blue-950 text-xs uppercase italic">${staf.nama}</h4>
-                            <p class="text-[9px] font-bold text-slate-400 mt-1">NIP. ${staf.nip}</p>
+                    <div class="content-hidden px-6 bg-slate-50 border-t">
+                        <div class="pt-4">
+                            <h4 class="font-black text-blue-950 text-sm uppercase italic">${s.nama}</h4>
+                            <p class="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-tighter">NIP. ${s.nip}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Sewa Alat
+            document.getElementById('wadah-sewa').innerHTML = dataSewa.map((a, i) => `
+                <div class="item-sewa bg-white rounded-2xl border shadow-sm overflow-hidden text-left">
+                    <button onclick="toggleItem('item-sewa', ${i})" class="w-full px-6 py-5 flex justify-between items-center hover:bg-orange-50 transition">
+                        <span class="font-black text-slate-700 uppercase text-xs tracking-widest flex items-center">
+                            <i class="fas ${a.ikon} mr-3 text-orange-500"></i> ${a.alat}
+                        </span>
+                        <i class="fas fa-chevron-down text-orange-500 chevron-icon"></i>
+                    </button>
+                    <div class="content-hidden px-6 bg-orange-50/30 border-t border-orange-100">
+                        <div class="pt-4">
+                            <h4 class="font-black text-orange-600 text-lg italic uppercase tracking-tighter">${a.detail}</h4>
+                            <p class="text-[9px] font-bold text-slate-400 mt-1 uppercase">Harga sesuai standar biaya umum daerah</p>
                         </div>
                     </div>
                 </div>
             `).join('');
         }
 
-        function toggleStaff(index) {
-            const items = document.querySelectorAll('.staff-item');
-            items.forEach((item, i) => { if(i !== index) item.classList.remove('active'); });
-            items[index].classList.toggle('active');
+        // LOGIKA KLIK (ACCORDION)
+        function toggleItem(className, index) {
+            const items = document.querySelectorAll('.' + className);
+            items.forEach((item, i) => {
+                if(i === index) {
+                    item.classList.toggle('item-active');
+                } else {
+                    item.classList.remove('item-active');
+                }
+            });
         }
 
-        // Dropdown Menu Logic
-        const navItems = document.querySelectorAll('.nav-item');
-        navItems.forEach(item => {
-            item.querySelector('button').addEventListener('click', (e) => {
-                navItems.forEach(other => { if(other !== item) other.classList.remove('active'); });
-                item.classList.toggle('active');
-                e.stopPropagation();
-            });
-        });
-
-        window.onclick = () => navItems.forEach(item => item.classList.remove('active'));
-        window.onload = renderPersonel;
+        window.onload = renderKonten;
     </script>
 </body>
 </html>
