@@ -11,24 +11,19 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); }
         
-        /* Accordion Smooth Animation */
-        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.8s cubic-bezier(0, 1, 0, 1); }
-        .item-active .accordion-content { max-height: 3000px; }
-        .item-active .chevron-icon { transform: rotate(180deg); color: #eab308; }
-        .chevron-icon { transition: transform 0.3s ease; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.6s ease-in-out; }
+        .item-active .accordion-content { max-height: 2000px; }
+        .item-active .chevron-icon { transform: rotate(180deg); }
 
-        /* Style Teks Daftar Tahun */
         .year-link { 
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 16px 28px; border-bottom: 1px solid #f1f5f9; 
+            padding: 15px 25px; border-bottom: 1px solid #f1f5f9; 
             transition: all 0.3s ease; text-decoration: none; color: #334155;
             font-weight: 800; font-style: italic; text-transform: uppercase; font-size: 11px;
         }
-        .year-link:hover { background: #f8fafc; color: #1e40af; padding-left: 38px; border-left: 4px solid #eab308; }
+        .year-link:hover { background: #f8fafc; color: #1e40af; padding-left: 35px; border-left: 4px solid #eab308; }
         
-        table { width: 100%; border-collapse: separate; border-spacing: 0 4px; }
-        .img-kegiatan { width: 100%; max-width: 200px; border-radius: 15px; border: 3px solid #f1f5f9; transition: transform 0.3s ease; }
-        .img-kegiatan:hover { transform: scale(1.05); cursor: pointer; }
+        .img-kegiatan { width: 140px; height: 90px; object-fit: cover; border-radius: 12px; border: 2px solid #fff; shadow-sm; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -36,193 +31,136 @@
     <nav class="bg-white sticky top-0 z-50 shadow-md border-b-4 border-yellow-400">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" alt="Logo" class="h-10 w-10 object-cover rounded-lg shadow-sm">
+                <img src="proyek-bangkep.jpg" alt="Logo" class="h-10 w-10 rounded-lg object-cover">
                 <div class="border-l-2 border-slate-200 pl-3 uppercase font-black text-blue-900 italic leading-none">
                     <span class="text-sm block">SIJAKON</span>
                     <span class="text-[7px] text-slate-400 tracking-tighter">PUPR Banggai Kepulauan</span>
                 </div>
             </div>
             <ul class="flex space-x-4 text-[9px] font-black uppercase text-blue-900">
-                <li><a href="#tentang">Profil</a></li>
-                <li><a href="#arsip" class="bg-blue-900 text-white px-3 py-1 rounded-full shadow-md">Arsip</a></li>
-                <li><a href="#data">Data</a></li>
+                <li><a href="#arsip">Arsip</a></li>
+                <li><a href="#data" class="bg-blue-900 text-white px-3 py-1 rounded-full">Data Bidang</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero-gradient text-white py-24 text-center relative overflow-hidden">
-        <div class="relative z-10">
-            <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" class="h-24 w-24 mx-auto rounded-[25px] mb-6 border-4 border-white/20 shadow-2xl transition-transform hover:scale-110">
-            <h1 class="text-6xl md:text-7xl font-black italic uppercase tracking-tighter leading-none">SI-<span class="text-yellow-400">JAKON</span></h1>
-            <p class="text-[10px] md:text-sm opacity-80 mt-4 font-bold uppercase tracking-[0.4em] italic">Sistem Informasi Jasa Konstruksi</p>
-        </div>
-        <i class="fas fa-city absolute -bottom-10 -right-10 text-white/5 text-[200px]"></i>
+    <header class="hero-gradient text-white py-20 text-center">
+        <img src="proyek-bangkep.jpg" class="h-24 w-24 mx-auto rounded-[25px] mb-4 border-4 border-white/20 shadow-2xl object-cover">
+        <h1 class="text-5xl font-black italic uppercase tracking-tighter">SI-<span class="text-yellow-400">JAKON</span></h1>
+        <p class="text-[10px] opacity-70 mt-2 font-bold uppercase tracking-[0.4em] italic">Dinas PUPR Banggai Kepulauan</p>
     </header>
 
-    <section id="arsip" class="py-20 bg-blue-50 border-y-2 border-slate-100">
-        <div class="container mx-auto px-6 max-w-3xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-black text-blue-950 uppercase italic tracking-tighter">ARSIP DIGITAL</h2>
-                <div class="h-2 w-20 bg-yellow-400 mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <div class="space-y-4">
-                <div class="accordion-item border-2 border-slate-200 rounded-[30px] overflow-hidden bg-white shadow-sm transition-all">
-                    <button onclick="toggleAccordion(this)" class="w-full px-8 py-7 flex justify-between items-center group">
-                        <div class="flex items-center space-x-4">
-                            <i class="fas fa-file-contract text-blue-600 text-xl"></i>
-                            <span class="font-black text-blue-900 uppercase italic text-sm tracking-widest">Peminjaman Alat Berat</span>
-                        </div>
-                        <i class="fas fa-chevron-down chevron-icon text-blue-900"></i>
-                    </button>
-                    <div class="accordion-content border-t">
-                        <a href="#" class="year-link"><span>Arsip Tahun 2021</span> <i class="fas fa-external-link-alt text-slate-300"></i></a>
-                        <a href="#" class="year-link"><span>Arsip Tahun 2022</span> <i class="fas fa-external-link-alt text-slate-300"></i></a>
-                        <a href="#" class="year-link"><span>Arsip Tahun 2023</span> <i class="fas fa-external-link-alt text-slate-300"></i></a>
-                        <a href="#" class="year-link"><span>Arsip Tahun 2024</span> <i class="fas fa-external-link-alt text-slate-300"></i></a>
-                        <a href="#" class="year-link"><span>Arsip Tahun 2025</span> <i class="fas fa-external-link-alt text-slate-300"></i></a>
-                    </div>
-                </div>
-
-                <div class="accordion-item border-2 border-slate-200 rounded-[30px] overflow-hidden bg-white shadow-sm transition-all">
-                    <button onclick="toggleAccordion(this)" class="w-full px-8 py-7 flex justify-between items-center group">
-                        <div class="flex items-center space-x-4">
-                            <i class="fas fa-file-import text-green-600 text-xl"></i>
-                            <span class="font-black text-blue-900 uppercase italic text-sm tracking-widest">Pengembalian Alat Berat</span>
-                        </div>
-                        <i class="fas fa-chevron-down chevron-icon text-blue-900"></i>
-                    </button>
-                    <div class="accordion-content border-t">
-                        <a href="#" class="year-link"><span>Arsip Tahun 2021</span> <i class="fas fa-external-link-alt text-slate-300"></i></a>
-                        <a href="#" class="year-link"><span>Arsip Tahun 2022</span> <i class="fas fa-external-link-alt text-slate-300"></i></a>
-                        <a href="#" class="year-link"><span>Arsip Tahun 2023</span> <i class="fas fa-external-link-alt text-slate-300"></i></a>
-                        <a href="#" class="year-link"><span>Arsip Tahun 2024</span> <i class="fas fa-external-link-alt text-slate-300"></i></a>
-                        <a href="#" class="year-link"><span>Arsip Tahun 2025</span> <i class="fas fa-external-link-alt text-slate-300"></i></a>
-                    </div>
+    <section id="arsip" class="py-12 bg-blue-50">
+        <div class="container mx-auto px-6 max-w-2xl text-center">
+            <h2 class="text-2xl font-black text-blue-950 uppercase italic mb-8 tracking-tighter">ARSIP DIGITAL</h2>
+            <div class="accordion-item border-2 border-slate-200 rounded-[25px] overflow-hidden bg-white shadow-sm mb-4">
+                <button onclick="toggleAccordion(this)" class="w-full px-6 py-5 flex justify-between items-center group">
+                    <span class="font-black text-blue-900 uppercase italic text-xs tracking-widest">Peminjaman & Pengembalian Alat</span>
+                    <i class="fas fa-chevron-down chevron-icon text-blue-900 transition-transform"></i>
+                </button>
+                <div class="accordion-content text-left">
+                    <a href="#" class="year-link"><span>Data Scan 2021</span> <i class="fas fa-file-pdf"></i></a>
+                    <a href="#" class="year-link"><span>Data Scan 2022</span> <i class="fas fa-file-pdf"></i></a>
+                    <a href="#" class="year-link"><span>Data Scan 2023</span> <i class="fas fa-file-pdf"></i></a>
+                    <a href="#" class="year-link"><span>Data Scan 2024</span> <i class="fas fa-file-pdf"></i></a>
+                    <a href="#" class="year-link"><span>Data Scan 2025</span> <i class="fas fa-file-pdf"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="data" class="py-20 bg-white">
-        <div class="container mx-auto px-6 max-w-4xl space-y-6">
+    <section id="data" class="py-12 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl space-y-10">
             
-            <div class="accordion-item border-2 border-slate-100 rounded-[35px] overflow-hidden bg-white shadow-sm transition-all">
-                <button onclick="toggleAccordion(this)" class="w-full px-10 py-9 flex justify-between items-center group">
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-user-tie text-blue-900 text-xl"></i>
-                        <h2 class="text-xl font-black text-blue-900 uppercase italic">Struktur Personel Bidang</h2>
-                    </div>
-                    <i class="fas fa-plus chevron-icon text-blue-900"></i>
+            <div class="accordion-item border-2 border-blue-900 rounded-[30px] overflow-hidden bg-white shadow-md">
+                <button onclick="toggleAccordion(this)" class="w-full bg-blue-900 px-8 py-6 flex justify-between items-center text-white group">
+                    <span class="font-black uppercase italic tracking-widest text-sm">I. Struktur Personel Bidang</span>
+                    <i class="fas fa-plus chevron-icon transition-transform"></i>
                 </button>
-                <div class="accordion-content bg-slate-50/50 p-6 md:p-10">
-                    <table id="tabel-staf" class="text-[11px] font-black uppercase italic text-blue-900"></table>
+                <div class="accordion-content p-6">
+                    <table class="w-full text-[11px] font-black uppercase italic text-blue-900">
+                        <tr class="border-b">
+                            <td class="py-5">Jasrun Hasan,S.T.,M.Ap<br><span class="text-[8px] opacity-50">Kepala Bidang Jasa Konstruksi</span></td>
+                            <td class="text-right opacity-40">NIP. 197904052009011005</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="py-5">Staf Bidang<br><span class="text-[8px] opacity-50">Pengelola Data & Administrasi</span></td>
+                            <td class="text-right opacity-40">NIP. 19XXXXXXXXXXXX</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
 
-            <div class="accordion-item border-2 border-orange-100 rounded-[35px] overflow-hidden bg-white shadow-sm transition-all">
-                <button onclick="toggleAccordion(this)" class="w-full px-10 py-9 flex justify-between items-center group">
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-truck-pickup text-orange-600 text-xl"></i>
-                        <h2 class="text-xl font-black text-orange-600 uppercase italic">Daftar Sewa Alat & Kendaraan</h2>
-                    </div>
-                    <i class="fas fa-plus chevron-icon text-orange-600"></i>
+            <div class="accordion-item border-2 border-orange-500 rounded-[30px] overflow-hidden bg-white shadow-md">
+                <button onclick="toggleAccordion(this)" class="w-full bg-orange-500 px-8 py-6 flex justify-between items-center text-white group">
+                    <span class="font-black uppercase italic tracking-widest text-sm">II. Daftar Sewa Alat & Kendaraan</span>
+                    <i class="fas fa-plus chevron-icon transition-transform"></i>
                 </button>
-                <div class="accordion-content bg-orange-50/30 p-6 md:p-10">
-                    <table id="tabel-sewa" class="text-[11px] font-black uppercase italic text-orange-600"></table>
+                <div class="accordion-content p-6">
+                    <table class="w-full text-[11px] font-black uppercase italic text-orange-600">
+                        <tr class="border-b border-orange-50">
+                            <td class="py-4">EXCAVATOR PC200</td>
+                            <td class="text-right">Rp 4.500.000 / Shift</td>
+                        </tr>
+                        <tr class="border-b border-orange-50">
+                            <td class="py-4">DUMP TRUCK 8 TON</td>
+                            <td class="text-right">Rp 1.250.000 / Hari</td>
+                        </tr>
+                        <tr class="border-b border-orange-50">
+                            <td class="py-4">VIBRATORY ROLLER</td>
+                            <td class="text-right">Rp 3.500.000 / Shift</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
 
-            <div class="accordion-item border-2 border-blue-100 rounded-[35px] overflow-hidden bg-white shadow-sm transition-all">
-                <button onclick="toggleAccordion(this)" class="w-full px-10 py-9 flex justify-between items-center group">
-                    <div class="flex items-center space-x-4">
-                        <i class="fas fa-camera-retro text-blue-700 text-xl"></i>
-                        <h2 class="text-xl font-black text-blue-700 uppercase italic">Dokumentasi Kegiatan</h2>
-                    </div>
-                    <i class="fas fa-plus chevron-icon text-blue-700"></i>
+            <div class="accordion-item border-2 border-green-600 rounded-[30px] overflow-hidden bg-white shadow-md">
+                <button onclick="toggleAccordion(this)" class="w-full bg-green-600 px-8 py-6 flex justify-between items-center text-white group">
+                    <span class="font-black uppercase italic tracking-widest text-sm">III. Dokumentasi Kegiatan</span>
+                    <i class="fas fa-camera chevron-icon transition-transform"></i>
                 </button>
-                <div class="accordion-content p-6 md:p-10">
-                    <table id="tabel-kegiatan" class="text-[11px] font-black uppercase italic text-slate-500"></table>
+                <div class="accordion-content p-6 space-y-6">
+                    <div class="flex items-center justify-between border-b pb-4">
+                        <div class="w-2/3">
+                            <p class="text-blue-900 font-black text-[9px]">AGENDA 01</p>
+                            <p class="text-slate-600 italic text-[11px] font-black uppercase">Sosialisasi Jasa Konstruksi</p>
+                        </div>
+                        <img src="kegiatan1.jpg" class="img-kegiatan shadow-lg object-cover">
+                    </div>
+                    <div class="flex items-center justify-between border-b pb-4">
+                        <div class="w-2/3">
+                            <p class="text-blue-900 font-black text-[9px]">AGENDA 02</p>
+                            <p class="text-slate-600 italic text-[11px] font-black uppercase">Pelatihan Tenaga Terampil</p>
+                        </div>
+                        <img src="kegiatan2.jpg" class="img-kegiatan shadow-lg object-cover">
+                    </div>
+                    <div class="flex items-center justify-between pb-4">
+                        <div class="w-2/3">
+                            <p class="text-blue-900 font-black text-[9px]">AGENDA 03</p>
+                            <p class="text-slate-600 italic text-[11px] font-black uppercase">Pengawasan Lapangan Proyek</p>
+                        </div>
+                        <img src="kegiatan3.jpg" class="img-kegiatan shadow-lg object-cover">
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <footer class="bg-slate-900 text-white pt-24 pb-12">
-        <div class="container mx-auto px-6 max-w-4xl text-center">
-            <div class="inline-block border-2 border-yellow-400 p-8 rounded-[40px] mb-16 bg-white/5 backdrop-blur-sm">
-                <p class="text-[10px] font-black uppercase italic tracking-[0.4em] text-yellow-400 mb-2">Kontak Admin Bidang</p>
-                <p class="text-2xl font-black uppercase italic mb-1">TARI MANESSA</p>
-                <a href="https://wa.me/6285394940435" target="_blank" class="text-lg font-bold hover:text-yellow-400 transition italic">
-                    <i class="fab fa-whatsapp mr-2 text-green-400"></i> 0853 9494 0435
-                </a>
-            </div>
-
-            <h3 class="text-4xl font-black text-white uppercase italic tracking-tighter leading-none mb-4">PUPR BANGGAI KEPULAUAN</h3>
-            <p class="text-[8px] font-bold opacity-30 uppercase tracking-[0.6em] italic">© 2026 SIJAKON • DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</p>
+    <footer class="bg-slate-900 text-white py-12 text-center">
+        <div class="mb-8">
+            <p class="text-[9px] font-black uppercase italic text-yellow-400 mb-1">Kontak Admin Bidang</p>
+            <p class="text-xl font-black uppercase italic tracking-tighter">TARI MANESSA</p>
+            <p class="text-sm font-bold opacity-60"><i class="fab fa-whatsapp"></i> 0853 9494 0435</p>
         </div>
+        <p class="text-[7px] font-bold opacity-30 uppercase tracking-[0.4em]">© 2026 SIJAKON • DINAS PUPR BANGGAI KEPULAUAN</p>
     </footer>
 
     <script>
-        // DATA PERSONEL (Nama Kabid Baru & NIP Sesuai Permintaan)
-        const dataStaf = [
-            { n: "Jasrun Hasan, S.T., M.Ap", j: "KEPALA BIDANG JASA KONSTRUKSI", nip: "197904052009011005" },
-            { n: "STAF PEMBINA JAKON", j: "PENYUSUN PROGRAM", nip: "19XXXXXXXXXXXX" },
-            { n: "STAF TEKNIS", j: "PENGELOLA DATA", nip: "19XXXXXXXXXXXX" }
-        ];
-
-        // DATA SEWA
-        const dataSewa = [
-            { a: "EXCAVATOR PC200", h: "Rp 4.500.000 / Shift" },
-            { a: "DUMP TRUCK 8 TON", h: "Rp 1.250.000 / Hari" },
-            { a: "VIBRATORY ROLLER", h: "Rp 3.500.000 / Shift" },
-            { a: "MOTOR GRADER", h: "Rp 5.000.000 / Shift" }
-        ];
-
-        // DATA KEGIATAN (Foto menggunakan file WhatsApp Anda)
-        const dataKegiatan = [
-            { t: "15 MARET 2026", k: "PELATIHAN SERTIFIKASI TENAGA KERJA KONSTRUKSI", f: "WhatsApp Image 2026-02-05 at 10.17.15.jpeg" },
-            { t: "12 MEI 2026", k: "PEMELIHARAAN RUTIN ALAT BERAT DINAS", f: "WhatsApp Image 2026-02-05 at 10.17.15.jpeg" }
-        ];
-
-        function renderAll() {
-            // Render Staf
-            document.getElementById('tabel-staf').innerHTML = dataStaf.map(s => `
-                <tr class="border-b border-slate-200/50">
-                    <td class="py-5">
-                        <span class="block text-sm font-black text-blue-900">${s.n}</span>
-                        <span class="block text-[8px] opacity-60 italic">${s.j}</span>
-                    </td>
-                    <td class="text-right opacity-40 text-[9px] font-bold">NIP. ${s.nip}</td>
-                </tr>
-            `).join('');
-
-            // Render Sewa
-            document.getElementById('tabel-sewa').innerHTML = dataSewa.map(a => `
-                <tr class="border-b border-orange-100">
-                    <td class="py-5 font-black uppercase">${a.a}</td>
-                    <td class="text-right font-black italic tracking-tighter">${a.h}</td>
-                </tr>
-            `).join('');
-
-            // Render Kegiatan
-            document.getElementById('tabel-kegiatan').innerHTML = dataKegiatan.map(k => `
-                <tr class="border-b border-slate-100">
-                    <td class="py-8 w-1/4 text-blue-900 font-black">${k.t}</td>
-                    <td class="py-8 px-4 italic leading-snug">${k.k}</td>
-                    <td class="py-8 text-right">
-                        <img src="${k.f}" class="img-kegiatan ml-auto shadow-xl" alt="Foto">
-                    </td>
-                </tr>
-            `).join('');
-        }
-
         function toggleAccordion(btn) {
-            btn.parentElement.classList.toggle('item-active');
+            const item = btn.parentElement;
+            item.classList.toggle('item-active');
         }
-
-        window.onload = renderAll;
     </script>
 </body>
 </html>
