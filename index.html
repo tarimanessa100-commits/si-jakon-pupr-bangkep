@@ -16,6 +16,8 @@
         .premium-btn { transition: all 0.3s ease; border-radius: 12px; font-weight: 900; text-transform: uppercase; font-style: italic; font-size: 10px; }
         .premium-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
         .italic-up { font-style: italic; text-transform: uppercase; }
+        .sub-menu-btn { background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); color: #e9d5ff; padding: 15px; border-radius: 15px; text-align: left; transition: all 0.3s; }
+        .sub-menu-btn:hover { background: rgba(168, 85, 247, 0.3); border-color: #a855f7; }
     </style>
 </head>
 <body class="italic-up">
@@ -39,20 +41,6 @@
 
     <main class="container mx-auto px-6 max-w-5xl space-y-6 pb-24">
         
-        <section class="glass-card p-10 border-t-4 border-blue-500">
-            <h2 class="heading-font text-2xl font-black mb-6 text-blue-400"># PROFIL BIDANG</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="space-y-4">
-                    <h3 class="text-yellow-400 font-black text-sm">VISI</h3>
-                    <p class="text-[10px] opacity-70 leading-relaxed font-bold">MEWUJUDKAN PENYELENGGARAAN JASA KONSTRUKSI YANG TERTIB, PROFESIONAL, DAN BERDAYA SAING DI BANGGAI KEPULAUAN.</p>
-                </div>
-                <div class="space-y-4">
-                    <h3 class="text-blue-400 font-black text-sm">MISI</h3>
-                    <p class="text-[9px] opacity-70 leading-loose font-bold">1. PEMBINAAN TATA KELOLA KONSTRUKSI.<br>2. PENGAWASAN STANDAR K4.<br>3. MANAJEMEN ALAT BERAT DAERAH.</p>
-                </div>
-            </div>
-        </section>
-
         <div class="space-y-4">
             
             <div class="accordion-item glass-card px-8">
@@ -123,11 +111,20 @@
                     </span>
                     <i class="fas fa-chevron-down opacity-30"></i>
                 </button>
-                <div class="acc-content grid grid-cols-2 md:grid-cols-4 gap-4 px-2">
-                    <button class="premium-btn p-5 bg-white/5 border border-white/10">TAHUN 2023</button>
-                    <button class="premium-btn p-5 bg-white/5 border border-white/10">TAHUN 2024</button>
-                    <button class="premium-btn p-5 bg-white/5 border border-white/10">TAHUN 2025</button>
-                    <button class="premium-btn p-5 bg-purple-600 border border-purple-400">TAHUN 2026</button>
+                <div class="acc-content px-2 space-y-4">
+                    <div class="grid grid-cols-1 gap-3">
+                        <button class="sub-menu-btn flex items-center gap-4">
+                            <span class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span>
+                            <span class="text-[10px] font-black uppercase tracking-wider">Bimtek "Pengendalian Pelaksanaan Kontrak dan Pengawasan Jasa Konstruksi"</span>
+                        </button>
+                    </div>
+                    <div class="h-[1px] bg-white/10 my-4"></div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <button class="premium-btn p-5 bg-white/5 border border-white/10">TAHUN 2023</button>
+                        <button class="premium-btn p-5 bg-white/5 border border-white/10">TAHUN 2024</button>
+                        <button class="premium-btn p-5 bg-white/5 border border-white/10">TAHUN 2025</button>
+                        <button class="premium-btn p-5 bg-purple-600 border border-purple-400">TAHUN 2026</button>
+                    </div>
                 </div>
             </div>
 
@@ -148,29 +145,6 @@
                         <tr class="border-b border-white/5 hover:bg-white/5"><td class="p-4">5. DUMP TRUCK</td><td class="p-4 text-right text-yellow-400">RP 81,074 / JAM</td></tr>
                         <tr class="border-b border-white/5 hover:bg-white/5"><td class="p-4">6. TRONTON</td><td class="p-4 text-right text-yellow-400">RP 36,000 / KM</td></tr>
                     </table>
-                </div>
-            </div>
-
-            <div class="accordion-item glass-card px-8">
-                <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center group">
-                    <span class="text-sm font-black tracking-widest flex items-center gap-4">
-                        <i class="fas fa-camera text-blue-400 text-xl"></i> DOKUMENTASI KEGIATAN
-                    </span>
-                    <i class="fas fa-plus opacity-30"></i>
-                </button>
-                <div class="acc-content grid grid-cols-2 md:grid-cols-4 gap-4 px-2">
-                    <div class="aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl">
-                        <img src="kegiatan1.jpg" class="w-full h-full object-cover" alt="K1">
-                    </div>
-                    <div class="aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl">
-                        <img src="kegiatan2.jpg" class="w-full h-full object-cover" alt="K2">
-                    </div>
-                    <div class="aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl">
-                        <img src="kegiatan3.jpg" class="w-full h-full object-cover" alt="K3">
-                    </div>
-                    <div class="aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl">
-                        <img src="proyek-bangkep.jpg" class="w-full h-full object-cover" alt="PB">
-                    </div>
                 </div>
             </div>
         </div>
