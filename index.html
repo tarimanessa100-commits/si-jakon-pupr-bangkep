@@ -15,7 +15,6 @@
         .item-active .acc-content { max-height: 5000px; opacity: 1; padding: 25px 0; transition: all 0.5s ease-in-out; }
         .italic-up { font-style: italic; text-transform: uppercase; }
         
-        /* Style Khusus List Bimtek */
         .bimtek-item { 
             background: linear-gradient(90deg, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0.05) 100%);
             border: 1px solid rgba(168, 85, 247, 0.4);
@@ -26,11 +25,6 @@
             align-items: center;
             gap: 15px;
             width: 100%;
-            transition: all 0.3s ease;
-        }
-        .bimtek-item:hover { 
-            background: rgba(168, 85, 247, 0.25);
-            transform: scale(1.02);
         }
     </style>
 </head>
@@ -39,35 +33,63 @@
     <nav class="sticky top-0 z-[100] bg-slate-900/90 backdrop-blur-xl border-b border-white/10 py-4 px-6">
         <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-4">
-                <img src="logo-bangkep.png" class="h-10 w-auto">
-                <img src="logo-pupr.png" class="h-8 w-auto">
+                <img src="logo-bangkep.png" class="h-10 w-auto" onerror="this.style.display='none'">
+                <img src="logo-pupr.png" class="h-8 w-auto" onerror="this.style.display='none'">
                 <div class="h-8 w-[2px] bg-white/20"></div>
                 <h1 class="heading-font text-xl font-black tracking-tighter text-yellow-400">SIJAKON</h1>
             </div>
         </div>
     </nav>
 
-    <header class="py-20 text-center relative overflow-hidden">
+    <header class="py-16 text-center relative overflow-hidden">
         <div class="absolute inset-0 bg-blue-600/10 blur-[120px] rounded-full -top-24 -left-24"></div>
-        <h1 class="heading-font text-7xl md:text-9xl font-black tracking-tighter mb-4">SI-<span class="text-yellow-400">JAKON</span></h1>
-        <p class="text-xs font-bold tracking-[0.6em] text-blue-400">SISTEM INFORMASI JASA KONSTRUKSI</p>
+        <h1 class="heading-font text-6xl md:text-8xl font-black tracking-tighter mb-4 text-white">SI-<span class="text-yellow-400">JAKON</span></h1>
+        <p class="text-[10px] font-bold tracking-[0.5em] text-blue-400">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</p>
     </header>
 
-    <main class="container mx-auto px-6 max-w-5xl space-y-6 pb-24">
+    <main class="container mx-auto px-6 max-w-5xl space-y-8 pb-24">
         
+        <section class="glass-card p-8 md:p-12 border-t-4 border-blue-500 shadow-2xl">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="heading-font text-2xl font-black mb-6 text-yellow-400"># VISI & MISI</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xs font-black text-blue-400 tracking-widest mb-2">VISI</h3>
+                            <p class="text-[11px] leading-relaxed font-bold opacity-80 italic uppercase">"Mewujudkan penyelenggaraan jasa konstruksi yang tertib, profesional, berkualitas, dan berdaya saing tinggi di kabupaten banggai kepulauan."</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xs font-black text-blue-400 tracking-widest mb-2">MISI</h3>
+                            <ul class="text-[10px] leading-loose font-bold opacity-80 list-none space-y-1">
+                                <li>1. MENINGKATKAN PEMBINAAN DAN PENGAWASAN TATA KELOLA JASA KONSTRUKSI.</li>
+                                <li>2. MENJAMIN MUTU DAN KEAMANAN KONSTRUKSI MELALUI STANDAR K4.</li>
+                                <li>3. OPTIMALISASI PENGELOLAAN ALAT BERAT DAN LABORATORIUM KONSTRUKSI.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white/5 p-6 rounded-3xl border border-white/10">
+                    <h2 class="heading-font text-xl font-black mb-4 text-yellow-400"># TENTANG BIDANG</h2>
+                    <p class="text-[10px] leading-relaxed font-bold opacity-70 text-justify uppercase">
+                        Bidang Jasa Konstruksi memiliki peran strategis dalam melaksanakan pembinaan, pengaturan, dan pengawasan di sektor konstruksi daerah. kami bertanggung jawab memastikan setiap badan usaha dan tenaga kerja konstruksi memiliki kompetensi standar. Selain itu, kami mengelola aset berupa peralatan berat untuk mendukung percepatan pembangunan infrastruktur di Kabupaten Banggai Kepulauan.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <div class="space-y-4">
             
-            <div class="accordion-item glass-card px-8">
+            <div class="accordion-item glass-card px-8 border-l-4 border-slate-500">
                 <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center group">
                     <span class="text-sm font-black tracking-widest flex items-center gap-4">
                         <i class="fas fa-users-cog text-blue-400 text-xl"></i> PERSONEL BIDANG (20)
                     </span>
-                    <i class="fas fa-plus opacity-30 group-hover:opacity-100 transition-all"></i>
+                    <i class="fas fa-plus opacity-30"></i>
                 </button>
                 <div class="acc-content grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <div class="p-3 bg-white/5 rounded-xl border border-white/5"><p class="text-[10px] font-black text-blue-300">01. JASRUN HASAN, S.T., M.AP</p><p class="text-[7px] opacity-40">KEPALA BIDANG JASA KONSTRUKSI</p></div>
-                    <div class="p-3 bg-white/5 rounded-xl border border-white/5"><p class="text-[10px] font-black text-blue-300">02. JUFRI, S.T</p><p class="text-[7px] opacity-40">PEMBINA JAKON AHLI MUDA</p></div>
-                    <div class="p-3 bg-white/5 rounded-xl border border-white/5"><p class="text-[10px] font-black text-blue-300">03. HENDRA MOIDAY, S.T</p><p class="text-[7px] opacity-40">PEMBINA JAKON AHLI MUDA</p></div>
+                    <div class="p-3 bg-white/5 rounded-xl border border-white/5"><p class="text-[10px] font-black text-blue-300">01. JASRUN HASAN, S.T., M.AP</p><p class="text-[7px] opacity-40 uppercase">Kepala Bidang Jasa Konstruksi</p></div>
+                    <div class="p-3 bg-white/5 rounded-xl border border-white/5"><p class="text-[10px] font-black text-blue-300">02. JUFRI, S.T</p><p class="text-[7px] opacity-40 uppercase">Pembina Jakon Ahli Muda</p></div>
+                    <div class="p-3 bg-white/5 rounded-xl border border-white/5"><p class="text-[10px] font-black text-blue-300">03. HENDRA MOIDAY, S.T</p><p class="text-[7px] opacity-40 uppercase">Pembina Jakon Ahli Muda</p></div>
                     <div class="p-3 bg-white/5 rounded-xl border border-white/5"><p class="text-[10px] font-black text-blue-300">04. IKRAR, S.T</p><p class="text-[7px] opacity-40">PENGUJI LABORATORIUM</p></div>
                     <div class="p-3 bg-white/5 rounded-xl border border-white/5"><p class="text-[10px] font-black text-blue-300">05. ARWING KARAU</p><p class="text-[7px] opacity-40">PEMELIHARA PERALATAN</p></div>
                     <div class="p-3 bg-white/5 rounded-xl border border-white/5"><p class="text-[10px] font-black text-blue-300">06. PUSPA SARI, S.P.W.K</p><p class="text-[7px] opacity-40">PEMBINA JAKON AHLI MUDA</p></div>
@@ -127,7 +149,7 @@
                 </button>
                 <div class="acc-content px-2">
                     <div class="bimtek-item">
-                        <div class="bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-black flex-shrink-0 shadow-lg">1</div>
+                        <div class="bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-black flex-shrink-0">1</div>
                         <div class="text-[11px] md:text-[12px] font-black leading-tight tracking-wider uppercase">
                             BIMTEK "PENGENDALIAN PELAKSANAAN KONTRAK DAN PENGAWASAN JASA KONSTRUKSI"
                         </div>
@@ -136,10 +158,8 @@
             </div>
 
             <div class="accordion-item glass-card px-8 border-2 border-yellow-500/30">
-                <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center group">
-                    <span class="text-sm font-black tracking-widest flex items-center gap-4 text-yellow-400">
-                        <i class="fas fa-tag text-xl"></i> HARGA SEWA ALAT BERAT
-                    </span>
+                <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center group text-yellow-400">
+                    <span class="text-sm font-black tracking-widest flex items-center gap-4"><i class="fas fa-tag text-xl"></i> HARGA SEWA ALAT BERAT</span>
                     <i class="fas fa-chevron-down opacity-30"></i>
                 </button>
                 <div class="acc-content overflow-x-auto px-2">
@@ -148,17 +168,52 @@
                         <tr class="border-b border-white/5"><td class="p-4">1. LOADER</td><td class="p-4 text-right text-yellow-400">RP 215,813 / JAM</td></tr>
                         <tr class="border-b border-white/5"><td class="p-4">2. MOTOR GREDER</td><td class="p-4 text-right text-yellow-400">RP 576,785 / JAM</td></tr>
                         <tr class="border-b border-white/5"><td class="p-4">3. VIBRATOR ROLLER</td><td class="p-4 text-right text-yellow-400">RP 326,786 / JAM</td></tr>
+                        <tr class="border-b border-white/5"><td class="p-4">4. TANDEM ROLLER</td><td class="p-4 text-right text-yellow-400">RP 165,500 / JAM</td></tr>
+                        <tr class="border-b border-white/5"><td class="p-4">5. DUMP TRUCK</td><td class="p-4 text-right text-yellow-400">RP 81,074 / JAM</td></tr>
+                        <tr class="border-b border-white/5"><td class="p-4">6. TRONTON</td><td class="p-4 text-right text-yellow-400">RP 36,000 / KM</td></tr>
                     </table>
+                </div>
+            </div>
+
+            <div class="accordion-item glass-card px-8 border-l-4 border-pink-500">
+                <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center group">
+                    <span class="text-sm font-black tracking-widest flex items-center gap-4"><i class="fas fa-camera text-pink-400 text-xl"></i> DOKUMENTASI KEGIATAN</span>
+                    <i class="fas fa-images opacity-30"></i>
+                </button>
+                <div class="acc-content grid grid-cols-2 md:grid-cols-4 gap-4 px-2">
+                    <div class="aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl"><img src="kegiatan1.jpg" class="w-full h-full object-cover"></div>
+                    <div class="aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl"><img src="kegiatan2.jpg" class="w-full h-full object-cover"></div>
+                    <div class="aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl"><img src="kegiatan3.jpg" class="w-full h-full object-cover"></div>
+                    <div class="aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl"><img src="proyek-bangkep.jpg" class="w-full h-full object-cover"></div>
                 </div>
             </div>
         </div>
 
+        <section class="glass-card p-8 border-b-4 border-yellow-500 shadow-2xl">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="flex-1 space-y-4">
+                    <h4 class="text-sm font-black text-yellow-400 tracking-widest italic uppercase"><i class="fas fa-map-marked-alt mr-2"></i> Alamat Kantor</h4>
+                    <p class="text-[11px] font-bold leading-relaxed opacity-80 uppercase">
+                        Jl. Bukit Trikora, Kompleks Perkantoran Salakan, <br>
+                        Kecamatan Tinangkung, Kabupaten Banggai Kepulauan, <br>
+                        Sulawesi Tengah 94885
+                    </p>
+                    <div class="flex gap-4">
+                        <span class="text-[9px] bg-blue-600/20 px-3 py-1 rounded-full text-blue-400 font-black">BUKA: 07:30 - 16:00 WITA</span>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 h-56 rounded-3xl overflow-hidden border border-white/10 shadow-inner">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15957.535804368553!2d123.2979147!3d-1.314733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d8593641248597d%3A0xe5d91bae3b244711!2sDINAS%20PEKERJAAN%20UMUM%20DAN%20PENATAAN%20RUANG!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="bg-slate-900 border-t border-white/5 py-16 text-center">
-        <h4 class="heading-font text-4xl font-black italic mb-8 opacity-80">TARI MANESSA</h4>
-        <a href="https://wa.me/6285394940435" target="_blank" class="bg-green-600 px-12 py-5 rounded-full font-black text-[10px] tracking-widest shadow-2xl hover:scale-110 transition-transform inline-block">
-            <i class="fab fa-whatsapp mr-2 text-lg"></i> WHATSAPP CENTER
+        <h4 class="heading-font text-4xl font-black italic mb-8 opacity-80 tracking-tighter">TARI MANESSA</h4>
+        <a href="https://wa.me/6282290044867" target="_blank" class="bg-green-600 px-12 py-5 rounded-full font-black text-[10px] tracking-widest shadow-2xl hover:scale-110 transition-transform inline-block uppercase">
+            <i class="fab fa-whatsapp mr-2 text-lg"></i> WhatsApp Center
         </a>
     </footer>
 
