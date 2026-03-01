@@ -1,4 +1,4 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -14,15 +14,10 @@
         .acc-content { max-height: 0; overflow: hidden; transition: all 0.5s cubic-bezier(0, 1, 0, 1); opacity: 0; }
         .item-active .acc-content { max-height: 5000px; opacity: 1; padding: 25px 0; transition: all 0.5s ease-in-out; }
         .italic-up { font-style: italic; text-transform: uppercase; }
-        
         .img-box { position: relative; aspect-ratio: 1/1; background: #1e293b; border-radius: 1.25rem; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
         .img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
         .img-box:hover img { transform: scale(1.1); }
-        
-        .bimtek-item { 
-            background: linear-gradient(90deg, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0.05) 100%);
-            border-left: 5px solid #a855f7; padding: 20px; border-radius: 18px;
-        }
+        .bimtek-item { background: linear-gradient(90deg, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0.05) 100%); border-left: 5px solid #a855f7; padding: 20px; border-radius: 18px; }
     </style>
 </head>
 <body class="italic-up">
@@ -106,27 +101,31 @@
 
             <div class="accordion-item glass-card px-8 border-l-4 border-blue-600">
                 <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center">
-                    <span class="text-[10px] font-black tracking-widest flex items-center gap-3"><i class="fas fa-sign-out-alt"></i> PEMINJAMAN ALAT</span>
-                    <i class="fas fa-chevron-down opacity-30"></i>
+                    <span class="text-[11px] font-black tracking-widest flex items-center gap-3 text-blue-400">
+                        <i class="fas fa-sign-out-alt"></i> PEMINJAMAN ALAT BERAT
+                    </span>
+                    <i class="fas fa-plus opacity-30"></i>
                 </button>
-                <div class="acc-content grid grid-cols-2 gap-2">
-                    <button class="bg-white/5 p-4 rounded-xl text-[10px] font-bold">TAHUN 2023</button>
-                    <button class="bg-white/5 p-4 rounded-xl text-[10px] font-bold">TAHUN 2024</button>
-                    <button class="bg-white/5 p-4 rounded-xl text-[10px] font-bold">TAHUN 2025</button>
-                    <button class="bg-blue-600 p-4 rounded-xl text-[10px] font-bold">TAHUN 2026</button>
+                <div class="acc-content grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <button class="p-4 bg-white/5 rounded-xl font-bold text-[10px] hover:bg-blue-600 transition-colors">TAHUN 2023</button>
+                    <button class="p-4 bg-white/5 rounded-xl font-bold text-[10px] hover:bg-blue-600 transition-colors">TAHUN 2024</button>
+                    <button class="p-4 bg-white/5 rounded-xl font-bold text-[10px] hover:bg-blue-600 transition-colors">TAHUN 2025</button>
+                    <button class="p-4 bg-blue-600 rounded-xl font-bold text-[10px]">TAHUN 2026</button>
                 </div>
             </div>
 
             <div class="accordion-item glass-card px-8 border-l-4 border-emerald-500">
                 <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center">
-                    <span class="text-[10px] font-black tracking-widest flex items-center gap-3"><i class="fas fa-sign-in-alt"></i> PENGEMBALIAN ALAT</span>
-                    <i class="fas fa-chevron-down opacity-30"></i>
+                    <span class="text-[11px] font-black tracking-widest flex items-center gap-3 text-emerald-400">
+                        <i class="fas fa-sign-in-alt"></i> PENGEMBALIAN ALAT BERAT
+                    </span>
+                    <i class="fas fa-plus opacity-30"></i>
                 </button>
-                <div class="acc-content grid grid-cols-2 gap-2">
-                    <button class="bg-white/5 p-4 rounded-xl text-[10px] font-bold">TAHUN 2023</button>
-                    <button class="bg-white/5 p-4 rounded-xl text-[10px] font-bold">TAHUN 2024</button>
-                    <button class="bg-white/5 p-4 rounded-xl text-[10px] font-bold">TAHUN 2025</button>
-                    <button class="bg-emerald-600 p-4 rounded-xl text-[10px] font-bold">TAHUN 2026</button>
+                <div class="acc-content grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <button class="p-4 bg-white/5 rounded-xl font-bold text-[10px] hover:bg-emerald-600 transition-colors">TAHUN 2023</button>
+                    <button class="p-4 bg-white/5 rounded-xl font-bold text-[10px] hover:bg-emerald-600 transition-colors">TAHUN 2024</button>
+                    <button class="p-4 bg-white/5 rounded-xl font-bold text-[10px] hover:bg-emerald-600 transition-colors">TAHUN 2025</button>
+                    <button class="p-4 bg-emerald-600 rounded-xl font-bold text-[10px]">TAHUN 2026</button>
                 </div>
             </div>
 
@@ -138,8 +137,8 @@
                 <div class="acc-content px-2 space-y-4">
                     <div class="bimtek-item flex flex-col md:flex-row items-center justify-between gap-4">
                         <div class="text-[10px] font-black uppercase">BIMTEK "PENGENDALIAN PELAKSANAAN KONTRAK"</div>
-                        <a href="ISI_LINK_DRIVE_DISINI" target="_blank" class="bg-purple-600 px-6 py-2 rounded-full text-[9px] font-black transition-all hover:scale-105">
-                            <i class="fab fa-google-drive mr-2"></i> MATERI & SERTIFIKAT
+                        <a href="#" target="_blank" class="bg-purple-600 px-6 py-2 rounded-full text-[9px] font-black transition-all hover:scale-105 flex items-center gap-2">
+                            <i class="fab fa-google-drive"></i> MATERI & SERTIFIKAT
                         </a>
                     </div>
                 </div>
@@ -152,31 +151,13 @@
                 </button>
                 <div class="acc-content overflow-x-auto px-2">
                     <table class="w-full text-left text-[11px] font-bold">
-                        <tr class="bg-yellow-500 text-slate-900"><th class="p-4">JENIS ALAT</th><th class="p-4 text-right">TARIF SEWA</th></tr>
-                        <tr class="border-b border-white/5">
-                            <td class="p-4">1. LOADER</td>
-                            <td class="p-4 text-right text-yellow-400">RP 215,813 / JAM</td>
-                        </tr>
-                        <tr class="border-b border-white/5">
-                            <td class="p-4">2. MOTOR GREDER</td>
-                            <td class="p-4 text-right text-yellow-400">RP 576,785 / JAM</td>
-                        </tr>
-                        <tr class="border-b border-white/5">
-                            <td class="p-4">3. VIBRATOR ROLLER</td>
-                            <td class="p-4 text-right text-yellow-400">RP 326,786 / JAM</td>
-                        </tr>
-                        <tr class="border-b border-white/5">
-                            <td class="p-4">4. TANDEM ROLLER</td>
-                            <td class="p-4 text-right text-yellow-400">RP 165,500 / JAM</td>
-                        </tr>
-                        <tr class="border-b border-white/5">
-                            <td class="p-4">5. DUMP TRUCK</td>
-                            <td class="p-4 text-right text-yellow-400">RP 81,074 / JAM</td>
-                        </tr>
-                        <tr class="border-b border-white/5">
-                            <td class="p-4">6. TRONTON</td>
-                            <td class="p-4 text-right text-yellow-400">RP 36,000 / KM</td>
-                        </tr>
+                        <tr class="bg-yellow-500 text-slate-900"><th class="p-4 uppercase">Jenis Alat</th><th class="p-4 text-right uppercase">Tarif Sewa</th></tr>
+                        <tr class="border-b border-white/5"><td class="p-4">1. LOADER</td><td class="p-4 text-right text-yellow-400">RP 215,813 / JAM</td></tr>
+                        <tr class="border-b border-white/5"><td class="p-4">2. MOTOR GREDER</td><td class="p-4 text-right text-yellow-400">RP 576,785 / JAM</td></tr>
+                        <tr class="border-b border-white/5"><td class="p-4">3. VIBRATOR ROLLER</td><td class="p-4 text-right text-yellow-400">RP 326,786 / JAM</td></tr>
+                        <tr class="border-b border-white/5"><td class="p-4">4. TANDEM ROLLER</td><td class="p-4 text-right text-yellow-400">RP 165,500 / JAM</td></tr>
+                        <tr class="border-b border-white/5"><td class="p-4">5. DUMP TRUCK</td><td class="p-4 text-right text-yellow-400">RP 81,074 / JAM</td></tr>
+                        <tr class="border-b border-white/5"><td class="p-4">6. TRONTON</td><td class="p-4 text-right text-yellow-400">RP 36,000 / KM</td></tr>
                     </table>
                 </div>
             </div>
@@ -189,26 +170,26 @@
                 <div class="acc-content grid grid-cols-2 md:grid-cols-4 gap-4 px-2">
                     <div class="img-box">
                         <img src="kegiatan1.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                        <div style="display:none" class="absolute inset-0 flex items-center justify-center text-[7px] text-center p-4 opacity-40">KEGIATAN1.JPG</div>
+                        <div style="display:none" class="absolute inset-0 flex items-center justify-center text-[7px] text-center p-4 opacity-40">kegiatan1.jpg</div>
                     </div>
                     <div class="img-box">
                         <img src="kegiatan2.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                        <div style="display:none" class="absolute inset-0 flex items-center justify-center text-[7px] text-center p-4 opacity-40">KEGIATAN2.JPG</div>
+                        <div style="display:none" class="absolute inset-0 flex items-center justify-center text-[7px] text-center p-4 opacity-40">kegiatan2.jpg</div>
                     </div>
                     <div class="img-box">
                         <img src="kegiatan3.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                        <div style="display:none" class="absolute inset-0 flex items-center justify-center text-[7px] text-center p-4 opacity-40">KEGIATAN3.JPG</div>
+                        <div style="display:none" class="absolute inset-0 flex items-center justify-center text-[7px] text-center p-4 opacity-40">kegiatan3.jpg</div>
                     </div>
                     <div class="img-box">
                         <img src="proyek-bangkep.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                        <div style="display:none" class="absolute inset-0 flex items-center justify-center text-[7px] text-center p-4 opacity-40">PROYEK-BANGKEP.JPG</div>
+                        <div style="display:none" class="absolute inset-0 flex items-center justify-center text-[7px] text-center p-4 opacity-40">proyek-bangkep.jpg</div>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <section class="glass-card p-8 border-b-4 border-blue-600 shadow-2xl mt-8">
+        <section class="glass-card p-8 border-b-4 border-blue-600 mt-8">
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="space-y-4">
                     <h4 class="text-sm font-black text-yellow-400 tracking-widest italic uppercase"><i class="fas fa-map-marker-alt"></i> KANTOR KAMI</h4>
@@ -217,7 +198,7 @@
                     </p>
                 </div>
                 <div class="h-48 rounded-2xl overflow-hidden border border-white/10 bg-slate-800">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.1!2d123.2!3d-1.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMzAnMDAuMCJTIDEyM8KwMTInMDAuMCJF!5e0!3m2!1sid!2sid!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.1!2d123.3!3d-1.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMzAnMDAuMCJTIDEyM8KwMTgnMDAuMCJF!5e0!3m2!1sid!2sid!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </section>
