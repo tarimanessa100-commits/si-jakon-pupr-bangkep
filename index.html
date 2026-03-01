@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f1f5f9; scroll-behavior: smooth; margin:0; padding:0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f1f5f9; scroll-behavior: smooth; margin:0; }
         .hero-gradient { background: radial-gradient(circle at top right, #1e3a8a, #020617); }
         .acc-content { max-height: 0; overflow: hidden; transition: all 0.5s ease; opacity: 0; }
         .item-active .acc-content { max-height: 5000px; opacity: 1; padding: 15px 0; }
         .italic-up { font-style: italic; text-transform: uppercase; }
-        .year-card { background: #f8fafc; padding: 10px; border-radius: 12px; border: 1px solid #e2e8f0; font-weight: 800; font-size: 11px; text-align: center; }
+        .year-card { background: #f8fafc; padding: 12px; border-radius: 12px; border: 1px solid #e2e8f0; font-weight: 800; font-size: 11px; text-align: center; }
     </style>
 </head>
 <body class="italic-up">
@@ -40,12 +40,12 @@
             <h2 class="text-xl font-black text-blue-900 mb-3 underline">APA ITU JASA KONSTRUKSI?</h2>
             <p class="text-[10px] font-bold text-slate-500 mb-8 leading-relaxed text-justify">LAYANAN JASA KONSULTANSI DAN PEKERJAAN KONSTRUKSI UNTUK MEWUJUDKAN BANGUNAN BERKUALITAS, AMAN, DAN BERKELANJUTAN DI BANGGAI KEPULAUAN.</p>
             <div class="grid md:grid-cols-2 gap-4">
-                <div class="bg-blue-50 p-6 rounded-2xl">
-                    <h3 class="font-black text-blue-900 text-xs mb-2">VISI</h3>
+                <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                    <h3 class="font-black text-blue-900 text-xs mb-2 italic">VISI</h3>
                     <p class="text-[9px] font-bold">MEWUJUDKAN PENYELENGGARAAN JASA KONSTRUKSI YANG TERTIB, PROFESIONAL, DAN BERDAYA SAING.</p>
                 </div>
                 <div class="bg-slate-900 p-6 rounded-2xl text-white">
-                    <h3 class="font-black text-yellow-400 text-xs mb-2">MISI</h3>
+                    <h3 class="font-black text-yellow-400 text-xs mb-2 italic">MISI</h3>
                     <p class="text-[8px] font-bold opacity-80 leading-relaxed">1. TATA KELOLA PEMBINAAN.<br>2. STANDAR K4 (KESELAMATAN & KEBERLANJUTAN).<br>3. OPTIMALISASI ALAT BERAT.</p>
                 </div>
             </div>
@@ -55,7 +55,7 @@
             
             <div class="accordion-item bg-white rounded-[25px] px-6 py-1 border border-slate-200 shadow-sm">
                 <button onclick="toggleAcc(this)" class="w-full py-5 flex justify-between items-center font-black text-xs text-blue-900">
-                    <span><i class="fas fa-users mr-3"></i> PERSONEL BIDANG (20)</span>
+                    <span><i class="fas fa-users mr-3 text-blue-600"></i> PERSONEL BIDANG (20)</span>
                     <i class="fas fa-plus text-slate-300"></i>
                 </button>
                 <div class="acc-content grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -72,8 +72,8 @@
                     <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">11. SUMIARTO SUKU, S.T</p><p class="text-[7px] text-slate-400">PEMBINA JAKON AHLI PERTAMA</p></div>
                     <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">12. RIKO TANDOAK, S.T</p><p class="text-[7px] text-slate-400">PENATA LAYANAN OPERASIONAL</p></div>
                     <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">13. ABDIMAS, S.T</p><p class="text-[7px] text-slate-400">PENATA LAYANAN OPERASIONAL</p></div>
-                    <div class="p-2 bg-orange-50 rounded-lg"><p class="text-[9px] font-black text-orange-700">14. HAIRUDIN ABD. HAMID</p><p class="text-[7px] text-orange-400">OPERATOR VIBRATOR ROLLER</p></div>
-                    <div class="p-2 bg-orange-50 rounded-lg"><p class="text-[9px] font-black text-orange-700">15. AWI LAMAGA</p><p class="text-[7px] text-orange-400">OPERATOR TRONTON</p></div>
+                    <div class="p-2 bg-orange-50 rounded-lg"><p class="text-[9px] font-black text-orange-700">14. HAIRUDIN ABD. HAMID</p><p class="text-[7px] text-orange-400 font-bold">OPERATOR VIBRATOR ROLLER</p></div>
+                    <div class="p-2 bg-orange-50 rounded-lg"><p class="text-[9px] font-black text-orange-700">15. AWI LAMAGA</p><p class="text-[7px] text-orange-400 font-bold">OPERATOR TRONTON</p></div>
                     <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">16. SITI HADIJA Z. MADALUMAN</p><p class="text-[7px] text-slate-400">PENGADMINISTRASI PERKANTORAN</p></div>
                     <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">17. TAMRIN SAID</p><p class="text-[7px] text-slate-400">LAYANAN OPERASIONAL</p></div>
                     <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">18. RIDHA H. YABU</p><p class="text-[7px] text-slate-400">LAYANAN OPERASIONAL</p></div>
@@ -84,38 +84,38 @@
 
             <div class="accordion-item bg-white rounded-[25px] px-6 py-1 border border-slate-200 shadow-sm">
                 <button onclick="toggleAcc(this)" class="w-full py-5 flex justify-between items-center font-black text-xs text-blue-900">
-                    <span><i class="fas fa-file-export mr-3 text-blue-600"></i> DATA PEMINJAMAN ALAT</span>
+                    <span><i class="fas fa-file-export mr-3 text-blue-600"></i> DATA PEMINJAMAN ALAT BERAT</span>
                     <i class="fas fa-plus text-slate-300"></i>
                 </button>
                 <div class="acc-content px-2 grid grid-cols-2 md:grid-cols-4 gap-2">
                     <div class="year-card">TAHUN 2023</div>
                     <div class="year-card">TAHUN 2024</div>
                     <div class="year-card">TAHUN 2025</div>
-                    <div class="year-card bg-blue-900 text-white">TAHUN 2026</div>
+                    <div class="year-card bg-blue-900 text-white border-blue-900">TAHUN 2026</div>
                 </div>
             </div>
 
             <div class="accordion-item bg-white rounded-[25px] px-6 py-1 border border-slate-200 shadow-sm">
                 <button onclick="toggleAcc(this)" class="w-full py-5 flex justify-between items-center font-black text-xs text-blue-900">
-                    <span><i class="fas fa-file-import mr-3 text-emerald-600"></i> DATA PENGEMBALIAN ALAT</span>
+                    <span><i class="fas fa-file-import mr-3 text-emerald-600"></i> DATA PENGEMBALIAN ALAT BERAT</span>
                     <i class="fas fa-plus text-slate-300"></i>
                 </button>
                 <div class="acc-content px-2 grid grid-cols-2 md:grid-cols-4 gap-2">
                     <div class="year-card">TAHUN 2023</div>
                     <div class="year-card">TAHUN 2024</div>
                     <div class="year-card">TAHUN 2025</div>
-                    <div class="year-card bg-emerald-600 text-white">TAHUN 2026</div>
+                    <div class="year-card bg-emerald-600 text-white border-emerald-600">TAHUN 2026</div>
                 </div>
             </div>
 
             <div class="accordion-item bg-white rounded-[25px] px-6 py-1 border-2 border-yellow-400 shadow-sm">
                 <button onclick="toggleAcc(this)" class="w-full py-5 flex justify-between items-center font-black text-xs text-blue-900">
-                    <span><i class="fas fa-tags mr-3 text-yellow-500"></i> TARIF SEWA ALAT BERAT</span>
+                    <span><i class="fas fa-tags mr-3 text-yellow-500"></i> DAFTAR HARGA SEWA ALAT</span>
                     <i class="fas fa-plus text-slate-300"></i>
                 </button>
                 <div class="acc-content px-2">
                     <table class="w-full text-[10px] font-bold">
-                        <tr class="bg-blue-900 text-yellow-400 font-black"><td class="p-2">JENIS ALAT</td><td class="p-2 text-right">HARGA SEWA</td></tr>
+                        <tr class="bg-blue-900 text-yellow-400 font-black"><td class="p-2">JENIS ALAT</td><td class="p-2 text-right">TARIF SEWA</td></tr>
                         <tr class="border-b"><td>1. LOADER</td><td class="text-right p-2">215,813 / JAM</td></tr>
                         <tr class="border-b"><td>2. MOTOR GREDER</td><td class="text-right p-2">576,785 / JAM</td></tr>
                         <tr class="border-b"><td>3. VIBRATOR ROLLER</td><td class="text-right p-2">326,786 / JAM</td></tr>
@@ -132,25 +132,25 @@
                     <i class="fas fa-plus text-slate-300"></i>
                 </button>
                 <div class="acc-content px-2 grid grid-cols-2 gap-3">
-                    <img src="kegiatan1.jpg" class="h-24 w-full object-cover rounded-xl border">
-                    <img src="kegiatan2.jpg" class="h-24 w-full object-cover rounded-xl border">
-                    <img src="kegiatan3.jpg" class="h-24 w-full object-cover rounded-xl border">
-                    <img src="proyek-bangkep.jpg" class="h-24 w-full object-cover rounded-xl border">
+                    <img src="kegiatan1.jpg" class="h-24 w-full object-cover rounded-xl border" alt="K1">
+                    <img src="kegiatan2.jpg" class="h-24 w-full object-cover rounded-xl border" alt="K2">
+                    <img src="kegiatan3.jpg" class="h-24 w-full object-cover rounded-xl border" alt="K3">
+                    <img src="proyek-bangkep.jpg" class="h-24 w-full object-cover rounded-xl border" alt="PB">
                 </div>
             </div>
         </div>
 
         <section class="bg-blue-950 text-white p-8 rounded-[40px] shadow-xl">
-            <h4 class="font-black text-xs mb-4"><i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i> LOKASI KANTOR</h4>
+            <h4 class="font-black text-xs mb-4 italic"><i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i> LOKASI KANTOR</h4>
             <p class="text-[9px] font-bold mb-6 opacity-80">JL. BUKIT TRIKORA KOMPLEKS PERKANTORAN SALAKAN, KAB. BANGGAI KEPULAUAN</p>
             <div class="h-44 rounded-2xl overflow-hidden grayscale border-2 border-white/10">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15951.56453775677!2d123.44!3d-1.25!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d85600000000001%3A0x0!2sSalakan!5e0!3m2!1sid!2sid!4v1700000000000" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
+                <iframe src="https://maps.google.com/maps/contrib/102349848874418305905" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
             </div>
         </section>
     </main>
 
     <footer class="bg-slate-900 text-white py-16 text-center">
-        <h4 class="text-3xl font-black mb-6">TARI MANESSA</h4>
+        <h4 class="text-3xl font-black mb-6 italic opacity-80">TARI MANESSA</h4>
         <a href="https://wa.me/6285394940435" target="_blank" class="bg-green-500 px-10 py-4 rounded-full font-black text-xs shadow-xl transition-transform hover:scale-105 inline-block">WHATSAPP CENTER</a>
     </footer>
 
