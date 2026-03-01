@@ -16,8 +16,25 @@
         .premium-btn { transition: all 0.3s ease; border-radius: 12px; font-weight: 900; text-transform: uppercase; font-style: italic; font-size: 10px; }
         .premium-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
         .italic-up { font-style: italic; text-transform: uppercase; }
-        .sub-menu-btn { background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3); color: #e9d5ff; padding: 15px; border-radius: 15px; text-align: left; transition: all 0.3s; }
-        .sub-menu-btn:hover { background: rgba(168, 85, 247, 0.3); border-color: #a855f7; }
+        
+        /* Gaya Khusus List Bimtek */
+        .bimtek-card { 
+            background: linear-gradient(90deg, rgba(168, 85, 247, 0.1) 0%, rgba(168, 85, 247, 0.05) 100%);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-left: 4px solid #a855f7;
+            padding: 20px;
+            border-radius: 16px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            text-align: left;
+        }
+        .bimtek-card:hover { 
+            background: rgba(168, 85, 247, 0.2);
+            transform: translateX(5px);
+        }
     </style>
 </head>
 <body class="italic-up">
@@ -112,20 +129,13 @@
                     <i class="fas fa-chevron-down opacity-30"></i>
                 </button>
                 <div class="acc-content px-2 space-y-4">
-                    <div class="grid grid-cols-1 gap-3">
-                        <button class="sub-menu-btn flex items-center gap-4">
-                            <span class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span>
-                            <span class="text-[10px] font-black uppercase tracking-wider">Bimtek "Pengendalian Pelaksanaan Kontrak dan Pengawasan Jasa Konstruksi"</span>
-                        </button>
+                    <div class="bimtek-card">
+                        <div class="bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-black flex-shrink-0">1</div>
+                        <div class="text-[10px] md:text-[11px] font-black leading-relaxed tracking-wider uppercase">
+                            BIMTEK "PENGENDALIAN PELAKSANAAN KONTRAK DAN PENGAWASAN JASA KONSTRUKSI"
+                        </div>
                     </div>
-                    <div class="h-[1px] bg-white/10 my-4"></div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <button class="premium-btn p-5 bg-white/5 border border-white/10">TAHUN 2023</button>
-                        <button class="premium-btn p-5 bg-white/5 border border-white/10">TAHUN 2024</button>
-                        <button class="premium-btn p-5 bg-white/5 border border-white/10">TAHUN 2025</button>
-                        <button class="premium-btn p-5 bg-purple-600 border border-purple-400">TAHUN 2026</button>
                     </div>
-                </div>
             </div>
 
             <div class="accordion-item glass-card px-8 border-2 border-yellow-500/30">
@@ -147,12 +157,13 @@
                     </table>
                 </div>
             </div>
+
         </div>
 
         <section class="glass-card p-8 border-b-4 border-yellow-500">
             <h4 class="text-[10px] font-black text-yellow-400 mb-4 tracking-widest italic uppercase"><i class="fas fa-map-pin mr-2"></i> LOKASI KANTOR</h4>
             <div class="h-48 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.1362751430485!2d123.2384!3d-1.2882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTcnMTcuNSJTIDEyM8KwMTQnMTguMiJF!5e0!3m2!1sid!2sid!4v17000000000000" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15951.368297371134!2d123.5134!3d-1.3323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d88a10000000001%3A0x0!2zMcKwMTknNTYuMyJTIDEyM8KwMzAnNDguMiJF!5e0!3m2!1sid!2sid!4v1710000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
 
@@ -169,8 +180,16 @@
         function toggleAcc(btn) {
             const item = btn.parentElement;
             const active = item.classList.contains('item-active');
-            document.querySelectorAll('.accordion-item').forEach(e => e.classList.remove('item-active'));
-            if(!active) item.classList.add('item-active');
+            
+            // Close all others
+            document.querySelectorAll('.accordion-item').forEach(e => {
+                e.classList.remove('item-active');
+            });
+            
+            // Toggle current
+            if(!active) {
+                item.classList.add('item-active');
+            }
         }
     </script>
 </body>
