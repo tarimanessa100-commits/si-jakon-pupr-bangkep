@@ -7,280 +7,224 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;700;900&display=swap');
         
-        :root {
-            --primary: #1e40af;
-            --secondary: #0f172a;
-            --accent: #eab308;
-        }
-
         body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #020617; 
-            color: #f8fafc;
-            background-image: radial-gradient(circle at top right, rgba(30, 64, 175, 0.15), transparent),
-                              radial-gradient(circle at bottom left, rgba(234, 179, 8, 0.05), transparent);
-            background-attachment: fixed;
+            font-family: 'Inter', sans-serif; 
+            background: #020617; 
+            color: #f8fafc; 
+            margin: 0;
+            background-image: radial-gradient(circle at 0% 0%, #1e293b 0%, transparent 50%),
+                              radial-gradient(circle at 100% 100%, #0f172a 0%, transparent 50%);
         }
 
-        .nav-blur { backdrop-filter: blur(12px); background: rgba(15, 23, 42, 0.8); }
-        
-        .card-modern {
-            background: rgba(30, 41, 59, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            transition: all 0.3s ease;
+        .premium-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            transition: all 0.4s ease;
         }
 
-        .card-modern:hover {
-            border-color: rgba(59, 130, 246, 0.5);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        .premium-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
         }
 
-        /* Accordion Custom */
         .acc-content { 
             max-height: 0; 
             overflow: hidden; 
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+            transition: all 0.5s cubic-bezier(0, 1, 0, 1); 
             opacity: 0; 
         }
+
         .item-active .acc-content { 
-            max-height: 2000px; 
+            max-height: 3000px; 
             opacity: 1; 
             padding: 20px 0; 
         }
-        .item-active .chevron-icon { transform: rotate(180deg); color: var(--accent); }
 
-        .btn-gradient {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-            transition: all 0.3s ease;
-        }
-        .btn-gradient:hover { filter: brightness(1.2); transform: scale(1.02); }
-
-        .jabatan-badge {
-            background: rgba(59, 130, 246, 0.1);
-            color: #60a5fa;
+        .jabatan-tag {
             font-size: 9px;
-            padding: 2px 8px;
-            border-radius: 6px;
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            padding: 2px 10px;
+            border-radius: 100px;
+            color: white;
             display: inline-block;
-            margin-top: 4px;
-            font-weight: 700;
+            margin-top: 5px;
+            font-weight: 800;
         }
-
-        .img-container {
-            aspect-ratio: 4/3;
-            overflow: hidden;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .img-container:hover img { transform: scale(1.1); }
 
         .italic-up { font-style: italic; text-transform: uppercase; }
+
+        /* Mencegah link tertutup saat diklik */
+        .drive-btn {
+            position: relative;
+            z-index: 50;
+        }
     </style>
 </head>
 <body class="italic-up">
 
-    <nav class="nav-blur sticky top-0 z-50 border-b border-white/5 px-6 py-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="flex -space-x-2">
-                    <img src="logo-bangkep.png" class="h-8 w-auto" onerror="this.style.display='none'">
-                    <img src="logo-pupr.png" class="h-8 w-auto" onerror="this.style.display='none'">
-                </div>
-                <div class="h-6 w-[1px] bg-white/20 mx-2"></div>
-                <span class="font-extrabold tracking-tighter text-xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-yellow-400">SIJAKON</span>
+    <nav class="p-6 flex justify-between items-center border-b border-white/5">
+        <div class="flex items-center gap-4">
+            <img src="logo-pupr.png" class="h-10" onerror="this.style.display='none'">
+            <div class="leading-none">
+                <h1 class="text-xl font-black tracking-tighter text-blue-500">SIJAKON</h1>
+                <p class="text-[8px] font-bold opacity-50">KAB. BANGGAI KEPULAUAN</p>
             </div>
+        </div>
+        <div class="hidden md:block text-[9px] font-bold opacity-40 tracking-[0.3em]">
+            Dinas Pekerjaan Umum & Penataan Ruang
         </div>
     </nav>
 
     <main class="container mx-auto px-6 max-w-5xl py-12">
         
-        <header class="text-center mb-20 relative">
-            <div class="inline-block px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold tracking-widest mb-6">
-                OFFICIAL PORTAL BIDANG JASA KONSTRUKSI
-            </div>
-            <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter">BANGGAI <span class="text-yellow-400">KEPULAUAN</span></h1>
-            <p class="text-slate-400 text-xs tracking-[0.3em] font-medium">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</p>
-        </header>
+        <section class="text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">PORTAL DIGITAL <br> <span class="text-blue-500">JASA KONSTRUKSI</span></h2>
+            <div class="w-20 h-1 bg-yellow-500 mx-auto mb-8"></div>
+            <p class="text-xs max-w-xl mx-auto opacity-60 leading-relaxed font-bold">
+                Mewujudkan penyelenggaraan jasa konstruksi yang tertib, profesional, dan berdaya saing tinggi di wilayah Kabupaten Banggai Kepulauan.
+            </p>
+        </section>
 
-        <div class="grid md:grid-cols-3 gap-6 mb-12">
-            <div class="card-modern p-8 md:col-span-2">
-                <h3 class="text-yellow-400 font-bold mb-4 flex items-center gap-2">
-                    <i class="fas fa-eye"></i> VISI & MISI
-                </h3>
-                <p class="text-sm leading-relaxed mb-6 font-semibold">"MEWUJUDKAN PENYELENGGARAAN JASA KONSTRUKSI YANG TERTIB, PROFESIONAL, BERKUALITAS, DAN BERDAYA SAING TINGGI."</p>
-                <div class="space-y-3 text-[10px] opacity-80">
-                    <div class="flex gap-3"><span class="text-blue-500">01.</span> <p>PENINGKATAN TATA KELOLA JASA KONSTRUKSI</p></div>
-                    <div class="flex gap-3"><span class="text-blue-500">02.</span> <p>PENJAMINAN MUTU DAN STANDAR K4</p></div>
-                    <div class="flex gap-3"><span class="text-blue-500">03.</span> <p>OPTIMALISASI ALAT BERAT & LABORATORIUM</p></div>
-                </div>
-            </div>
-            <div class="card-modern p-8 bg-blue-600/10 border-blue-500/20">
-                <h3 class="text-blue-400 font-bold mb-4">LOKASI STRATEGIS</h3>
-                <p class="text-[10px] leading-loose opacity-70 mb-6">JL. BUKIT TRIKORA, KOMPLEKS PERKANTORAN SALAKAN, KABUPATEN BANGGAI KEPULAUAN.</p>
-                <div class="h-24 rounded-xl bg-slate-900 overflow-hidden border border-white/10">
-                    <iframe src="https://www.google.com/maps/embed?..." width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-        </div>
-
-        <div class="space-y-4">
+        <div class="grid gap-6">
             
-            <div class="accordion-item card-modern px-8">
-                <button onclick="toggleAcc(this)" class="w-full py-8 flex justify-between items-center group">
-                    <span class="flex items-center gap-4 font-bold tracking-widest text-sm">
-                        <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500 transition-all">
-                            <i class="fas fa-users-cog text-blue-400 group-hover:text-white"></i>
-                        </div>
-                        STRUKTUR PERSONEL
+            <div class="accordion-item premium-card px-8">
+                <button onclick="toggleAcc(this)" class="w-full py-8 flex justify-between items-center text-left">
+                    <span class="text-sm font-black tracking-widest flex items-center gap-4">
+                        <i class="fas fa-id-badge text-blue-500"></i> STRUKTUR PERSONEL
                     </span>
-                    <i class="fas fa-chevron-down chevron-icon transition-transform opacity-30"></i>
+                    <i class="fas fa-chevron-right transition-transform opacity-30"></i>
                 </button>
                 <div class="acc-content grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
-                        <p class="text-[10px] font-black uppercase">01. JASRUN HASAN, S.T., M.AP</p>
-                        <span class="jabatan-badge">KEPALA BIDANG JASA KONSTRUKSI</span>
+                        <p class="text-[10px] font-black">01. JASRUN HASAN, S.T., M.AP</p>
+                        <span class="jabatan-tag">KEPALA BIDANG JASA KONSTRUKSI</span>
                     </div>
                     <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
-                        <p class="text-[10px] font-black uppercase">02. JUFRI, S.T</p>
-                        <span class="jabatan-badge">KEPALA SEKSI PEMBINAAN</span>
+                        <p class="text-[10px] font-black">02. JUFRI, S.T</p>
+                        <span class="jabatan-tag">KEPALA SEKSI PEMBINAAN</span>
                     </div>
                     <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
-                        <p class="text-[10px] font-black uppercase">03. HENDRA MOIDAY, S.T</p>
-                        <span class="jabatan-badge">KEPALA SEKSI PENGAWASAN</span>
+                        <p class="text-[10px] font-black">03. HENDRA MOIDAY, S.T</p>
+                        <span class="jabatan-tag">KEPALA SEKSI PENGAWASAN</span>
                     </div>
                     <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
-                        <p class="text-[10px] font-black uppercase">07. NUR UTARI DEWI D. MANESSA, S.T</p>
-                        <span class="jabatan-badge">PENGELOLA DATA JASA KONSTRUKSI</span>
+                        <p class="text-[10px] font-black">07. NUR UTARI DEWI D. MANESSA, S.T</p>
+                        <span class="jabatan-tag">PENGELOLA DATA JASA KONSTRUKSI</span>
                     </div>
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
+                        <p class="text-[10px] font-black text-white/40 italic">LIHAT PERSONEL LAINNYA DI DATABASE...</p>
                     </div>
-            </div>
-
-            <div class="accordion-item card-modern px-8 border-l-4 border-blue-500">
-                <button onclick="toggleAcc(this)" class="w-full py-8 flex justify-between items-center">
-                    <span class="flex items-center gap-4 font-bold tracking-widest text-sm text-blue-400">
-                        <i class="fas fa-arrow-right-from-bracket"></i> PEMINJAMAN ALAT BERAT
-                    </span>
-                    <i class="fas fa-chevron-down chevron-icon transition-transform opacity-30"></i>
-                </button>
-                <div class="acc-content grid grid-cols-2 md:grid-cols-4 gap-3">
-                    <button class="py-4 bg-white/5 rounded-xl text-[10px] font-bold hover:bg-blue-600 transition-all">TAHUN 2023</button>
-                    <button class="py-4 bg-white/5 rounded-xl text-[10px] font-bold hover:bg-blue-600 transition-all">TAHUN 2024</button>
-                    <button class="py-4 bg-white/5 rounded-xl text-[10px] font-bold hover:bg-blue-600 transition-all">TAHUN 2025</button>
-                    <button class="py-4 btn-gradient rounded-xl text-[10px] font-bold shadow-lg shadow-blue-500/20">TAHUN 2026</button>
                 </div>
             </div>
 
-            <div class="accordion-item card-modern px-8 border-l-4 border-emerald-500">
+            <div class="accordion-item premium-card px-8 border-l-4 border-blue-600">
                 <button onclick="toggleAcc(this)" class="w-full py-8 flex justify-between items-center">
-                    <span class="flex items-center gap-4 font-bold tracking-widest text-sm text-emerald-400">
-                        <i class="fas fa-arrow-right-to-bracket"></i> PENGEMBALIAN ALAT BERAT
+                    <span class="text-sm font-black tracking-widest text-blue-400">
+                        <i class="fas fa-file-export mr-3"></i> PEMINJAMAN ALAT BERAT
                     </span>
-                    <i class="fas fa-chevron-down chevron-icon transition-transform opacity-30"></i>
+                    <i class="fas fa-chevron-right opacity-30"></i>
                 </button>
                 <div class="acc-content grid grid-cols-2 md:grid-cols-4 gap-3">
-                    <button class="py-4 bg-white/5 rounded-xl text-[10px] font-bold hover:bg-emerald-600 transition-all">TAHUN 2023</button>
-                    <button class="py-4 bg-white/5 rounded-xl text-[10px] font-bold hover:bg-emerald-600 transition-all">TAHUN 2024</button>
-                    <button class="py-4 bg-white/5 rounded-xl text-[10px] font-bold hover:bg-emerald-600 transition-all">TAHUN 2025</button>
-                    <button class="py-4 bg-emerald-600 rounded-xl text-[10px] font-bold">TAHUN 2026</button>
+                    <button class="p-4 bg-white/5 rounded-xl font-bold text-[10px] hover:bg-blue-600 transition-all">2023</button>
+                    <button class="p-4 bg-white/5 rounded-xl font-bold text-[10px] hover:bg-blue-600 transition-all">2024</button>
+                    <button class="p-4 bg-white/5 rounded-xl font-bold text-[10px] hover:bg-blue-600 transition-all">2025</button>
+                    <button class="p-4 bg-blue-600 rounded-xl font-bold text-[10px] shadow-lg">AKTIF 2026</button>
                 </div>
             </div>
 
-            <div class="accordion-item card-modern px-8 border-l-4 border-purple-500">
+            <div class="accordion-item premium-card px-8 border-l-4 border-emerald-500">
                 <button onclick="toggleAcc(this)" class="w-full py-8 flex justify-between items-center">
-                    <span class="flex items-center gap-4 font-bold tracking-widest text-sm text-purple-400">
-                        <i class="fas fa-graduation-cap"></i> PELATIHAN & BIMTEK
+                    <span class="text-sm font-black tracking-widest text-emerald-400">
+                        <i class="fas fa-file-import mr-3"></i> PENGEMBALIAN ALAT BERAT
                     </span>
-                    <i class="fas fa-chevron-down chevron-icon transition-transform opacity-30"></i>
+                    <i class="fas fa-chevron-right opacity-30"></i>
+                </button>
+                <div class="acc-content grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <button class="p-4 bg-white/5 rounded-xl font-bold text-[10px] hover:bg-emerald-600 transition-all">2023</button>
+                    <button class="p-4 bg-white/5 rounded-xl font-bold text-[10px] hover:bg-emerald-600 transition-all">2024</button>
+                    <button class="p-4 bg-white/5 rounded-xl font-bold text-[10px] hover:bg-emerald-600 transition-all">2025</button>
+                    <button class="p-4 bg-emerald-600 rounded-xl font-bold text-[10px]">AKTIF 2026</button>
+                </div>
+            </div>
+
+            <div class="accordion-item premium-card px-8 border-l-4 border-purple-500">
+                <button onclick="toggleAcc(this)" class="w-full py-8 flex justify-between items-center text-purple-400">
+                    <span class="text-sm font-black tracking-widest">
+                        <i class="fas fa-graduation-cap mr-3"></i> PELATIHAN & BIMTEK
+                    </span>
+                    <i class="fas fa-chevron-right opacity-30"></i>
                 </button>
                 <div class="acc-content">
-                    <div class="bg-gradient-to-r from-purple-900/40 to-transparent p-6 rounded-2xl border border-purple-500/20 flex flex-col md:flex-row justify-between items-center gap-6">
-                        <div>
-                            <h4 class="text-xs font-bold mb-2">FOLDER DIGITAL SERTIFIKAT & MATERI</h4>
-                            <p class="text-[10px] opacity-60">AKSES DOKUMEN BIMTEK PENGENDALIAN KONTRAK DAN TATA KELOLA</p>
+                    <div class="bg-purple-900/20 p-6 rounded-3xl border border-purple-500/20 flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div class="text-center md:text-left">
+                            <h4 class="text-xs font-black mb-1">DOKUMEN BIMTEK JASA KONSTRUKSI</h4>
+                            <p class="text-[9px] opacity-50">Sertifikat, Materi, dan Laporan Kegiatan</p>
                         </div>
                         <a href="https://drive.google.com/drive/folders/1bEDRxrVCGJxh6fLQpvFV22dK4G06oSCd" 
                            target="_blank" 
                            onclick="event.stopPropagation();"
-                           class="w-full md:w-auto px-8 py-3 bg-purple-600 hover:bg-purple-500 rounded-full text-[10px] font-black flex items-center justify-center gap-3 shadow-xl shadow-purple-900/40 transition-all">
+                           class="drive-btn bg-purple-600 hover:bg-purple-500 px-8 py-4 rounded-2xl text-[10px] font-black flex items-center gap-3 transition-all shadow-xl">
                             <i class="fab fa-google-drive text-lg"></i> BUKA GOOGLE DRIVE
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="accordion-item card-modern px-8">
-                <button onclick="toggleAcc(this)" class="w-full py-8 flex justify-between items-center">
-                    <span class="flex items-center gap-4 font-bold tracking-widest text-sm text-yellow-400">
-                        <i class="fas fa-file-invoice-dollar"></i> TARIF SEWA ALAT
+            <div class="accordion-item premium-card px-8">
+                <button onclick="toggleAcc(this)" class="w-full py-8 flex justify-between items-center text-yellow-400">
+                    <span class="text-sm font-black tracking-widest">
+                        <i class="fas fa-tags mr-3"></i> TARIF RETRIBUSI ALAT
                     </span>
-                    <i class="fas fa-chevron-down chevron-icon transition-transform opacity-30"></i>
+                    <i class="fas fa-chevron-right opacity-30"></i>
                 </button>
                 <div class="acc-content overflow-x-auto">
-                    <table class="w-full text-[10px] font-bold uppercase">
+                    <table class="w-full text-[10px] font-bold text-left">
                         <thead>
-                            <tr class="text-slate-500 border-b border-white/5">
-                                <th class="py-4 text-left">NAMA ALAT BERAT</th>
-                                <th class="py-4 text-right">SATUAN</th>
-                                <th class="py-4 text-right">TARIF RETRIBUSI</th>
+                            <tr class="opacity-30 border-b border-white/10 uppercase">
+                                <th class="pb-4">NAMA UNIT</th>
+                                <th class="pb-4 text-right">SATUAN</th>
+                                <th class="pb-4 text-right text-white">BESARAN TARIF</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-white/5">
-                            <tr><td class="py-4">01. LOADER</td><td class="text-right opacity-50">PER JAM</td><td class="text-right text-yellow-400">RP 215,813</td></tr>
-                            <tr><td class="py-4">02. MOTOR GREDER</td><td class="text-right opacity-50">PER JAM</td><td class="text-right text-yellow-400">RP 576,785</td></tr>
-                            <tr><td class="py-4">03. VIBRATOR ROLLER</td><td class="text-right opacity-50">PER JAM</td><td class="text-right text-yellow-400">RP 326,786</td></tr>
-                            <tr><td class="py-4">04. TANDEM ROLLER</td><td class="text-right opacity-50">PER JAM</td><td class="text-right text-yellow-400">RP 165,500</td></tr>
-                            <tr><td class="py-4">05. DUMP TRUCK</td><td class="text-right opacity-50">PER JAM</td><td class="text-right text-yellow-400">RP 81,074</td></tr>
-                            <tr><td class="py-4">06. TRONTON</td><td class="text-right opacity-50">PER KM</td><td class="text-right text-yellow-400">RP 36,000</td></tr>
+                            <tr><td class="py-4">01. LOADER</td><td class="text-right opacity-40">PER JAM</td><td class="text-right text-yellow-500">RP 215,813</td></tr>
+                            <tr><td class="py-4">02. MOTOR GREDER</td><td class="text-right opacity-40">PER JAM</td><td class="text-right text-yellow-500">RP 576,785</td></tr>
+                            <tr><td class="py-4">03. VIBRATOR ROLLER</td><td class="text-right opacity-40">PER JAM</td><td class="text-right text-yellow-500">RP 326,786</td></tr>
+                            <tr><td class="py-4">04. TANDEM ROLLER</td><td class="text-right opacity-40">PER JAM</td><td class="text-right text-yellow-500">RP 165,500</td></tr>
+                            <tr><td class="py-4">05. DUMP TRUCK</td><td class="text-right opacity-40">PER JAM</td><td class="text-right text-yellow-500">RP 81,074</td></tr>
+                            <tr><td class="py-4">06. TRONTON</td><td class="text-right opacity-40">PER KM</td><td class="text-right text-yellow-500">RP 36,000</td></tr>
                         </tbody>
                     </table>
                 </div>
             </div>
 
-            <div class="accordion-item card-modern px-8 border-l-4 border-pink-500 item-active">
-                <button onclick="toggleAcc(this)" class="w-full py-8 flex justify-between items-center">
-                    <span class="flex items-center gap-4 font-bold tracking-widest text-sm text-pink-400">
-                        <i class="fas fa-images"></i> GALERI KEGIATAN
+            <div class="accordion-item premium-card px-8 border-b-4 border-pink-600 item-active">
+                <button onclick="toggleAcc(this)" class="w-full py-8 flex justify-between items-center text-pink-400">
+                    <span class="text-sm font-black tracking-widest">
+                        <i class="fas fa-camera mr-3"></i> DOKUMENTASI TERBARU
                     </span>
-                    <i class="fas fa-chevron-down chevron-icon transition-transform opacity-30"></i>
+                    <i class="fas fa-chevron-down"></i>
                 </button>
-                <div class="acc-content">
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="img-container bg-slate-800 flex items-center justify-center">
-                            <img src="kegiatan1.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=FOTO+KEGIATAN+1'">
-                        </div>
-                        <div class="img-container bg-slate-800 flex items-center justify-center">
-                            <img src="kegiatan2.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=FOTO+KEGIATAN+2'">
-                        </div>
-                        <div class="img-container bg-slate-800 flex items-center justify-center">
-                            <img src="kegiatan3.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=FOTO+KEGIATAN+3'">
-                        </div>
-                        <div class="img-container bg-slate-800 flex items-center justify-center">
-                            <img src="proyek-bangkep.jpg" onerror="this.src='https://via.placeholder.com/400x300?text=PROYEK+BANGKEP'">
-                        </div>
-                    </div>
+                <div class="acc-content grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="aspect-square rounded-2xl bg-slate-800 border border-white/5 flex items-center justify-center text-[8px] opacity-20">FOTO KEGIATAN 1</div>
+                    <div class="aspect-square rounded-2xl bg-slate-800 border border-white/5 flex items-center justify-center text-[8px] opacity-20">FOTO KEGIATAN 2</div>
+                    <div class="aspect-square rounded-2xl bg-slate-800 border border-white/5 flex items-center justify-center text-[8px] opacity-20">FOTO KEGIATAN 3</div>
+                    <div class="aspect-square rounded-2xl bg-slate-800 border border-white/5 flex items-center justify-center text-[8px] opacity-20">PROYEK BANGKEP</div>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <footer class="mt-20 border-t border-white/5 bg-slate-950/50 py-16 text-center">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-black italic tracking-tighter mb-8 opacity-40 uppercase">TARI MANESSA</h2>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
-                <a href="https://wa.me/6285394940435" class="px-10 py-4 bg-green-600 hover:bg-green-500 rounded-full font-black text-[10px] tracking-widest flex items-center gap-3 transition-all">
-                    <i class="fab fa-whatsapp text-xl"></i> KONSULTASI VIA WHATSAPP
-                </a>
-                <div class="text-[9px] font-bold opacity-40 tracking-widest">
-                    &copy; 2026 DINAS PUPR KAB. BANGGAI KEPULAUAN
-                </div>
-            </div>
-        </div>
+    <footer class="py-16 text-center">
+        <p class="text-[30px] font-black italic opacity-10 tracking-tighter mb-8">TARI MANESSA</p>
+        <a href="https://wa.me/6285394940435" target="_blank" class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-500 px-10 py-4 rounded-full font-black text-[10px] tracking-widest transition-all shadow-2xl">
+            <i class="fab fa-whatsapp text-lg"></i> HUBUNGI KAMI SEKARANG
+        </a>
     </footer>
 
     <script>
@@ -288,14 +232,16 @@
             const item = btn.parentElement;
             const isActive = item.classList.contains('item-active');
             
-            // Tutup semua yang lain
+            // Tutup semua menu lain
             document.querySelectorAll('.accordion-item').forEach(el => {
                 el.classList.remove('item-active');
+                el.querySelector('.fas.fa-chevron-right')?.classList.remove('rotate-90');
             });
 
-            // Buka yang diklik jika sebelumnya tidak aktif
+            // Buka yang diklik
             if (!isActive) {
                 item.classList.add('item-active');
+                btn.querySelector('.fas.fa-chevron-right')?.classList.add('rotate-90');
             }
         }
     </script>
