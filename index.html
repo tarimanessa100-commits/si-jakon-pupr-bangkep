@@ -7,211 +7,159 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@800&family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f1f5f9; color: #0f172a; scroll-behavior: smooth; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f1f5f9; scroll-behavior: smooth; margin:0; padding:0; }
         .hero-gradient { background: radial-gradient(circle at top right, #1e3a8a, #020617); }
-        .acc-content { max-height: 0; overflow: hidden; transition: all 0.5s ease-in-out; opacity: 0; }
-        .item-active .acc-content { max-height: 5000px; opacity: 1; padding: 20px 0; }
-        .premium-table td { background: white; padding: 10px; border-bottom: 1px solid #f1f5f9; font-weight: 700; font-size: 11px; }
+        .acc-content { max-height: 0; overflow: hidden; transition: all 0.5s ease; opacity: 0; }
+        .item-active .acc-content { max-height: 5000px; opacity: 1; padding: 15px 0; }
+        .italic-up { font-style: italic; text-transform: uppercase; }
+        .year-card { background: #f8fafc; padding: 10px; border-radius: 12px; border: 1px solid #e2e8f0; font-weight: 800; font-size: 11px; text-align: center; }
     </style>
 </head>
-<body>
+<body class="italic-up">
 
-    <nav class="sticky top-0 z-[100] bg-white/95 backdrop-blur-md border-b border-slate-200 py-3">
-        <div class="container mx-auto px-6 flex justify-between items-center">
+    <nav class="sticky top-0 z-[100] bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 px-6">
+        <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <img src="logo-bangkep.png" class="h-10 w-auto" alt="Logo Bangkep">
-                <img src="logo-pupr.png" class="h-8 w-auto" alt="Logo PUPR">
-                <div class="border-l-2 pl-3 border-slate-200">
-                    <h1 class="font-black text-blue-900 text-lg italic leading-none uppercase">SIJAKON</h1>
-                </div>
+                <img src="logo-bangkep.png" class="h-10" alt="Logo">
+                <img src="logo-pupr.png" class="h-8" alt="Logo">
+                <h1 class="font-black text-blue-900 border-l-2 pl-3">SIJAKON</h1>
             </div>
-            <p class="text-[8px] font-black text-blue-900 italic uppercase">PUPR BANGGAI KEPULAUAN</p>
+            <p class="text-[8px] font-black text-blue-900">PUPR BANGGAI KEPULAUAN</p>
         </div>
     </nav>
 
     <header class="hero-gradient text-white py-20 text-center">
-        <h1 class="text-6xl font-black italic uppercase tracking-tighter">SI-<span class="text-yellow-400">JAKON</span></h1>
-        <p class="text-[10px] font-bold uppercase tracking-[0.4em] opacity-60 italic mt-2">Sistem Informasi Jasa Konstruksi</p>
+        <h1 class="text-6xl font-black tracking-tighter">SI-<span class="text-yellow-400">JAKON</span></h1>
+        <p class="text-[10px] font-bold tracking-[0.4em] opacity-60 mt-2">SISTEM INFORMASI JASA KONSTRUKSI</p>
     </header>
 
-    <section class="py-12 bg-white uppercase italic">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="mb-10 border-l-4 border-blue-900 pl-4">
-                <h2 class="text-xl font-black text-blue-950 mb-2">APA ITU JASA KONSTRUKSI?</h2>
-                <p class="text-[10px] font-bold text-slate-500 leading-relaxed text-justify">Layanan jasa konsultansi dan pekerjaan konstruksi untuk mewujudkan bangunan yang berkualitas, aman, dan berkelanjutan di Kabupaten Banggai Kepulauan.</p>
-            </div>
+    <main class="container mx-auto px-6 max-w-4xl py-10 space-y-6">
+        
+        <section class="bg-white p-8 rounded-[30px] shadow-sm border border-slate-200">
+            <h2 class="text-xl font-black text-blue-900 mb-3 underline">APA ITU JASA KONSTRUKSI?</h2>
+            <p class="text-[10px] font-bold text-slate-500 mb-8 leading-relaxed text-justify">LAYANAN JASA KONSULTANSI DAN PEKERJAAN KONSTRUKSI UNTUK MEWUJUDKAN BANGUNAN BERKUALITAS, AMAN, DAN BERKELANJUTAN DI BANGGAI KEPULAUAN.</p>
             <div class="grid md:grid-cols-2 gap-4">
-                <div class="bg-blue-50 p-6 rounded-[25px] border border-blue-100">
-                    <h3 class="font-black text-blue-900 mb-2 text-xs">VISI</h3>
-                    <p class="text-[9px] font-bold text-blue-800">Mewujudkan Penyelenggaraan Jasa Konstruksi yang Tertib, Profesional, dan Berdaya Saing.</p>
+                <div class="bg-blue-50 p-6 rounded-2xl">
+                    <h3 class="font-black text-blue-900 text-xs mb-2">VISI</h3>
+                    <p class="text-[9px] font-bold">MEWUJUDKAN PENYELENGGARAAN JASA KONSTRUKSI YANG TERTIB, PROFESIONAL, DAN BERDAYA SAING.</p>
                 </div>
-                <div class="bg-slate-900 p-6 rounded-[25px] text-white">
-                    <h3 class="font-black text-yellow-400 mb-2 text-xs">MISI</h3>
-                    <p class="text-[8px] font-bold opacity-80 leading-loose">1. Meningkatkan Tata Kelola Pembinaan.<br>2. Menjamin Standar K4 (Keamanan, Keselamatan, Kesehatan, Keberlanjutan).<br>3. Optimalisasi Alat Berat.</p>
+                <div class="bg-slate-900 p-6 rounded-2xl text-white">
+                    <h3 class="font-black text-yellow-400 text-xs mb-2">MISI</h3>
+                    <p class="text-[8px] font-bold opacity-80 leading-relaxed">1. TATA KELOLA PEMBINAAN.<br>2. STANDAR K4 (KESELAMATAN & KEBERLANJUTAN).<br>3. OPTIMALISASI ALAT BERAT.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-10 bg-slate-100 uppercase italic">
-        <div class="container mx-auto px-6 max-w-4xl space-y-3">
+        <div class="space-y-3">
             
-            <div class="accordion-item bg-white rounded-[25px] px-6 py-1 shadow-sm border border-slate-200">
-                <button onclick="toggleAcc(this)" class="w-full py-5 flex justify-between items-center text-left">
-                    <span class="font-black text-xs text-blue-950"><i class="fas fa-users mr-3 text-blue-600"></i> PERSONEL BIDANG (20)</span>
-                    <i class="fas fa-plus text-slate-300 transition-transform"></i>
+            <div class="accordion-item bg-white rounded-[25px] px-6 py-1 border border-slate-200 shadow-sm">
+                <button onclick="toggleAcc(this)" class="w-full py-5 flex justify-between items-center font-black text-xs text-blue-900">
+                    <span><i class="fas fa-users mr-3"></i> PERSONEL BIDANG (20)</span>
+                    <i class="fas fa-plus text-slate-300"></i>
                 </button>
                 <div class="acc-content grid grid-cols-1 md:grid-cols-2 gap-2">
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">01. JASRUN HASAN, S.T., M.AP</p>
-                        <p class="text-[7px] text-slate-400 font-bold">KEPALA BIDANG JASA KONSTRUKSI</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">02. JUFRI, S.T</p>
-                        <p class="text-[7px] text-slate-400 font-bold">PEMBINA JASA KONSTRUKSI AHLI MUDA</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">03. HENDRA MOIDAY, S.T</p>
-                        <p class="text-[7px] text-slate-400 font-bold">PEMBINA JASA KONSTRUKSI AHLI MUDA</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">04. IKRAR, S.T</p>
-                        <p class="text-[7px] text-slate-400 font-bold">PENGUJI LABORATORIUM TANAH, ASPAL, DAN BETON</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">05. ARWING KARAU</p>
-                        <p class="text-[7px] text-slate-400 font-bold">PEMELIHARA PERALATAN</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">06. PUSPA SARI, S.P.W.K</p>
-                        <p class="text-[7px] text-slate-400 font-bold">PEMBINA JASA KONSTRUKSI AHLI MUDA</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">07. NUR UTARI DEWI DAENG MANESSA, S.T</p>
-                        <p class="text-[7px] text-slate-400 font-bold">PEMBINA JASA KONSTRUKSI AHLI MUDA</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">08. M. SADLI SOLODIA, S.P.W.K</p>
-                        <p class="text-[7px] text-slate-400 font-bold">PEMBINA JASA KONSTRUKSI AHLI MUDA</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">09. USMAN IBRAHIM, S.Ars</p>
-                        <p class="text-[7px] text-slate-400 font-bold">PEMBINA JASA KONSTRUKSI AHLI MUDA</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">10. MARIANA BAGO, S.E</p>
-                        <p class="text-[7px] text-slate-400 font-bold">PEMBINA JASA KONSTRUKSI AHLI PERTAMA</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">11. SUMIARTO SUKU, S.T</p>
-                        <p class="text-[7px] text-slate-400 font-bold">PEMBINA JASA KONSTRUKSI AHLI PERTAMA</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">12. RIKO TANDOAK, S.T</p>
-                        <p class="text-[7px] text-slate-400 font-bold">PENATA LAYANAN OPERASIONAL</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">13. ABDIMAS, S.T</p>
-                        <p class="text-[7px] text-slate-400 font-bold">PENATA LAYANAN OPERASIONAL</p>
-                    </div>
-                    <div class="p-2 bg-orange-50 rounded-lg">
-                        <p class="text-[9px] font-black text-orange-700">14. HAIRUDIN ABD. HAMID</p>
-                        <p class="text-[7px] text-orange-400 font-bold">OPERATOR VIBRATOR ROLLER</p>
-                    </div>
-                    <div class="p-2 bg-orange-50 rounded-lg">
-                        <p class="text-[9px] font-black text-orange-700">15. AWI LAMAGA</p>
-                        <p class="text-[7px] text-orange-400 font-bold">OPERATOR TRONTON</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">16. SITI HADIJA Z. MADALUMAN</p>
-                        <p class="text-[7px] text-slate-400 font-bold">PENGADMINISTRASI PERKANTORAN</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">17. TAMRIN SAID</p>
-                        <p class="text-[7px] text-slate-400 font-bold">LAYANAN OPERASIONAL</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">18. RIDHA H. YABU</p>
-                        <p class="text-[7px] text-slate-400 font-bold">LAYANAN OPERASIONAL</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">19. MULYADI MUSA</p>
-                        <p class="text-[7px] text-slate-400 font-bold">SOPIR DUMP TRUCK</p>
-                    </div>
-                    <div class="p-2 bg-slate-50 rounded-lg">
-                        <p class="text-[9px] font-black text-blue-900">20. MUH. YUSRI SAPUTRA</p>
-                        <p class="text-[7px] text-slate-400 font-bold">AGENDARIS</p>
-                    </div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">01. JASRUN HASAN, S.T., M.AP</p><p class="text-[7px] text-slate-400">KEPALA BIDANG JASA KONSTRUKSI</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">02. JUFRI, S.T</p><p class="text-[7px] text-slate-400">PEMBINA JAKON AHLI MUDA</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">03. HENDRA MOIDAY, S.T</p><p class="text-[7px] text-slate-400">PEMBINA JAKON AHLI MUDA</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">04. IKRAR, S.T</p><p class="text-[7px] text-slate-400">PENGUJI LABORATORIUM</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">05. ARWING KARAU</p><p class="text-[7px] text-slate-400">PEMELIHARA PERALATAN</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">06. PUSPA SARI, S.P.W.K</p><p class="text-[7px] text-slate-400">PEMBINA JAKON AHLI MUDA</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">07. NUR UTARI DEWI D. MANESSA, S.T</p><p class="text-[7px] text-slate-400">PEMBINA JAKON AHLI MUDA</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">08. M. SADLI SOLODIA, S.P.W.K</p><p class="text-[7px] text-slate-400">PEMBINA JAKON AHLI MUDA</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">09. USMAN IBRAHIM, S.Ars</p><p class="text-[7px] text-slate-400">PEMBINA JAKON AHLI MUDA</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">10. MARIANA BAGO, S.E</p><p class="text-[7px] text-slate-400">PEMBINA JAKON AHLI PERTAMA</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">11. SUMIARTO SUKU, S.T</p><p class="text-[7px] text-slate-400">PEMBINA JAKON AHLI PERTAMA</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">12. RIKO TANDOAK, S.T</p><p class="text-[7px] text-slate-400">PENATA LAYANAN OPERASIONAL</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">13. ABDIMAS, S.T</p><p class="text-[7px] text-slate-400">PENATA LAYANAN OPERASIONAL</p></div>
+                    <div class="p-2 bg-orange-50 rounded-lg"><p class="text-[9px] font-black text-orange-700">14. HAIRUDIN ABD. HAMID</p><p class="text-[7px] text-orange-400">OPERATOR VIBRATOR ROLLER</p></div>
+                    <div class="p-2 bg-orange-50 rounded-lg"><p class="text-[9px] font-black text-orange-700">15. AWI LAMAGA</p><p class="text-[7px] text-orange-400">OPERATOR TRONTON</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">16. SITI HADIJA Z. MADALUMAN</p><p class="text-[7px] text-slate-400">PENGADMINISTRASI PERKANTORAN</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">17. TAMRIN SAID</p><p class="text-[7px] text-slate-400">LAYANAN OPERASIONAL</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">18. RIDHA H. YABU</p><p class="text-[7px] text-slate-400">LAYANAN OPERASIONAL</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">19. MULYADI MUSA</p><p class="text-[7px] text-slate-400">SOPIR DUMP TRUCK</p></div>
+                    <div class="p-2 bg-slate-50 rounded-lg"><p class="text-[9px] font-black">20. MUH. YUSRI SAPUTRA</p><p class="text-[7px] text-slate-400">AGENDARIS</p></div>
                 </div>
             </div>
 
-            <div class="accordion-item bg-white rounded-[25px] px-6 py-1 shadow-sm border border-slate-200">
-                <button onclick="toggleAcc(this)" class="w-full py-5 flex justify-between items-center text-left">
-                    <span class="font-black text-xs text-blue-950"><i class="fas fa-exchange-alt mr-3 text-blue-600"></i> PEMINJAMAN & PENGEMBALIAN ALAT</span>
-                    <i class="fas fa-plus text-slate-300 transition-transform"></i>
+            <div class="accordion-item bg-white rounded-[25px] px-6 py-1 border border-slate-200 shadow-sm">
+                <button onclick="toggleAcc(this)" class="w-full py-5 flex justify-between items-center font-black text-xs text-blue-900">
+                    <span><i class="fas fa-file-export mr-3 text-blue-600"></i> DATA PEMINJAMAN ALAT</span>
+                    <i class="fas fa-plus text-slate-300"></i>
                 </button>
-                <div class="acc-content px-2">
-                    <div class="grid grid-cols-2 gap-4 text-center">
-                        <div class="p-4 bg-blue-50 border border-blue-100 rounded-xl font-black text-[10px] text-blue-900 uppercase">DATABASE PEMINJAMAN ALAT (2023-2026)</div>
-                        <div class="p-4 bg-emerald-50 border border-emerald-100 rounded-xl font-black text-[10px] text-emerald-900 uppercase">DATABASE PENGEMBALIAN ALAT (2023-2026)</div>
-                    </div>
+                <div class="acc-content px-2 grid grid-cols-2 md:grid-cols-4 gap-2">
+                    <div class="year-card">TAHUN 2023</div>
+                    <div class="year-card">TAHUN 2024</div>
+                    <div class="year-card">TAHUN 2025</div>
+                    <div class="year-card bg-blue-900 text-white">TAHUN 2026</div>
                 </div>
             </div>
 
-            <div class="accordion-item bg-white rounded-[25px] px-6 py-1 shadow-sm border-2 border-yellow-400">
-                <button onclick="toggleAcc(this)" class="w-full py-5 flex justify-between items-center text-left">
-                    <span class="font-black text-xs text-blue-950"><i class="fas fa-tags mr-3 text-yellow-500"></i> TARIF SEWA ALAT</span>
-                    <i class="fas fa-plus text-slate-300 transition-transform"></i>
+            <div class="accordion-item bg-white rounded-[25px] px-6 py-1 border border-slate-200 shadow-sm">
+                <button onclick="toggleAcc(this)" class="w-full py-5 flex justify-between items-center font-black text-xs text-blue-900">
+                    <span><i class="fas fa-file-import mr-3 text-emerald-600"></i> DATA PENGEMBALIAN ALAT</span>
+                    <i class="fas fa-plus text-slate-300"></i>
+                </button>
+                <div class="acc-content px-2 grid grid-cols-2 md:grid-cols-4 gap-2">
+                    <div class="year-card">TAHUN 2023</div>
+                    <div class="year-card">TAHUN 2024</div>
+                    <div class="year-card">TAHUN 2025</div>
+                    <div class="year-card bg-emerald-600 text-white">TAHUN 2026</div>
+                </div>
+            </div>
+
+            <div class="accordion-item bg-white rounded-[25px] px-6 py-1 border-2 border-yellow-400 shadow-sm">
+                <button onclick="toggleAcc(this)" class="w-full py-5 flex justify-between items-center font-black text-xs text-blue-900">
+                    <span><i class="fas fa-tags mr-3 text-yellow-500"></i> TARIF SEWA ALAT BERAT</span>
+                    <i class="fas fa-plus text-slate-300"></i>
                 </button>
                 <div class="acc-content px-2">
-                    <table class="w-full text-left text-[10px]">
-                        <tr class="bg-blue-900 text-yellow-400 font-black uppercase"><th class="p-2">ALAT</th><th class="p-2 text-right">HARGA</th></tr>
-                        <tr><td class="p-2 border-b">LOADER</td><td class="p-2 border-b text-right font-black">215,813 / JAM</td></tr>
-                        <tr><td class="p-2 border-b">MOTOR GREDER</td><td class="p-2 border-b text-right font-black">576,785 / JAM</td></tr>
-                        <tr><td class="p-2 border-b">VIBRATOR ROLLER</td><td class="p-2 border-b text-right font-black">326,786 / JAM</td></tr>
-                        <tr><td class="p-2 border-b">TANDEM ROLLER</td><td class="p-2 border-b text-right font-black">165,500 / JAM</td></tr>
-                        <tr><td class="p-2 border-b">DUMP TRUCK</td><td class="p-2 border-b text-right font-black">81,074 / JAM</td></tr>
-                        <tr><td class="p-2 border-b">TRONTON</td><td class="p-2 border-b text-right font-black">36,000 / KM</td></tr>
+                    <table class="w-full text-[10px] font-bold">
+                        <tr class="bg-blue-900 text-yellow-400 font-black"><td class="p-2">JENIS ALAT</td><td class="p-2 text-right">HARGA SEWA</td></tr>
+                        <tr class="border-b"><td>1. LOADER</td><td class="text-right p-2">215,813 / JAM</td></tr>
+                        <tr class="border-b"><td>2. MOTOR GREDER</td><td class="text-right p-2">576,785 / JAM</td></tr>
+                        <tr class="border-b"><td>3. VIBRATOR ROLLER</td><td class="text-right p-2">326,786 / JAM</td></tr>
+                        <tr class="border-b"><td>4. TANDEM ROLLER</td><td class="text-right p-2">165,500 / JAM</td></tr>
+                        <tr class="border-b"><td>5. DUMP TRUCK</td><td class="text-right p-2">81,074 / JAM</td></tr>
+                        <tr class="border-b"><td>6. TRONTON</td><td class="text-right p-2">36,000 / KM</td></tr>
                     </table>
                 </div>
             </div>
 
-            <div class="accordion-item bg-white rounded-[25px] px-6 py-1 shadow-sm border border-slate-200">
-                <button onclick="toggleAcc(this)" class="w-full py-5 flex justify-between items-center text-left">
-                    <span class="font-black text-xs text-blue-950"><i class="fas fa-camera mr-3 text-blue-600"></i> DOKUMENTASI KEGIATAN</span>
-                    <i class="fas fa-plus text-slate-300 transition-transform"></i>
+            <div class="accordion-item bg-white rounded-[25px] px-6 py-1 border border-slate-200 shadow-sm">
+                <button onclick="toggleAcc(this)" class="w-full py-5 flex justify-between items-center font-black text-xs text-blue-900">
+                    <span><i class="fas fa-camera mr-3 text-blue-600"></i> DOKUMENTASI KEGIATAN</span>
+                    <i class="fas fa-plus text-slate-300"></i>
                 </button>
                 <div class="acc-content px-2 grid grid-cols-2 gap-3">
-                    <img src="kegiatan1.jpg" class="rounded-xl border h-24 w-full object-cover">
-                    <img src="kegiatan2.jpg" class="rounded-xl border h-24 w-full object-cover">
-                    <img src="kegiatan3.jpg" class="rounded-xl border h-24 w-full object-cover">
-                    <img src="proyek-bangkep.jpg" class="rounded-xl border h-24 w-full object-cover">
+                    <img src="kegiatan1.jpg" class="h-24 w-full object-cover rounded-xl border">
+                    <img src="kegiatan2.jpg" class="h-24 w-full object-cover rounded-xl border">
+                    <img src="kegiatan3.jpg" class="h-24 w-full object-cover rounded-xl border">
+                    <img src="proyek-bangkep.jpg" class="h-24 w-full object-cover rounded-xl border">
                 </div>
             </div>
-
-            <div class="bg-blue-950 rounded-[30px] p-6 text-white italic uppercase shadow-xl">
-                <h4 class="font-black text-[10px] mb-2"><i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i> LOKASI KANTOR</h4>
-                <p class="text-[8px] opacity-70 mb-4 font-bold">JL. BUKIT TRIKORA KOMPLEKS PERKANTORAN SALAKAN, KAB. BANGGAI KEPULAUAN</p>
-                <div class="h-40 rounded-2xl overflow-hidden grayscale contrast-125 border-2 border-white/10">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15951.1219266185!2d123.2952!3d-1.2952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTcnNDIuNyJTIDEyM8KwMTcnNDIuNyJF!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-
         </div>
-    </section>
 
-    <footer class="bg-slate-900 text-white py-12 text-center uppercase italic">
-        <h4 class="text-3xl font-black mb-4 tracking-tighter italic opacity-80">TARI MANESSA</h4>
-        <a href="https://wa.me/6285394940435" target="_blank" class="bg-green-500 px-8 py-3 rounded-full font-black text-[10px] inline-block shadow-lg hover:scale-105 transition">WHATSAPP CENTER</a>
+        <section class="bg-blue-950 text-white p-8 rounded-[40px] shadow-xl">
+            <h4 class="font-black text-xs mb-4"><i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i> LOKASI KANTOR</h4>
+            <p class="text-[9px] font-bold mb-6 opacity-80">JL. BUKIT TRIKORA KOMPLEKS PERKANTORAN SALAKAN, KAB. BANGGAI KEPULAUAN</p>
+            <div class="h-44 rounded-2xl overflow-hidden grayscale border-2 border-white/10">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15951.56453775677!2d123.44!3d-1.25!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d85600000000001%3A0x0!2sSalakan!5e0!3m2!1sid!2sid!4v1700000000000" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-white py-16 text-center">
+        <h4 class="text-3xl font-black mb-6">TARI MANESSA</h4>
+        <a href="https://wa.me/6285394940435" target="_blank" class="bg-green-500 px-10 py-4 rounded-full font-black text-xs shadow-xl transition-transform hover:scale-105 inline-block">WHATSAPP CENTER</a>
     </footer>
 
     <script>
         function toggleAcc(btn) {
             const item = btn.parentElement;
-            const isActive = item.classList.contains('item-active');
-            document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('item-active'));
-            if (!isActive) item.classList.add('item-active');
+            const active = item.classList.contains('item-active');
+            document.querySelectorAll('.accordion-item').forEach(e => e.classList.remove('item-active'));
+            if(!active) item.classList.add('item-active');
         }
     </script>
 </body>
