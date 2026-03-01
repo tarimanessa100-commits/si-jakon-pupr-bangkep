@@ -147,28 +147,34 @@
                 </div>
             </div>
 
-            <div class="accordion-item glass-card px-8 border-l-4 border-pink-500">
-                <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center group">
-                    <span class="text-sm font-black tracking-widest flex items-center gap-4 text-pink-400">
-                        <i class="fas fa-camera text-xl"></i> DOKUMENTASI KEGIATAN
-                    </span>
-                    <i class="fas fa-images opacity-30"></i>
-                </button>
-                <div class="acc-content grid grid-cols-2 md:grid-cols-4 gap-4 px-2">
-                    <div class="aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl flex items-center justify-center">
-                        <i class="fas fa-image opacity-20 text-4xl"></i>
-                    </div>
-                    <div class="aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl flex items-center justify-center">
-                        <i class="fas fa-image opacity-20 text-4xl"></i>
-                    </div>
-                    <div class="aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl flex items-center justify-center">
-                        <i class="fas fa-image opacity-20 text-4xl"></i>
-                    </div>
-                    <div class="aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl flex items-center justify-center">
-                        <i class="fas fa-image opacity-20 text-4xl"></i>
-                    </div>
-                </div>
-            </div>
+            <div class="accordion-item item-active glass-card px-8 border-l-4 border-pink-500">
+    <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center group">
+        <span class="text-sm font-black tracking-widest flex items-center gap-4 text-pink-400">
+            <i class="fas fa-camera text-xl"></i> DOKUMENTASI KEGIATAN
+        </span>
+        <i class="fas fa-chevron-up opacity-30"></i>
+    </button>
+    
+    <div class="acc-content grid grid-cols-2 md:grid-cols-4 gap-4 px-2" style="max-height: 5000px; opacity: 1; padding: 25px 0;">
+        
+        <div class="group relative aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+            <img src="dokumentasi1.jpg" alt="Kegiatan 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-[8px] text-center p-2\'>GAMBAR 1<br>(DOKUMENTASI1.JPG)</div>'">
+        </div>
+
+        <div class="group relative aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+            <img src="dokumentasi2.jpg" alt="Kegiatan 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-[8px] text-center p-2\'>GAMBAR 2<br>(DOKUMENTASI2.JPG)</div>'">
+        </div>
+
+        <div class="group relative aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+            <img src="dokumentasi3.jpg" alt="Kegiatan 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-[8px] text-center p-2\'>GAMBAR 3<br>(DOKUMENTASI3.JPG)</div>'">
+        </div>
+
+        <div class="group relative aspect-square bg-slate-800 rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+            <img src="dokumentasi4.jpg" alt="Kegiatan 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-full text-[8px] text-center p-2\'>GAMBAR 4<br>(DOKUMENTASI4.JPG)</div>'">
+        </div>
+
+    </div>
+</div>
 
         </div> <section class="glass-card p-8 border-b-4 border-blue-500 shadow-2xl">
             <div class="grid md:grid-cols-2 gap-8 items-center">
