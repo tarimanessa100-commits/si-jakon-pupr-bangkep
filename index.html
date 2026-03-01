@@ -15,21 +15,21 @@
 
         /* Accordion Logic */
         .acc-content { max-height: 0; overflow: hidden; transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); opacity: 0; }
-        .item-active .acc-content { max-height: 3000px; opacity: 1; padding: 25px 0; }
+        .item-active .acc-content { max-height: 5000px; opacity: 1; padding: 25px 0; }
 
         /* Style Kartu Personel */
         .person-card { 
             background: white; 
             padding: 12px 20px; 
-            border-radius: 20px; 
+            border-radius: 18px; 
             border: 1px solid #f1f5f9; 
             display: flex; 
             align-items: center; 
-            margin-bottom: 10px; 
+            margin-bottom: 8px; 
             transition: 0.3s;
         }
         .person-card:hover { border-color: #3b82f6; background: #f1f5f9; transform: translateX(5px); }
-        .avatar { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0; }
+        .avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0; font-size: 14px; }
         
         /* Dokumentasi */
         .doc-img { width: 100%; height: 280px; object-fit: cover; border-radius: 25px; border: 5px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
@@ -37,7 +37,7 @@
         /* Tabel */
         .premium-table { width: 100%; border-radius: 20px; overflow: hidden; border: 1px solid #e2e8f0; }
         .premium-table th { background: #1e3a8a; color: #fbbf24; padding: 15px; font-size: 11px; text-transform: uppercase; text-align: left; }
-        .premium-table td { background: white; padding: 15px; border-bottom: 1px solid #f1f5f9; font-weight: 700; font-size: 13px; }
+        .premium-table td { background: white; padding: 15px; border-bottom: 1px solid #f1f5f9; font-weight: 700; font-size: 13px; color: #1e3a8a; }
     </style>
 </head>
 <body>
@@ -48,11 +48,11 @@
                 <img src="logo-bangkep.png" class="h-12 w-auto">
                 <img src="WhatsApp Image 2026-02-05 at 10.17.15.jpeg" class="h-12 w-auto rounded-lg shadow-sm">
                 <div class="hidden md:block border-l pl-4 border-slate-200 text-left uppercase italic">
-                    <h1 class="heading-font font-black text-blue-900 text-xl leading-none">SIJAKON</h1>
+                    <h1 class="heading-font font-black text-blue-900 text-xl leading-none italic">SIJAKON</h1>
                     <p class="text-[8px] font-bold text-slate-400 tracking-widest mt-1">PUPR Banggai Kepulauan</p>
                 </div>
             </div>
-            <a href="#database" class="bg-blue-950 text-white px-6 py-2 rounded-full text-[10px] font-black uppercase italic tracking-widest shadow-lg">DATA CENTER</a>
+            <a href="#database" class="bg-blue-950 text-white px-6 py-2 rounded-full text-[10px] font-black uppercase italic tracking-widest shadow-lg">DATABASE</a>
         </div>
     </nav>
 
@@ -66,55 +66,46 @@
             
             <div class="accordion-item bg-white rounded-[35px] overflow-hidden shadow-sm">
                 <button onclick="toggleAcc(this)" class="w-full px-10 py-8 flex justify-between items-center group">
-                    <span class="font-black text-sm tracking-widest text-blue-950">1. Personel Bidang Jasa Konstruksi</span>
+                    <span class="font-black text-sm tracking-widest text-blue-950 italic">1. Personel Bidang Jasa Konstruksi</span>
                     <i class="fas fa-chevron-down text-slate-300 transition-transform"></i>
                 </button>
                 <div class="acc-content px-10">
+                    
                     <div class="person-card border-l-4 border-blue-900 bg-blue-50/50">
-                        <div class="avatar bg-blue-900 text-white"><i class="fas fa-user-tie"></i></div>
+                        <div class="avatar bg-blue-900 text-white shadow-md"><i class="fas fa-user-tie"></i></div>
                         <div>
-                            <p class="text-[14px] font-black text-blue-900 italic">Jasrun Hasan, S.T., M.Ap</p>
+                            <p class="text-[14px] font-black text-blue-900">Jasrun Hasan, S.T., M.AP</p>
                             <p class="text-[9px] font-bold text-slate-500 uppercase">Kepala Bidang Jasa Konstruksi</p>
                         </div>
                     </div>
 
-                    <div class="mt-6 mb-3 px-4"><p class="text-[10px] font-black text-slate-400 tracking-[0.2em]">Seksi Pembinaan & Pengawasan</p></div>
-                    <div class="person-card">
-                        <div class="avatar bg-slate-200 text-slate-600"><i class="fas fa-user"></i></div>
-                        <div>
-                            <p class="text-[13px] font-bold text-slate-800">Nama Pejabat / Staff 1</p>
-                            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Sub Koordinator / Ahli Muda</p>
-                        </div>
-                    </div>
-                    <div class="person-card">
-                        <div class="avatar bg-slate-100 text-slate-400"><i class="fas fa-user"></i></div>
-                        <div>
-                            <p class="text-[13px] font-bold text-slate-700">Nama Staff Pelaksana</p>
-                            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Staf Administrasi</p>
-                        </div>
-                    </div>
-
-                    <div class="mt-6 mb-3 px-4"><p class="text-[10px] font-black text-slate-400 tracking-[0.2em]">Seksi Manajemen Alat & Aset</p></div>
-                    <div class="person-card">
-                        <div class="avatar bg-slate-200 text-slate-600"><i class="fas fa-user"></i></div>
-                        <div>
-                            <p class="text-[13px] font-bold text-slate-800">Nama Pejabat / Staff 2</p>
-                            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Pengelola Alat Berat</p>
-                        </div>
-                    </div>
-                    <div class="person-card">
-                        <div class="avatar bg-slate-100 text-slate-400"><i class="fas fa-user"></i></div>
-                        <div>
-                            <p class="text-[13px] font-bold text-slate-700">Nama Operator / Driver</p>
-                            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Staf Lapangan</p>
-                        </div>
+                    <div class="grid md:grid-cols-1 gap-1 mt-4">
+                        <div class="person-card"><div class="avatar bg-slate-100 text-slate-500">02</div><div><p class="text-[13px] font-bold">Jufri, S.T</p><p class="text-[8px] text-slate-400">Pembina Jasa Konstruksi Ahli Muda</p></div></div>
+                        <div class="person-card"><div class="avatar bg-slate-100 text-slate-500">03</div><div><p class="text-[13px] font-bold">Hendra Moiday, S.T</p><p class="text-[8px] text-slate-400">Pembina Jasa Konstruksi Ahli Muda</p></div></div>
+                        <div class="person-card"><div class="avatar bg-slate-100 text-slate-500">04</div><div><p class="text-[13px] font-bold">Ikrar, S.T</p><p class="text-[8px] text-slate-400">Penguji Laboratorium Tanah, Aspal dan Beton</p></div></div>
+                        <div class="person-card"><div class="avatar bg-slate-100 text-slate-500">05</div><div><p class="text-[13px] font-bold">Arwing Karau</p><p class="text-[8px] text-slate-400">Pemelihara Peralatan</p></div></div>
+                        <div class="person-card"><div class="avatar bg-slate-100 text-slate-500">06</div><div><p class="text-[13px] font-bold">Puspa Sari, S.P.W.K</p><p class="text-[8px] text-slate-400">Pembina Jasa Konstruksi Ahli Muda</p></div></div>
+                        <div class="person-card border-l-4 border-yellow-400"><div class="avatar bg-yellow-50 text-yellow-600">07</div><div><p class="text-[13px] font-bold">Nur Utari Dewi Daeng Manessa, S.T</p><p class="text-[8px] text-slate-400">Pembina Jasa Konstruksi Ahli Muda</p></div></div>
+                        <div class="person-card"><div class="avatar bg-slate-100 text-slate-500">08</div><div><p class="text-[13px] font-bold">Muhammad Sadli Solodia, S.P.W.K</p><p class="text-[8px] text-slate-400">Pembina Jasa Konstruksi Ahli Muda</p></div></div>
+                        <div class="person-card"><div class="avatar bg-slate-100 text-slate-500">09</div><div><p class="text-[13px] font-bold">Usman Ibrahim, S.Ars</p><p class="text-[8px] text-slate-400">Pembina Jasa Konstruksi Ahli Muda</p></div></div>
+                        <div class="person-card"><div class="avatar bg-slate-100 text-slate-500">10</div><div><p class="text-[13px] font-bold">Mariana Bago, S.E</p><p class="text-[8px] text-slate-400">Pembina Jasa Konstruksi Ahli Pertama</p></div></div>
+                        <div class="person-card"><div class="avatar bg-slate-100 text-slate-500">11</div><div><p class="text-[13px] font-bold">Sumiarto Suku, S.T</p><p class="text-[8px] text-slate-400">Pembina Jasa Konstruksi Ahli Pertama</p></div></div>
+                        <div class="person-card"><div class="avatar bg-slate-100 text-slate-500">12</div><div><p class="text-[13px] font-bold">Riko Tandoak, S.T</p><p class="text-[8px] text-slate-400">Penata Layanan Operasional</p></div></div>
+                        <div class="person-card"><div class="avatar bg-slate-100 text-slate-500">13</div><div><p class="text-[13px] font-bold">Abdimas, S.T</p><p class="text-[8px] text-slate-400">Penata Layanan Operasional</p></div></div>
+                        <div class="person-card bg-orange-50/30"><div class="avatar bg-orange-100 text-orange-600"><i class="fas fa-truck-pickup"></i></div><div><p class="text-[13px] font-bold">Hairudin Abd. Hamid</p><p class="text-[8px] text-slate-400">Operator Vibrator Roller</p></div></div>
+                        <div class="person-card bg-orange-50/30"><div class="avatar bg-orange-100 text-orange-600"><i class="fas fa-truck-moving"></i></div><div><p class="text-[13px] font-bold">Awi Lamaga</p><p class="text-[8px] text-slate-400">Operator Tronton</p></div></div>
+                        <div class="person-card"><div class="avatar bg-slate-100 text-slate-500">16</div><div><p class="text-[13px] font-bold">Siti Hadija Z. Madaluman</p><p class="text-[8px] text-slate-400">Operator Layanan Operasional</p></div></div>
+                        <div class="person-card"><div class="avatar bg-slate-100 text-slate-500">17</div><div><p class="text-[13px] font-bold">Tamrin Said</p><p class="text-[8px] text-slate-400">Operator Layanan Operasional</p></div></div>
+                        <div class="person-card"><div class="avatar bg-slate-100 text-slate-500">18</div><div><p class="text-[13px] font-bold">Ridha H. Yabu</p><p class="text-[8px] text-slate-400">Operator Layanan Operasional</p></div></div>
+                        <div class="person-card bg-orange-50/30"><div class="avatar bg-orange-100 text-orange-600"><i class="fas fa-truck"></i></div><div><p class="text-[13px] font-bold">Mulyadi Musa</p><p class="text-[8px] text-slate-400">Sopir Dump Truck</p></div></div>
+                        <div class="person-card"><div class="avatar bg-blue-50 text-blue-600"><i class="fas fa-book"></i></div><div><p class="text-[13px] font-bold">Muh. Yusri Saputra</p><p class="text-[8px] text-slate-400">Agendaris</p></div></div>
                     </div>
                 </div>
             </div>
 
             <div class="accordion-item bg-white rounded-[35px] overflow-hidden shadow-sm">
                 <button onclick="toggleAcc(this)" class="w-full px-10 py-8 flex justify-between items-center group">
-                    <span class="font-black text-sm tracking-widest text-blue-950">2. Peminjaman Alat & Kendaraan</span>
+                    <span class="font-black text-sm tracking-widest text-blue-950 italic">2. Peminjaman Alat & Kendaraan</span>
                     <i class="fas fa-chevron-down text-slate-300 transition-transform"></i>
                 </button>
                 <div class="acc-content px-10 text-center">
@@ -129,7 +120,7 @@
 
             <div class="accordion-item bg-white rounded-[35px] overflow-hidden shadow-sm">
                 <button onclick="toggleAcc(this)" class="w-full px-10 py-8 flex justify-between items-center group">
-                    <span class="font-black text-sm tracking-widest text-blue-950">3. Pengembalian Alat & Kendaraan</span>
+                    <span class="font-black text-sm tracking-widest text-blue-950 italic">3. Pengembalian Alat & Kendaraan</span>
                     <i class="fas fa-chevron-down text-slate-300 transition-transform"></i>
                 </button>
                 <div class="acc-content px-10 text-center">
@@ -144,7 +135,7 @@
 
             <div class="accordion-item bg-white rounded-[35px] overflow-hidden shadow-sm border-2 border-yellow-400">
                 <button onclick="toggleAcc(this)" class="w-full px-10 py-8 flex justify-between items-center group">
-                    <span class="font-black text-sm tracking-widest text-blue-950">4. Harga Sewa Alat (Resmi)</span>
+                    <span class="font-black text-sm tracking-widest text-blue-950 italic">4. Harga Sewa Alat (Resmi)</span>
                     <i class="fas fa-chevron-down text-slate-300 transition-transform"></i>
                 </button>
                 <div class="acc-content px-10">
@@ -168,7 +159,7 @@
     </section>
 
     <section class="py-24 container mx-auto px-6 max-w-6xl text-center">
-        <h2 class="heading-font text-3xl font-black text-blue-950 uppercase italic mb-12 tracking-tighter italic">Dokumentasi Kegiatan Lapangan</h2>
+        <h2 class="heading-font text-3xl font-black text-blue-950 uppercase italic mb-12 tracking-tighter italic">Dokumentasi Kegiatan</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <img src="kegiatan1.jpg" class="doc-img" alt="Foto 1">
             <img src="kegiatan2.jpg" class="doc-img" alt="Foto 2">
@@ -191,7 +182,7 @@
                 <div class="lg:col-span-2">
                     <div class="rounded-[40px] overflow-hidden border-8 border-white shadow-2xl h-[400px]">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.283120612173!2d123.30312347372433!3d-1.2952093356417778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d859d041335c6a1%3A0x53103547e418199f!2sDINAS%20PEKERJAAN%20UMUM%20DAN%20PENATAAN%20RUANG!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.4721453266295!2d123.18189877395244!3d-1.5039433355594458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d859364133546a1%3A0x53103547e418199f!2sDINAS%20PEKERJAAN%20UMUM%20DAN%20PENATAAN%20RUANG!5e0!3m2!1sid!2sid!4v1707123456789!5m2!1sid!2sid" 
                             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                         </iframe>
                     </div>
@@ -202,7 +193,7 @@
 
     <footer class="bg-slate-900 text-white pt-24 pb-12 text-center italic">
         <h4 class="heading-font text-3xl md:text-5xl font-black uppercase italic mb-10 tracking-tighter opacity-90 leading-none italic">TARI MANESSA</h4>
-        <a href="https://wa.me/6285394940435" target="_blank" class="inline-flex items-center space-x-5 bg-green-500 hover:bg-green-600 px-14 py-5 rounded-full shadow-2xl transition transform hover:scale-105">
+        <a href="https://wa.me/6285394940435" target="_blank" class="inline-flex items-center space-x-5 bg-green-500 hover:bg-green-600 px-14 py-5 rounded-full shadow-2xl transition transform hover:scale-105 active:scale-95">
             <i class="fab fa-whatsapp text-2xl"></i>
             <span class="font-black uppercase italic text-xs tracking-widest">Hubungi Admin</span>
         </a>
