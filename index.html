@@ -125,23 +125,27 @@
             </div>
 
             <div class="accordion-item glass-card px-8 border-l-4 border-purple-500">
-                <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-purple-400">
-                    <span class="text-sm font-black tracking-widest flex items-center gap-4 italic">
-                        <i class="fas fa-graduation-cap"></i> PELATIHAN & BIMTEK
-                    </span>
-                    <i class="fas fa-chevron-down opacity-30"></i>
-                </button>
-                <div class="acc-content space-y-4">
-                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-                        <div class="text-[10px] font-black uppercase text-center md:text-left">
-                            BIMTEK PENGENDALIAN KONTRAK & TATA KELOLA JASA KONSTRUKSI
-                        </div>
-                        <a href="https://drive.google.com/drive/folders/1bEDRxrVCGJxh6fLQpvFV22dK4G06oSCd" target="_blank" class="bg-purple-600 hover:bg-purple-700 transition-colors px-6 py-2 rounded-full text-[9px] font-black flex items-center gap-2">
-                            <i class="fab fa-google-drive"></i> BUKA MATERI DRIVE
-                        </a>
-                    </div>
-                </div>
+    <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-purple-400">
+        <span class="text-sm font-black tracking-widest flex items-center gap-4 italic">
+            <i class="fas fa-graduation-cap"></i> PELATIHAN & BIMTEK
+        </span>
+        <i class="fas fa-chevron-down opacity-30"></i>
+    </button>
+    <div class="acc-content space-y-4">
+        <div class="bg-white/5 p-6 rounded-2xl border border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-[10px] font-black uppercase text-center md:text-left">
+                BIMTEK PENGENDALIAN KONTRAK & TATA KELOLA JASA KONSTRUKSI
             </div>
+            
+            <a href="https://drive.google.com/drive/folders/1bEDRxrVCGJxh6fLQpvFV22dK4G06oSCd" 
+               target="_blank" 
+               onclick="event.stopPropagation();" 
+               class="bg-purple-600 hover:bg-purple-700 transition-colors px-6 py-2 rounded-full text-[9px] font-black flex items-center gap-2">
+                <i class="fab fa-google-drive"></i> BUKA MATERI DRIVE
+            </a>
+        </div>
+    </div>
+</div>
 
             <div class="accordion-item glass-card px-8 border-2 border-yellow-500/30">
                 <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-yellow-400">
