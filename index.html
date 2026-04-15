@@ -8,105 +8,96 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f172a; color: #f8fafc; scroll-behavior: smooth; margin:0; }
-        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; margin-bottom: 2rem; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f172a; color: #f8fafc; scroll-behavior: smooth; margin: 0; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; margin-bottom: 1.5rem; }
         .acc-content { max-height: 0; overflow: hidden; transition: all 0.5s cubic-bezier(0, 1, 0, 1); opacity: 0; }
-        .item-active .acc-content { max-height: 5000px; opacity: 1; padding: 25px 0; transition: all 0.5s ease-in-out; }
+        .item-active .acc-content { max-height: 10000px; opacity: 1; padding: 25px 0; transition: all 0.5s ease-in-out; }
         .italic-up { font-style: italic; text-transform: uppercase; }
         .jabatan-text { color: #60a5fa; font-size: 8px; font-weight: 800; letter-spacing: 0.05em; display: block; margin-top: 2px; }
     </style>
 </head>
 <body class="italic-up">
 
-    <nav class="sticky top-0 z-[100] bg-slate-900/90 backdrop-blur-xl border-b border-white/10 py-4 px-6">
-        <div class="container mx-auto flex justify-between items-center font-black tracking-widest">SIJAKON | PUPR BANGKEP</div>
+    <nav class="sticky top-0 z-[100] bg-slate-900/90 backdrop-blur-xl border-b border-white/10 py-4 px-6 text-center font-black tracking-widest">
+        SIJAKON | PUPR BANGGAI KEPULAUAN
     </nav>
 
     <main class="container mx-auto px-6 max-w-5xl py-12">
         
-        <section class="glass-card p-8 md:p-12 border-t-4 border-blue-500">
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <h2 class="text-xl font-black mb-4 text-blue-400"># TUGAS POKOK</h2>
-                    <ul class="text-[10px] font-bold space-y-2 list-disc pl-4 opacity-80">
-                        <li>PEMBINAAN DAN PENGAWASAN PENYELENGGARAAN JASA KONSTRUKSI</li>
-                        <li>PENDATAAN DAN REGISTRASI BADAN USAHA JASA KONSTRUKSI</li>
-                        <li>PENGEMBANGAN DAN PEMBERDAYAAN SDM KONSTRUKSI</li>
-                        <li>PENINGKATAN KUALITAS DAN KAPASITAS BADAN USAHA</li>
-                        <li>PEMANTAUAN DAN EVALUASI KINERJA JASA KONSTRUKSI</li>
+        <div class="accordion-item glass-card px-8 border-l-4 border-green-500">
+            <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-green-400">
+                <span class="text-[11px] font-black tracking-widest"><i class="fas fa-tasks mr-2"></i> Program Pengembangan Jasa Konstruksi</span>
+            </button>
+            <div class="acc-content space-y-6 text-[10px] font-bold">
+                <div class="bg-white/5 p-4 rounded-xl">
+                    <h4 class="font-black text-white mb-2 underline">01. Penyelenggaraan Pelatihan Tenaga Ahli Konstruksi</h4>
+                    <ul class="list-decimal pl-4 space-y-1 opacity-80">
+                        <li>Penyediaan Training Need Assessment (TNA) Pelatihan Tenaga Kerja Konstruksi</li>
+                        <li>Fasilitasi Sertifikasi Tenaga Kerja Konstruksi Kualifikasi Jabatan Operator dan Teknisi atau Analis</li>
+                        <li>Pembinaan dan Peningkatan Kapasitas Kelembagaan Jasa Konstruksi</li>
+                        <li>Penyediaan Instruktur/Asesor/Penyelenggara Pelatihan Tenaga Kerja Konstruksi</li>
+                        <li>Identifikasi Potensi Kerja Sama dan Pemberdayaan Jasa Konstruksi</li>
+                        <li>Pemantauan dan Evaluasi Pelatihan Tenaga Kerja Konstruksi Kualifikasi Jabatan Operator dan Teknisi atau Analis</li>
+                        <li>Penyediaan SOP Penyelenggaraan Pelatihan Tenaga Kerja Konstruksi Kualifikasi Jabatan Operator, Teknisi atau Analis</li>
+                        <li>Pelatihan Tenaga Kerja Konstruksi Kualifikasi Jabatan Operator, Teknisi atau Analis</li>
                     </ul>
                 </div>
-                <div>
-                    <h2 class="text-xl font-black mb-4 text-yellow-400"># DASAR HUKUM</h2>
-                    <p class="text-[10px] font-bold opacity-80 mb-2">UNDANG-UNDANG NO. 2 TAHUN 2017</p>
-                    <p class="text-[10px] italic opacity-70">MENGATUR PENYELENGGARAAN JASA KONSTRUKSI UNTUK MEWUJUDKAN STRUKTUR USAHA YANG KOKOH, ANDAL, BERDAYA SAING TINGGI, DAN BERKUALITAS.</p>
+                <div class="bg-white/5 p-4 rounded-xl">
+                    <h4 class="font-black text-white mb-2 underline">02. Penyelenggaraan Sistem Informasi Jasa Konstruksi Cakupan Kabupaten/Kota</h4>
+                    <ul class="list-decimal pl-4 space-y-1 opacity-80">
+                        <li>Penyediaan Perangkat Pendukung Layanan Informasi Jasa Konstruksi</li>
+                        <li>Penyediaan Data dan Informasi Jasa Konstruksi Cakupan Kabupaten/Kota</li>
+                        <li>Peningkatan Kapasitas Pengelola SIPJAKI</li>
+                        <li>Operasionalisasi Layanan Informasi Jasa Konstruksi</li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 p-4 rounded-xl">
+                    <h4 class="font-black text-white mb-2 underline">03. Pengawasan Tertib Usaha, Tertib Penyelenggaraan dan Tertib Pemanfaatan Jasa Konstruksi</h4>
+                    <ul class="list-decimal pl-4 space-y-1 opacity-80">
+                        <li>Pengawasan dan Evaluasi Tertib Penyelenggaraan Jasa Konstruksi Kabupaten/Kota</li>
+                        <li>Pengawasan dan Evaluasi Tertib Pemanfaatan Produk Jasa Konstruksi Kabupaten/Kota</li>
+                        <li>Pembinaan Tertib Usaha, Tertib Penyelenggaraan, dan Tertib Pemanfaatan Produk Jasa Konstruksi</li>
+                        <li>Pengawasan dan Evaluasi Tertib Usaha Jasa Konstruksi Kabupaten/Kota</li>
+                        <li>Penyusunan Produk Hukum Daerah Terkait Penyelenggaraan Jasa Konstruksi di Kabupaten/Kota</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <div class="space-y-4">
-
-            <div class="accordion-item glass-card px-8 border-l-4 border-green-500">
-                <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-green-400">
-                    <span class="text-[11px] font-black tracking-widest uppercase"><i class="fas fa-tasks mr-2"></i> Program & Kegiatan</span>
-                </button>
-                <div class="acc-content space-y-6 text-[10px]">
-                    <div class="p-4 bg-white/5 rounded-xl"><h4 class="font-black text-white">01. PELATIHAN TENAGA AHLI</h4><ul class="list-disc pl-4"><li>TNA: Tersedia TNA (Kinerja: Jumlah TNA Disediakan)</li><li>Sertifikasi: Terfasilitasi (Kinerja: Jumlah Tenaga Terfasilitasi)</li><li>Pembinaan Kelembagaan: Jumlah Lembaga Dibina</li><li>Instruktur/Asesor: Tersedia (Kinerja: Jumlah Disediakan)</li><li>Identifikasi Potensi: (Kinerja: Jumlah Lembaga Diidentifikasi)</li><li>Pemantauan & Evaluasi: (Kinerja: Jumlah Dokumen Dipantau)</li><li>Penyediaan SOP: (Kinerja: Jumlah SOP Disediakan)</li><li>Pelatihan Tenaga Kerja: (Kinerja: Jumlah Tenaga Kerja Dilatih)</li></ul></div>
-                    <div class="p-4 bg-white/5 rounded-xl"><h4 class="font-black text-white">02. SIPJAKI</h4><ul class="list-disc pl-4"><li>Perangkat Pendukung: (Kinerja: Jumlah Disediakan)</li><li>Data & Informasi: (Kinerja: Jumlah Dokumen Disediakan)</li><li>Kapasitas Pengelola: (Kinerja: Jumlah Pengelola Ditingkatkan)</li><li>Operasionalisasi Layanan: (Kinerja: Jumlah Layanan Dioperasikan)</li></ul></div>
-                    <div class="p-4 bg-white/5 rounded-xl"><h4 class="font-black text-white">03. PENGAWASAN</h4><ul class="list-disc pl-4"><li>Tertib Penyelenggaraan: (Kinerja: Jumlah Paket Pekerjaan)</li><li>Tertib Pemanfaatan Produk: (Kinerja: Jumlah Bangunan)</li><li>Pembinaan Tertib Usaha: (Kinerja: Jumlah Lembaga Dibina)</li><li>Tertib Usaha: (Kinerja: Jumlah Badan Usaha)</li><li>Penyusunan Produk Hukum: (Kinerja: Jumlah Dokumen Tersusun)</li></ul></div>
-                </div>
+        <div class="accordion-item glass-card px-8 border-l-4 border-blue-500">
+            <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-blue-400">
+                <span class="text-[11px] font-black tracking-widest"><i class="fas fa-users-cog mr-2"></i> Personel & Jabatan</span>
+            </button>
+            <div class="acc-content grid grid-cols-1 md:grid-cols-2 gap-3 text-[10px]">
+                <div class="p-3 bg-white/5 rounded-lg">01. JASRUN HASAN, S.T., M.AP <span class="jabatan-text">KEPALA BIDANG</span></div>
+                <div class="p-3 bg-white/5 rounded-lg">02. JUFRI, S.T <span class="jabatan-text">SEKSI PEMBINAAN</span></div>
+                <div class="p-3 bg-white/5 rounded-lg">03. HENDRA MOIDAY, S.T <span class="jabatan-text">SEKSI PENGAWASAN</span></div>
+                <div class="p-3 bg-white/5 rounded-lg">04. IKRAR, S.T</div> <div class="p-3 bg-white/5 rounded-lg">05. ARWING KARAU</div>
+                <div class="p-3 bg-white/5 rounded-lg">06. PUSPA SARI, S.P.W.K</div> <div class="p-3 bg-white/5 rounded-lg">07. NUR UTARI DEWI D. MANESSA, S.T</div>
+                <div class="p-3 bg-white/5 rounded-lg">08. M. SADLI SOLODIA, S.P.W.K</div> <div class="p-3 bg-white/5 rounded-lg">09. USMAN IBRAHIM, S.Ars</div>
+                <div class="p-3 bg-white/5 rounded-lg">10. MARIANA BAGO, S.E</div> <div class="p-3 bg-white/5 rounded-lg">11. SUMIARTO SUKU, S.T</div>
+                <div class="p-3 bg-white/5 rounded-lg">12. RIKO TANDOAK, S.T</div> <div class="p-3 bg-white/5 rounded-lg">13. ABDIMAS, S.T</div>
+                <div class="p-3 bg-white/5 rounded-lg">14. HAIRUDIN ABD. HAMID</div> <div class="p-3 bg-white/5 rounded-lg">15. AWI LAMAGA</div>
+                <div class="p-3 bg-white/5 rounded-lg">16. SITI HADIJA Z. MADALUMAN</div> <div class="p-3 bg-white/5 rounded-lg">17. TAMRIN SAID</div>
+                <div class="p-3 bg-white/5 rounded-lg">18. RIDHA H. YABU</div> <div class="p-3 bg-white/5 rounded-lg">19. MULYADI MUSA</div>
+                <div class="p-3 bg-white/5 rounded-lg">20. MUH. YUSRI SAPUTRA</div>
             </div>
+        </div>
 
-            <div class="accordion-item glass-card px-8">
-                <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-blue-400">
-                    <span class="text-sm font-black tracking-widest"><i class="fas fa-users-cog mr-2"></i> Personel & Jabatan</span>
-                </button>
-                <div class="acc-content grid grid-cols-1 md:grid-cols-2 gap-3 text-[10px]">
-                    <div class="p-3 bg-white/5 rounded-lg">01. JASRUN HASAN, S.T., M.AP <span class="jabatan-text">KEPALA BIDANG</span></div>
-                    <div class="p-3 bg-white/5 rounded-lg">02. JUFRI, S.T <span class="jabatan-text">SEKSI PEMBINAAN</span></div>
-                    <div class="p-3 bg-white/5 rounded-lg">03. HENDRA MOIDAY, S.T <span class="jabatan-text">SEKSI PENGAWASAN</span></div>
-                    <div class="p-3 bg-white/5 rounded-lg">04. IKRAR, S.T</div> <div class="p-3 bg-white/5 rounded-lg">05. ARWING KARAU</div>
-                    <div class="p-3 bg-white/5 rounded-lg">06. PUSPA SARI, S.P.W.K</div> <div class="p-3 bg-white/5 rounded-lg">07. NUR UTARI DEWI D. MANESSA, S.T</div>
-                    <div class="p-3 bg-white/5 rounded-lg">08. M. SADLI SOLODIA, S.P.W.K</div> <div class="p-3 bg-white/5 rounded-lg">09. USMAN IBRAHIM, S.Ars</div>
-                    <div class="p-3 bg-white/5 rounded-lg">10. MARIANA BAGO, S.E</div> <div class="p-3 bg-white/5 rounded-lg">11. SUMIARTO SUKU, S.T</div>
-                    <div class="p-3 bg-white/5 rounded-lg">12. RIKO TANDOAK, S.T</div> <div class="p-3 bg-white/5 rounded-lg">13. ABDIMAS, S.T</div>
-                    <div class="p-3 bg-white/5 rounded-lg">14. HAIRUDIN ABD. HAMID</div> <div class="p-3 bg-white/5 rounded-lg">15. AWI LAMAGA</div>
-                    <div class="p-3 bg-white/5 rounded-lg">16. SITI HADIJA Z. MADALUMAN</div> <div class="p-3 bg-white/5 rounded-lg">17. TAMRIN SAID</div>
-                    <div class="p-3 bg-white/5 rounded-lg">18. RIDHA H. YABU</div> <div class="p-3 bg-white/5 rounded-lg">19. MULYADI MUSA</div>
-                    <div class="p-3 bg-white/5 rounded-lg">20. MUH. YUSRI SAPUTRA</div>
-                </div>
-            </div>
-
-            <div class="accordion-item glass-card px-8 border-l-4 border-blue-600">
-                <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-blue-400">
-                    <span class="text-[11px] font-black tracking-widest"><i class="fas fa-file-contract mr-2"></i> SOP Peminjaman Alat Berat</span>
-                </button>
-                <div class="acc-content px-4 space-y-2 text-[10px] font-bold">
-                    <p>01. PENGAJUAN (SURAT PERMOHONAN)</p>
-                    <p>02. PERSETUJUAN (SKRD)</p>
-                    <p>03. PEMBERITAHUAN</p>
-                    <p>04. RINCIAN BIAYA</p>
-                    <p>05. PEMBAYARAN</p>
-                    <p>06. SETORAN (KAS DAERAH)</p>
-                    <p>07. KONTRAK & PENYERAHAN</p>
-                    <p>08. TANGGUNG JAWAB</p>
-                </div>
-            </div>
-
-            <div class="accordion-item glass-card px-8 border-2 border-yellow-500/30">
-                <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-yellow-400">
-                    <span class="text-[11px] font-black tracking-widest"><i class="fas fa-tag mr-2"></i> Tarif Sewa Alat</span>
-                </button>
-                <div class="acc-content overflow-x-auto text-[10px] font-bold">
-                    <table class="w-full text-left uppercase">
-                        <tr><td class="p-2">01. LOADER</td><td class="p-2 text-right">RP 215,813 / JAM</td></tr>
-                        <tr><td class="p-2">02. MOTOR GREDER</td><td class="p-2 text-right">RP 576,785 / JAM</td></tr>
-                        <tr><td class="p-2">03. VIBRATOR ROLLER</td><td class="p-2 text-right">RP 326,786 / JAM</td></tr>
-                        <tr><td class="p-2">04. TANDEM ROLLER</td><td class="p-2 text-right">RP 165,500 / JAM</td></tr>
-                        <tr><td class="p-2">05. DUMP TRUCK</td><td class="p-2 text-right">RP 81,074 / JAM</td></tr>
-                        <tr><td class="p-2">06. TRONTON</td><td class="p-2 text-right">RP 36,000 / KM</td></tr>
-                    </table>
-                </div>
+        <div class="accordion-item glass-card px-8 border-l-4 border-yellow-500">
+            <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-yellow-400">
+                <span class="text-[11px] font-black tracking-widest"><i class="fas fa-file-invoice-dollar mr-2"></i> SOP & Tarif Sewa</span>
+            </button>
+            <div class="acc-content space-y-6 text-[10px] font-bold">
+                <div class="p-4 bg-white/5 rounded-xl"><h4 class="text-white mb-2">SOP PEMINJAMAN ALAT</h4><p>01-08: Pengajuan, Persetujuan, Pemberitahuan, Biaya, Pembayaran, Setoran, Kontrak, Tanggung Jawab.</p></div>
+                <table class="w-full text-left uppercase">
+                    <tr><td class="p-2">01. LOADER</td><td class="p-2 text-right">RP 215,813</td></tr>
+                    <tr><td class="p-2">02. MOTOR GREDER</td><td class="p-2 text-right">RP 576,785</td></tr>
+                    <tr><td class="p-2">03. VIBRATOR ROLLER</td><td class="p-2 text-right">RP 326,786</td></tr>
+                    <tr><td class="p-2">04. TANDEM ROLLER</td><td class="p-2 text-right">RP 165,500</td></tr>
+                    <tr><td class="p-2">05. DUMP TRUCK</td><td class="p-2 text-right">RP 81,074</td></tr>
+                    <tr><td class="p-2">06. TRONTON</td><td class="p-2 text-right">RP 36,000 / KM</td></tr>
+                </table>
             </div>
         </div>
     </main>
