@@ -130,35 +130,45 @@
     </div>
 </div>
 
-            <div class="accordion-item glass rounded-3xl">
-                <button onclick="toggleAcc(this)" class="w-full p-8 text-left flex justify-between font-black text-lg text-white">
-                    <span>DAFTAR PERSONEL DAN JABATAN</span>
-                    <i class="fas fa-chevron-down text-amber-500"></i>
-                </button>
-                <div class="acc-content text-sm font-bold space-y-2 uppercase">
-                    <p>JASRUN HASAN, SARJANA TEKNIK, MAGISTER ADMINISTRASI PUBLIK - KEPALA BIDANG JASA KONSTRUKSI</p>
-                    <p>JUFRI, SARJANA TEKNIK - PEMBINA JASA KONSTRUKSI AHLI MUDA</p>
-                    <p>HENDRA MOIDADY, SARJANA TEKNIK - PEMBINA JASA KONSTRUKSI AHLI MUDA</p>
-                    <p>IKRAR, SARJANA TEKNIK - PENGUJI LABORATORIUM</p>
-                    <p>ARWING KARAU - PEMELIHARA PERALATAN</p>
-                    <p>PUSPA SARI, SARJANA PERENCANAAN WILAYAH DAN KOTA - PEMBINA JASA KONSTRUKSI AHLI MUDA</p>
-                    <p>NUR UTARI DEWI DAENG MANESSA, SARJANA TEKNIK - PEMBINA JASA KONSTRUKSI AHLI MUDA</p>
-                    <p>MUHAMMAD SADLI SOLODIA, SARJANA PERENCANAAN WILAYAH DAN KOTA - PEMBINA JASA KONSTRUKSI AHLI MUDA</p>
-                    <p>USMAN IBRAHIM, SARJANA ARSITEKTUR - PEMBINA JASA KONSTRUKSI AHLI MUDA</p>
-                    <p>MARIANA BAGO, SARJANA EKONOMI - PEMBINA JASA KONSTRUKSI AHLI PERTAMA</p>
-                    <p>SUMIARTO SUKU, SARJANA TEKNIK - PEMBINA JASA KONSTRUKSI AHLI PERTAMA</p>
-                    <p>RIKO TANDOAK, SARJANA TEKNIK - PENATA LAYANAN OPERASIONAL</p>
-                    <p>ABDIMAS, SARJANA TEKNIK - PENATA LAYANAN OPERASIONAL</p>
-                    <p>HAIRUDIN ABDUL HAMID - OPERATOR VIBRATOR ROLLER</p>
-                    <p>AWI LAMAGA - OPERATOR TRONTON</p>
-                    <p>SITI HADIJA Z. MADALUMAN - OPERATOR LAYANAN OPERASIONAL</p>
-                    <p>TAMRIN SAID - OPERATOR LAYANAN OPERASIONAL</p>
-                    <p>RIDHA H. YABU - OPERATOR LAYANAN OPERASIONAL</p>
-                    <p>MULYADI MUSA - SOPIR DUMP TRUCK</p>
-                    <p>MUHAMMAD YUSRI SAPUTRA - AGENDARIS</p>
-                </div>
-            </div>
-
+           <div class="accordion-item glass rounded-3xl">
+    <button onclick="toggleAcc(this)" class="w-full p-8 text-left flex justify-between font-black text-lg text-white">
+        <span>DAFTAR PERSONEL DAN JABATAN</span>
+        <i class="fas fa-chevron-down text-amber-500"></i>
+    </button>
+    <div class="acc-content overflow-x-auto p-0">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-amber-600/20 text-amber-500 uppercase text-[10px] md:text-xs tracking-widest">
+                    <th class="p-4 border-b border-amber-600/30 w-16">No</th>
+                    <th class="p-4 border-b border-amber-600/30">Nama Lengkap</th>
+                    <th class="p-4 border-b border-amber-600/30">Jabatan</th>
+                </tr>
+            </thead>
+            <tbody class="text-[11px] md:text-sm font-medium">
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">01</td><td class="p-4 font-bold text-white">JASRUN HASAN, S.T., M.AP</td><td class="p-4">Kepala Bidang Jasa Konstruksi</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">02</td><td class="p-4">JUFRI, S.T</td><td class="p-4">Pembina Jasa Konstruksi Ahli Muda</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">03</td><td class="p-4">HENDRA MOIDADY, S.T</td><td class="p-4">Pembina Jasa Konstruksi Ahli Muda</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">04</td><td class="p-4">IKRAR, S.T</td><td class="p-4">Penguji Laboratorium, Tanah, Aspal dan Beton</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">05</td><td class="p-4">ARWING KARAU</td><td class="p-4">Pemelihara Peralatan</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">06</td><td class="p-4">PUSPA SARI, S.P.W.K</td><td class="p-4">Pembina Jasa Konstruksi Ahli Muda</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">07</td><td class="p-4">NUR UTARI DEWI DAENG MANESSA, ST</td><td class="p-4">Pembina Jasa Konstruksi Ahli Muda</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">08</td><td class="p-4">MUHAMMAD SADLI SOLOIDA, S.P.W.K</td><td class="p-4">Pembina Jasa Konstruksi Ahli Muda</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">09</td><td class="p-4">USMAN IBRAHIM, S.Ars</td><td class="p-4">Pembina Jasa Konstruksi Ahli Muda</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">10</td><td class="p-4">MARIANA BAGO, SE</td><td class="p-4">Pembina Jasa Konstruksi Ahli Pertama</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">11</td><td class="p-4">SUMIARTO SUKU, ST</td><td class="p-4">Pembina Jasa Konstruksi Ahli Pertama</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">12</td><td class="p-4">RIKO TANDOAK, S.T</td><td class="p-4">Penata Layanan Operasional</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">13</td><td class="p-4">ABDIMAS, S.T</td><td class="p-4">Penata Layanan Operasional</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">14</td><td class="p-4">HAIRUDIN ABD. HAMID</td><td class="p-4">Operator Vibrator Roller</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">15</td><td class="p-4">AWI LAMAGA</td><td class="p-4">Operator Tronton</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">16</td><td class="p-4">SITI HADIJA Z. MADALUMAN</td><td class="p-4">Operator Layanan Operasional</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">17</td><td class="p-4">TAMRIN SAID</td><td class="p-4">Operator Layanan Operasional</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">18</td><td class="p-4">RIDHA H. YABU</td><td class="p-4">Operator Layanan Operasional</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">19</td><td class="p-4">MULYADI MUSA</td><td class="p-4">Sopir Dump Truck</td></tr>
+                <tr class="hover:bg-white/5 transition-colors border-b border-white/5"><td class="p-4 text-slate-500">20</td><td class="p-4">MUH. YUSRI SAPUTRA</td><td class="p-4">Agendaris</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
             <div class="accordion-item glass rounded-3xl">
                 <button onclick="toggleAcc(this)" class="w-full p-8 text-left flex justify-between font-black text-lg text-white">
                     <span>DAFTAR TARIF RETRIBUSI ALAT BERAT</span>
