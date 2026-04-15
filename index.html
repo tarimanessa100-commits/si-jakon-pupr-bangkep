@@ -7,140 +7,135 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f172a; color: #f8fafc; }
-        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; margin-bottom: 1.5rem; }
-        .acc-content { max-height: 0; overflow: hidden; transition: all 0.5s ease; opacity: 0; }
-        .item-active .acc-content { max-height: 20000px; opacity: 1; padding: 25px 0; }
-        .jabatan-text { color: #60a5fa; font-size: 8px; font-weight: 800; display: block; margin-top: 2px; }
-        .img-box { aspect-ratio: 16/9; background: #1e293b; border-radius: 1rem; display: flex; align-items: center; justify-content: center; font-size: 10px; border: 2px dashed rgba(255,255,255,0.1); }
-        .logo-placeholder { width: 50px; height: 50px; background: #fbbf24; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #0f172a; font-weight: 900; }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;600;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0b1120; color: #e2e8f0; }
+        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .acc-content { max-height: 0; overflow: hidden; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); opacity: 0; }
+        .item-active .acc-content { max-height: 20000px; opacity: 1; padding-top: 1.5rem; }
     </style>
 </head>
-<body class="uppercase">
+<body class="uppercase tracking-wide">
 
-    <header class="sticky top-0 z-[100] bg-slate-900/90 backdrop-blur-xl border-b border-white/10 py-4 px-6 flex items-center justify-center gap-4">
-        <div class="logo-placeholder">LOGO</div>
-        <h1 class="text-xl font-black tracking-widest text-center">SIJAKON | PUPR BANGGAI KEPULAUAN</h1>
-    </header>
+    <main class="max-w-4xl mx-auto p-6 md:p-12">
+        <header class="mb-12 text-center">
+            <div class="w-20 h-20 bg-amber-600 rounded-3xl mx-auto flex items-center justify-center font-black text-3xl text-white mb-6 shadow-xl shadow-amber-900/20">JS</div>
+            <h1 class="text-3xl md:text-4xl font-black text-white mb-2">SIJAKON<span class="text-amber-500">.</span></h1>
+            <p class="text-[10px] font-bold text-slate-500 tracking-[0.3em]">PUPR BANGGAI KEPULAUAN</p>
+        </header>
 
-    <main class="container mx-auto px-6 max-w-5xl py-12">
-        
-        <section class="glass-card p-8 border-t-4 border-yellow-500">
-            <h2 class="text-lg font-black mb-6 text-yellow-400 underline">INFORMASI KONTAK & LOKASI</h2>
-            <div class="grid md:grid-cols-2 gap-8 text-[11px] font-bold">
-                <div class="space-y-4">
-                    <p><i class="fas fa-map-marker-alt text-red-500 mr-2"></i> ALAMAT: JL. TRANS SULAWESI, BANGGAI KEPULAUAN, SULAWESI TENGAH</p>
-                    <p><i class="fab fa-whatsapp text-green-500 mr-2"></i> WA (TARI MANESSA): 085394940435</p>
-                    <p><i class="fab fa-instagram text-pink-500 mr-2"></i> INSTAGRAM: @JAKON_BANGKEP</p>
-                </div>
-                <div class="bg-slate-800 h-32 rounded-xl flex items-center justify-center border border-white/10">
-                    <a href="https://maps.google.com" target="_blank" class="text-blue-400 underline italic"><i class="fas fa-map-marked-alt mr-2"></i> BUKA LOKASI DI GOOGLE MAPS</a>
-                </div>
-            </div>
+        <section class="glass p-6 rounded-3xl border border-slate-800 mb-6 text-[10px] font-bold grid md:grid-cols-2 gap-4">
+            <p><i class="fas fa-map-marker-alt text-red-500 mr-2"></i> JL. TRANS SULAWESI, BANGGAI KEPULAUAN</p>
+            <p><i class="fab fa-whatsapp text-green-500 mr-2"></i> WA: 085394940435</p>
+            <p><i class="fab fa-instagram text-pink-500 mr-2"></i> INSTAGRAM: @JAKON_BANGKEP</p>
+            <a href="#" class="text-blue-400"><i class="fas fa-map-marked-alt mr-2"></i> LIHAT GOOGLE MAPS</a>
         </section>
 
-        <section class="glass-card p-8 border-t-4 border-blue-500">
-            <div class="grid md:grid-cols-2 gap-8 text-[11px] font-bold opacity-90">
-                <div><h3 class="text-blue-400 mb-2 font-black underline">TUGAS POKOK:</h3><ul class="list-disc pl-4 space-y-1"><li>PEMBINAAN & PENGAWASAN PENYELENGGARAAN JASA KONSTRUKSI</li><li>PENDATAAN & REGISTRASI BADAN USAHA JASA KONSTRUKSI</li><li>PENGEMBANGAN & PEMBERDAYAAN SDM KONSTRUKSI</li><li>PENINGKATAN KUALITAS & KAPASITAS BADAN USAHA</li><li>PEMANTAUAN & EVALUASI KINERJA JASA KONSTRUKSI</li></ul></div>
-                <div><h3 class="text-yellow-400 mb-2 font-black underline">DASAR HUKUM:</h3><p>UNDANG-UNDANG NO. 2 TAHUN 2017 TENTANG JASA KONSTRUKSI. MENGATUR PENYELENGGARAAN UNTUK MEWUJUDKAN STRUKTUR USAHA YANG KOKOH, ANDAL, BERDAYA SAING TINGGI, DAN BERKUALITAS.</p></div>
+        <div class="space-y-4">
+            <div class="glass p-6 rounded-3xl border border-slate-800">
+                <h3 class="text-amber-500 font-black text-xs mb-4">TUGAS POKOK & DASAR HUKUM</h3>
+                <div class="grid md:grid-cols-2 gap-6 text-[10px] font-bold opacity-80">
+                    <ul class="list-disc pl-4 space-y-1"><li>PEMBINAAN & PENGAWASAN JASA KONSTRUKSI</li><li>PENDATAAN BADAN USAHA</li><li>PENGEMBANGAN SDM KONSTRUKSI</li><li>PENINGKATAN KUALITAS BADAN USAHA</li><li>EVALUASI KINERJA JASA KONSTRUKSI</li></ul>
+                    <p>UNDANG-UNDANG NO. 2 TAHUN 2017 TENTANG JASA KONSTRUKSI. MEWUJUDKAN STRUKTUR USAHA YANG KOKOH, ANDAL, DAN BERDAYA SAING.</p>
+                </div>
             </div>
-        </section>
 
-        <div class="accordion-item glass-card px-8 border-l-4 border-green-500">
-            <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-green-400 font-black">PROGRAM PENGEMBANGAN JASA KONSTRUKSI <i class="fas fa-chevron-down"></i></button>
-            <div class="acc-content space-y-6 text-[11px] font-bold">
-                <div class="bg-white/5 p-4 rounded-xl"><h4 class="text-white font-black underline mb-3">01. PELATIHAN & BIMBINGAN TEKNIS (BIMTEK) TENAGA AHLI</h4><ul class="list-decimal pl-5 space-y-2 opacity-80"><li>PENYEDIAAN TRAINING NEED ASSESSMENT (TNA) PELATIHAN TENAGA KERJA KONSTRUKSI</li><li>BIMBINGAN TEKNIS (BIMTEK) SERTIFIKASI TENAGA KERJA KONSTRUKSI</li><li>FASILITASI SERTIFIKASI TENAGA KERJA KONSTRUKSI KUALIFIKASI JABATAN OPERATOR DAN TEKNISI ATAU ANALIS</li><li>PEMBINAAN DAN PENINGKATAN KAPASITAS KELEMBAGAAN JASA KONSTRUKSI</li><li>PENYEDIAAN INSTRUKTUR/ASESOR/PENYELENGGARA PELATIHAN TENAGA KERJA KONSTRUKSI</li><li>IDENTIFIKASI POTENSI KERJA SAMA DAN PEMBERDAYAAN JASA KONSTRUKSI</li><li>PEMANTAUAN DAN EVALUASI PELATIHAN TENAGA KERJA KONSTRUKSI KUALIFIKASI JABATAN OPERATOR DAN TEKNISI ATAU ANALIS</li><li>PENYEDIAAN SOP PENYELENGGARAAN PELATIHAN TENAGA KERJA KONSTRUKSI KUALIFIKASI JABATAN OPERATOR, TEKNISI ATAU ANALIS</li><li>PELATIHAN TENAGA KERJA KONSTRUKSI KUALIFIKASI JABATAN OPERATOR, TEKNISI ATAU ANALIS</li></ul></div>
-                <div class="bg-white/5 p-4 rounded-xl"><h4 class="text-white font-black underline mb-3">02. PENYELENGGARAAN SISTEM INFORMASI JASA KONSTRUKSI (SIPJAKI)</h4><ul class="list-decimal pl-5 space-y-2 opacity-80"><li>PENYEDIAAN PERANGKAT PENDUKUNG LAYANAN INFORMASI JASA KONSTRUKSI</li><li>PENYEDIAAN DATA DAN INFORMASI JASA KONSTRUKSI CAKUPAN KABUPATEN/KOTA</li><li>PENINGKATAN KAPASITAS PENGELOLA SIPJAKI</li><li>OPERASIONALISASI LAYANAN INFORMASI JASA KONSTRUKSI</li></ul></div>
-                <div class="bg-white/5 p-4 rounded-xl"><h4 class="text-white font-black underline mb-3">03. PENGAWASAN</h4><ul class="list-decimal pl-5 space-y-2 opacity-80"><li>PENGAWASAN DAN EVALUASI TERTIB PENYELENGGARAAN JASA KONSTRUKSI</li><li>PENGAWASAN DAN EVALUASI TERTIB PEMANFAATAN PRODUK JASA KONSTRUKSI</li><li>PEMBINAAN TERTIB USAHA, TERTIB PENYELENGGARAAN, DAN TERTIB PEMANFAATAN PRODUK JASA KONSTRUKSI</li><li>PENGAWASAN DAN EVALUASI TERTIB USAHA JASA KONSTRUKSI</li><li>PENYUSUNAN PRODUK HUKUM DAERAH</li></ul></div>
+            <div class="accordion-item group">
+                <button onclick="toggleAcc(this)" class="w-full text-left p-6 rounded-3xl glass hover:bg-slate-800 transition-all flex justify-between items-center border border-slate-800">
+                    <span class="text-white font-bold text-xs"><i class="fas fa-chalkboard-teacher text-amber-500 mr-3"></i> PROGRAM PENGEMBANGAN JASA KONSTRUKSI</span>
+                    <i class="fas fa-chevron-down text-amber-500 text-[10px]"></i>
+                </button>
+                <div class="acc-content glass p-6 rounded-3xl border border-slate-800 text-[10px] font-bold space-y-8 text-slate-300">
+                    
+                    <div class="border-l-2 border-amber-600/30 pl-4">
+                        <h4 class="text-amber-500 mb-3 text-xs">01. PENYELENGGARAAN PELATIHAN TENAGA AHLI KONSTRUKSI</h4>
+                        <ul class="list-decimal pl-4 space-y-2 uppercase">
+                            <li>PENYEDIAAN TRAINING NEED ASSESSMENT (TNA) PELATIHAN TENAGA KERJA KONSTRUKSI</li>
+                            <li>FASILITASI SERTIFIKASI TENAGA KERJA KONSTRUKSI KUALIFIKASI JABATAN OPERATOR DAN TEKNISI ATAU ANALIS</li>
+                            <li>PEMBINAAN DAN PENINGKATAN KAPASITAS KELEMBAGAAN JASA KONSTRUKSI</li>
+                            <li>PENYEDIAAN INSTRUKTUR/ASESOR/PENYELENGGARA PELATIHAN TENAGA KERJA KONSTRUKSI</li>
+                            <li>IDENTIFIKASI POTENSI KERJA SAMA DAN PEMBERDAYAAN JASA KONSTRUKSI</li>
+                            <li>PEMANTAUAN DAN EVALUASI PELATIHAN TENAGA KERJA KONSTRUKSI KUALIFIKASI JABATAN OPERATOR DAN TEKNISI ATAU ANALIS</li>
+                            <li>PENYEDIAAN SOP PENYELENGGARAAN PELATIHAN TENAGA KERJA KONSTRUKSI KUALIFIKASI JABATAN OPERATOR, TEKNISI ATAU ANALIS</li>
+                            <li>PELATIHAN TENAGA KERJA KONSTRUKSI KUALIFIKASI JABATAN OPERATOR, TEKNISI ATAU ANALIS</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-2 border-amber-600/30 pl-4">
+                        <h4 class="text-amber-500 mb-3 text-xs">02. PENYELENGGARAAN SISTEM INFORMASI JASA KONSTRUKSI</h4>
+                        <ul class="list-decimal pl-4 space-y-2 uppercase">
+                            <li>PENYEDIAAN PERANGKAT PENDUKUNG LAYANAN INFORMASI JASA KONSTRUKSI</li>
+                            <li>PENYEDIAAN DATA DAN INFORMASI JASA KONSTRUKSI CAKUPAN KABUPATEN/KOTA</li>
+                            <li>PENINGKATAN KAPASITAS PENGELOLA SIPJAKI</li>
+                            <li>OPERASIONALISASI LAYANAN INFORMASI JASA KONSTRUKSI</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-l-2 border-amber-600/30 pl-4">
+                        <h4 class="text-amber-500 mb-3 text-xs">03. PENGAWASAN TERTIB USAHA & PENYELENGGARAAN</h4>
+                        <ul class="list-decimal pl-4 space-y-2 uppercase">
+                            <li>PENGAWASAN DAN EVALUASI TERTIB PENYELENGGARAAN JASA KONSTRUKSI KABUPATEN/KOTA</li>
+                            <li>PENGAWASAN DAN EVALUASI TERTIB PEMANFAATAN PRODUK JASA KONSTRUKSI KABUPATEN/KOTA</li>
+                            <li>PEMBINAAN TERTIB USAHA, TERTIB PENYELENGGARAAN, DAN TERTIB PEMANFAATAN PRODUK JASA KONSTRUKSI</li>
+                            <li>PENGAWASAN DAN EVALUASI TERTIB USAHA JASA KONSTRUKSI KABUPATEN/KOTA</li>
+                            <li>PENYUSUNAN PRODUK HUKUM DAERAH TERKAIT PENYELENGGARAAN JASA KONSTRUKSI DI KABUPATEN/KOTA</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="accordion-item glass-card px-8 border-l-4 border-purple-500">
-            <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-purple-400 font-black">DOKUMENTASI KEGIATAN <i class="fas fa-chevron-down"></i></button>
-            <div class="acc-content grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="space-y-2"><div class="img-box">FOTO KEGIATAN BIMTEK</div><p class="text-[9px] text-center font-bold opacity-60">PELAKSANAAN BIMTEK TENAGA KERJA</p></div>
-                <div class="space-y-2"><div class="img-box">FOTO PENINJAUAN</div><p class="text-[9px] text-center font-bold opacity-60">PENGAWASAN TERTIB KONSTRUKSI</p></div>
+            <div class="accordion-item group">
+                <button onclick="toggleAcc(this)" class="w-full text-left p-6 rounded-3xl glass hover:bg-slate-800 transition-all flex justify-between items-center border border-slate-800">
+                    <span class="text-white font-bold text-xs"><i class="fas fa-file-contract text-amber-500 mr-3"></i> SOP PEMINJAMAN ALAT</span>
+                    <i class="fas fa-chevron-down text-amber-500 text-[10px]"></i>
+                </button>
+                <div class="acc-content glass p-6 rounded-3xl border border-slate-800 space-y-3">
+                    <div class="flex gap-4"><span class="text-amber-500 font-black text-xs">01</span><p class="text-[10px]">PENGAJUAN SURAT PERMOHONAN SEWA ALAT KE DINAS PUPR.</p></div>
+                    <div class="flex gap-4"><span class="text-amber-500 font-black text-xs">02</span><p class="text-[10px]">VERIFIKASI, DISPOSISI KEPALA DINAS, DAN PENERBITAN SKRD.</p></div>
+                    <div class="flex gap-4"><span class="text-amber-500 font-black text-xs">03</span><p class="text-[10px]">PEMBERITAHUAN PERSETUJUAN OLEH KEPALA UPTD.</p></div>
+                    <div class="flex gap-4"><span class="text-amber-500 font-black text-xs">04</span><p class="text-[10px]">PEMBERIAN RINCIAN BIAYA SEWA BERDASARKAN SKRD.</p></div>
+                    <div class="flex gap-4"><span class="text-amber-500 font-black text-xs">05</span><p class="text-[10px]">PEMBAYARAN OLEH PENYEWA KE BENDAHARA PENERIMA.</p></div>
+                    <div class="flex gap-4"><span class="text-amber-500 font-black text-xs">06</span><p class="text-[10px]">PENYETORAN HASIL KE KAS DAERAH.</p></div>
+                    <div class="flex gap-4"><span class="text-amber-500 font-black text-xs">07</span><p class="text-[10px]">PENYIAPAN KONTRAK DAN PENYERAHAN ALAT.</p></div>
+                    <div class="flex gap-4"><span class="text-amber-500 font-black text-xs">08</span><p class="text-[10px]">PENGGUNAAN ALAT DAN TANGGUNG JAWAB KONDISI ALAT.</p></div>
+                </div>
             </div>
-        </div>
 
-        <div class="accordion-item glass-card px-8 border-l-4 border-blue-500">
-            <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-blue-400 font-black">PERSONEL & JABATAN <i class="fas fa-chevron-down"></i></button>
-            <div class="acc-content grid grid-cols-1 md:grid-cols-2 gap-3 text-[10px]">
-                <div class="p-3 bg-white/5 rounded-lg">01. JASRUN HASAN, S.T., M.AP <span class="jabatan-text">KEPALA BIDANG</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">02. JUFRI, S.T <span class="jabatan-text">KEPALA SEKSI PEMBINAAN</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">03. HENDRA MOIDAY, S.T <span class="jabatan-text">KEPALA SEKSI PENGAWASAN</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">04. IKRAR, S.T <span class="jabatan-text">STAF TEKNIS</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">05. ARWING KARAU <span class="jabatan-text">STAF TEKNIS</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">06. PUSPA SARI, S.P.W.K <span class="jabatan-text">STAF ADMINISTRASI</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">07. NUR UTARI DEWI D. MANESSA, S.T <span class="jabatan-text">STAF TEKNIS</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">08. M. SADLI SOLODIA, S.P.W.K <span class="jabatan-text">STAF TEKNIS</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">09. USMAN IBRAHIM, S.Ars <span class="jabatan-text">STAF TEKNIS</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">10. MARIANA BAGO, S.E <span class="jabatan-text">STAF ADMINISTRASI</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">11. SUMIARTO SUKU, S.T <span class="jabatan-text">STAF TEKNIS</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">12. RIKO TANDOAK, S.T <span class="jabatan-text">STAF TEKNIS</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">13. ABDIMAS, S.T <span class="jabatan-text">STAF TEKNIS</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">14. HAIRUDIN ABD. HAMID <span class="jabatan-text">STAF OPERASIONAL</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">15. AWI LAMAGA <span class="jabatan-text">STAF OPERASIONAL</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">16. SITI HADIJA Z. MADALUMAN <span class="jabatan-text">STAF ADMINISTRASI</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">17. TAMRIN SAID <span class="jabatan-text">STAF OPERASIONAL</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">18. RIDHA H. YABU <span class="jabatan-text">STAF ADMINISTRASI</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">19. MULYADI MUSA <span class="jabatan-text">STAF OPERASIONAL</span></div>
-                <div class="p-3 bg-white/5 rounded-lg">20. MUH. YUSRI SAPUTRA <span class="jabatan-text">STAF TEKNIS</span></div>
+            <div class="accordion-item group">
+                <button onclick="toggleAcc(this)" class="w-full text-left p-6 rounded-3xl glass hover:bg-slate-800 transition-all flex justify-between items-center border border-slate-800">
+                    <span class="text-white font-bold text-xs"><i class="fas fa-users text-amber-500 mr-3"></i> PERSONEL & JABATAN</span>
+                    <i class="fas fa-chevron-down text-amber-500 text-[10px]"></i>
+                </button>
+                <div class="acc-content glass p-6 rounded-3xl border border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-3 text-[9px] font-bold">
+                    <div class="p-3 bg-white/5 rounded-xl">01. JASRUN HASAN, S.T., M.AP <span class="block text-amber-500">KEPALA BIDANG JASA KONSTRUKSI</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">03. JUFRI, S.T <span class="block text-amber-500">PEMBINA JASA KONSTRUKSI AHLI MUDA</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">04. HENDRA MOIDADY, S.T <span class="block text-amber-500">PEMBINA JASA KONSTRUKSI AHLI MUDA</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">05. IKRAR, S.T <span class="block text-amber-500">PENGUJI LABORATORIUM, TANAH, ASPAL DAN BETON</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">06. ARWING KARAU <span class="block text-amber-500">PEMELIHARA PERALATAN</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">07. PUSPA SARI, S.P.W.K <span class="block text-amber-500">PEMBINA JASA KONSTRUKSI AHLI MUDA</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">08. NUR UTARI DEWI DAENG MANESSA, S.T <span class="block text-amber-500">PEMBINA JASA KONSTRUKSI AHLI MUDA</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">09. MUHAMMAD SADLI SOLODIA, S.P.W.K <span class="block text-amber-500">PEMBINA JASA KONSTRUKSI AHLI MUDA</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">10. USMAN IBRAHIM, S.Ars <span class="block text-amber-500">PEMBINA JASA KONSTRUKSI AHLI MUDA</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">11. MARIANA BAGO, SE <span class="block text-amber-500">PEMBINA JASA KONSTRUKSI AHLI PERTAMA</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">12. SUMIARTO SUKU, ST <span class="block text-amber-500">PEMBINA JASA KONSTRUKSI AHLI PERTAMA</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">13. RIKO TANDOAK, S.T <span class="block text-amber-500">PENATA LAYANAN OPERASIONAL</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">14. ABDIMAS, S.T <span class="block text-amber-500">PENATA LAYANAN OPERASIONAL</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">15. HAIRUDIN ABD. HAMID <span class="block text-amber-500">OPERATOR VIBRATOR ROLLER</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">16. AWI LAMAGA <span class="block text-amber-500">OPERATOR TRONTON</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">17. SITI HADIJA Z. MADALUMAN <span class="block text-amber-500">OPERATOR LAYANAN OPERASIONAL</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">18. TAMRIN SAID <span class="block text-amber-500">OPERATOR LAYANAN OPERASIONAL</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">19. RIDHA H. YABU <span class="block text-amber-500">OPERATOR LAYANAN OPERASIONAL</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">20. MULYADI MUSA <span class="block text-amber-500">SOPIR DUMP TRUCK</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl">21. MUH. YUSRI SAPUTRA <span class="block text-amber-500">AGENDARIS</span></div>
+                </div>
             </div>
-        </div>
 
-        <div class="accordion-item glass-card px-8 border-l-4 border-yellow-500">
-    <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-yellow-400 font-black">
-        SOP PEMINJAMAN ALAT <i class="fas fa-chevron-down"></i>
-    </button>
-    <div class="acc-content text-[11px] font-bold p-4 bg-white/5 rounded-xl space-y-4">
-        <div>
-            <strong class="text-white">1. Pengajuan Permohonan</strong><br>
-            Penyewa mengajukan surat permohonan sewa alat kepada Dinas PUPR.
-        </div>
-        <div>
-            <strong class="text-white">2. Proses Persetujuan</strong><br>
-            Kepala Dinas melakukan verifikasi dan memberikan disposisi kepada Kepala UPTD serta menerbitkan SKRD.
-        </div>
-        <div>
-            <strong class="text-white">3. Pemberitahuan Persetujuan</strong><br>
-            Kepala UPTD menyampaikan informasi persetujuan sewa kepada penyewa.
-        </div>
-        <div>
-            <strong class="text-white">4. Rincian Biaya Sewa</strong><br>
-            Pengawas Pengoperasian Alat memberikan rincian biaya sewa berdasarkan SKRD.
-        </div>
-        <div>
-            <strong class="text-white">5. Pembayaran Sewa</strong><br>
-            Penyewa melakukan pembayaran kepada bendahara penerima.
-        </div>
-        <div>
-            <strong class="text-white">6. Penyetoran ke Kas Daerah</strong><br>
-            Bendahara menyetorkan hasil pembayaran ke kas daerah dan mengonfirmasi pelunasan.
-        </div>
-        <div>
-            <strong class="text-white">7. Penyiapan Kontrak dan Alat</strong><br>
-            Kepala UPTD menyiapkan kontrak sewa dan menyerahkan alat kepada penyewa.
-        </div>
-        <div>
-            <strong class="text-white">8. Penggunaan dan Tanggung Jawab</strong><br>
-            Penyewa menerima kontrak, menggunakan alat, dan bertanggung jawab atas kondisi alat hingga dikembalikan.
-        </div>
-    </div>
-</div>
-
-        <div class="accordion-item glass-card px-8 border-l-4 border-red-500">
-            <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-red-400 font-black">TARIF SEWA ALAT <i class="fas fa-chevron-down"></i></button>
-            <div class="acc-content p-4 bg-white/5 rounded-xl">
-                <table class="w-full text-left uppercase text-[11px] font-bold">
-                    <tr><td class="p-2">01. LOADER</td><td class="p-2 text-right">RP 215,813 / JAM</td></tr>
-                    <tr><td class="p-2">02. MOTOR GREDER</td><td class="p-2 text-right">RP 576,785 / JAM</td></tr>
-                    <tr><td class="p-2">03. VIBRATOR ROLLER</td><td class="p-2 text-right">RP 326,786 / JAM</td></tr>
-                    <tr><td class="p-2">04. TANDEM ROLLER</td><td class="p-2 text-right">RP 165,500 / JAM</td></tr>
-                    <tr><td class="p-2">05. DUMP TRUCK</td><td class="p-2 text-right">RP 81,074 / JAM</td></tr>
-                    <tr><td class="p-2">06. TRONTON</td><td class="p-2 text-right">RP 36,000 / KM</td></tr>
-                </table>
+            <div class="glass p-6 rounded-3xl border border-slate-800">
+                <h3 class="text-amber-500 font-black text-xs mb-4">TARIF SEWA ALAT</h3>
+                <div class="grid grid-cols-2 gap-4 text-[10px] font-bold">
+                    <p>LOADER: RP 215,813/JAM</p><p>MOTOR GREDER: RP 576,785/JAM</p>
+                    <p>VIBRATOR ROLLER: RP 326,786/JAM</p><p>TANDEM ROLLER: RP 165,500/JAM</p>
+                    <p>DUMP TRUCK: RP 81,074/JAM</p><p>TRONTON: RP 36,000/KM</p>
+                </div>
             </div>
         </div>
     </main>
@@ -148,9 +143,9 @@
     <script>
         function toggleAcc(btn) {
             const item = btn.parentElement;
-            const isActive = item.classList.contains('item-active');
+            const isOpen = item.classList.contains('item-active');
             document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('item-active'));
-            if (!isActive) item.classList.add('item-active');
+            if (!isOpen) item.classList.add('item-active');
         }
     </script>
 </body>
