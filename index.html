@@ -14,6 +14,7 @@
         .item-active .acc-content { max-height: 20000px; opacity: 1; padding: 25px 0; transition: all 0.5s ease-in-out; }
         .italic-up { font-style: italic; text-transform: uppercase; }
         .jabatan-text { color: #60a5fa; font-size: 8px; font-weight: 800; letter-spacing: 0.05em; display: block; margin-top: 2px; }
+        .img-box { position: relative; aspect-ratio: 1/1; background: #1e293b; border-radius: 1.25rem; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
     </style>
 </head>
 <body class="italic-up">
@@ -49,7 +50,7 @@
                 <span class="text-[11px] font-black tracking-widest uppercase"><i class="fas fa-tasks mr-2"></i> Program Pengembangan Jasa Konstruksi</span>
             </button>
             <div class="acc-content space-y-6 text-[10px] font-bold">
-                <div class="bg-white/5 p-4 rounded-xl"><h4 class="font-black text-white underline mb-2">01. Penyelenggaraan Pelatihan Tenaga Ahli Konstruksi</h4><ul class="list-decimal pl-4 space-y-1 opacity-80"><li>Penyediaan Training Need Assessment (TNA) Pelatihan Tenaga Kerja Konstruksi</li><li>Fasilitasi Sertifikasi Tenaga Kerja Konstruksi Kualifikasi Jabatan Operator dan Teknisi atau Analis</li><li>Pembinaan dan Peningkatan Kapasitas Kelembagaan Jasa Konstruksi</li><li>Penyediaan Instruktur/Asesor/Penyelenggara Pelatihan Tenaga Kerja Konstruksi</li><li>Identifikasi Potensi Kerja Sama dan Pemberdayaan Jasa Konstruksi</li><li>Pemantauan dan Evaluasi Pelatihan Tenaga Kerja Konstruksi Kualifikasi Jabatan Operator dan Teknisi atau Analis</li><li>Penyediaan SOP Penyelenggaraan Pelatihan Tenaga Kerja Konstruksi Kualifikasi Jabatan Operator, Teknisi atau Analis</li><li>Pelatihan Tenaga Kerja Konstruksi Kualifikasi Jabatan Operator, Teknisi atau Analis</li></ul></div>
+                <div class="bg-white/5 p-4 rounded-xl"><h4 class="font-black text-white underline mb-2">01. Pelatihan Tenaga Ahli Konstruksi</h4><ul class="list-decimal pl-4 space-y-1 opacity-80"><li>Penyediaan Training Need Assessment (TNA) Pelatihan Tenaga Kerja Konstruksi</li><li>Fasilitasi Sertifikasi Tenaga Kerja Konstruksi Kualifikasi Jabatan Operator dan Teknisi atau Analis</li><li>Pembinaan dan Peningkatan Kapasitas Kelembagaan Jasa Konstruksi</li><li>Penyediaan Instruktur/Asesor/Penyelenggara Pelatihan Tenaga Kerja Konstruksi</li><li>Identifikasi Potensi Kerja Sama dan Pemberdayaan Jasa Konstruksi</li><li>Pemantauan dan Evaluasi Pelatihan Tenaga Kerja Konstruksi Kualifikasi Jabatan Operator dan Teknisi atau Analis</li><li>Penyediaan SOP Penyelenggaraan Pelatihan Tenaga Kerja Konstruksi Kualifikasi Jabatan Operator, Teknisi atau Analis</li><li>Pelatihan Tenaga Kerja Konstruksi Kualifikasi Jabatan Operator, Teknisi atau Analis</li></ul></div>
                 <div class="bg-white/5 p-4 rounded-xl"><h4 class="font-black text-white underline mb-2">02. Penyelenggaraan Sistem Informasi Jasa Konstruksi Cakupan Kabupaten/Kota</h4><ul class="list-decimal pl-4 space-y-1 opacity-80"><li>Penyediaan Perangkat Pendukung Layanan Informasi Jasa Konstruksi</li><li>Penyediaan Data dan Informasi Jasa Konstruksi Cakupan Kabupaten/Kota</li><li>Peningkatan Kapasitas Pengelola SIPJAKI</li><li>Operasionalisasi Layanan Informasi Jasa Konstruksi</li></ul></div>
                 <div class="bg-white/5 p-4 rounded-xl"><h4 class="font-black text-white underline mb-2">03. Pengawasan Tertib Usaha, Tertib Penyelenggaraan dan Tertib Pemanfaatan Jasa Konstruksi</h4><ul class="list-decimal pl-4 space-y-1 opacity-80"><li>Pengawasan dan Evaluasi Tertib Penyelenggaraan Jasa Konstruksi Kabupaten/Kota</li><li>Pengawasan dan Evaluasi Tertib Pemanfaatan Produk Jasa Konstruksi Kabupaten/Kota</li><li>Pembinaan Tertib Usaha, Tertib Penyelenggaraan, dan Tertib Pemanfaatan Produk Jasa Konstruksi</li><li>Pengawasan dan Evaluasi Tertib Usaha Jasa Konstruksi Kabupaten/Kota</li><li>Penyusunan Produk Hukum Daerah Terkait Penyelenggaraan Jasa Konstruksi di Kabupaten/Kota</li></ul></div>
             </div>
@@ -85,11 +86,26 @@
 
         <div class="accordion-item glass-card px-8 border-l-4 border-yellow-500">
             <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-yellow-400">
-                <span class="text-[11px] font-black tracking-widest uppercase"><i class="fas fa-file-invoice-dollar mr-2"></i> SOP & Tarif Sewa Alat</span>
+                <span class="text-[11px] font-black tracking-widest uppercase"><i class="fas fa-file-alt mr-2"></i> SOP Peminjaman Alat</span>
             </button>
-            <div class="acc-content space-y-6 text-[10px] font-bold">
-                <div class="p-4 bg-white/5 rounded-xl"><h4 class="text-white mb-2 underline">SOP PEMINJAMAN ALAT</h4><p>01. Pengajuan, 02. Persetujuan, 03. Pemberitahuan, 04. Biaya, 05. Pembayaran, 06. Setoran, 07. Kontrak, 08. Tanggung Jawab.</p></div>
-                <table class="w-full text-left uppercase">
+            <div class="acc-content text-[10px] font-bold p-4 bg-white/5 rounded-xl space-y-4">
+                <div><h4 class="text-white mb-1">01. PENGAJUAN</h4><p class="opacity-70">Pemohon mengajukan Surat Permohonan resmi kepada Kepala Dinas PUPR melalui Bidang Jasa Konstruksi.</p></div>
+                <div><h4 class="text-white mb-1">02. VERIFIKASI</h4><p class="opacity-70">Tim Teknis memverifikasi ketersediaan dan kondisi teknis alat di lapangan.</p></div>
+                <div><h4 class="text-white mb-1">03. PERSETUJUAN</h4><p class="opacity-70">Kepala Bidang memberikan disposisi persetujuan teknis.</p></div>
+                <div><h4 class="text-white mb-1">04. PERHITUNGAN</h4><p class="opacity-70">Administrasi menghitung total retribusi sesuai durasi sewa.</p></div>
+                <div><h4 class="text-white mb-1">05. PEMBAYARAN</h4><p class="opacity-70">Pemohon membayar via sistem/kasir dan menerima bukti sah.</p></div>
+                <div><h4 class="text-white mb-1">06. SETORAN</h4><p class="opacity-70">Verifikasi setoran ke Kas Daerah.</p></div>
+                <div><h4 class="text-white mb-1">07. KONTRAK</h4><p class="opacity-70">Penandatanganan Kontrak Pinjam Pakai Alat Berat.</p></div>
+                <div><h4 class="text-white mb-1">08. OPERASIONAL</h4><p class="opacity-70">Mobilisasi alat dan tanggung jawab penuh oleh pemohon.</p></div>
+            </div>
+        </div>
+
+        <div class="accordion-item glass-card px-8 border-l-4 border-red-500">
+            <button onclick="toggleAcc(this)" class="w-full py-7 flex justify-between items-center text-red-400">
+                <span class="text-[11px] font-black tracking-widest uppercase"><i class="fas fa-money-bill-wave mr-2"></i> Tarif Sewa Alat</span>
+            </button>
+            <div class="acc-content p-4 bg-white/5 rounded-xl">
+                <table class="w-full text-left uppercase text-[10px] font-bold">
                     <tr><td class="p-2">01. LOADER</td><td class="p-2 text-right">RP 215,813 / JAM</td></tr>
                     <tr><td class="p-2">02. MOTOR GREDER</td><td class="p-2 text-right">RP 576,785 / JAM</td></tr>
                     <tr><td class="p-2">03. VIBRATOR ROLLER</td><td class="p-2 text-right">RP 326,786 / JAM</td></tr>
