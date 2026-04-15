@@ -12,28 +12,20 @@
         .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .acc-content { max-height: 0; overflow: hidden; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); opacity: 0; }
         .item-active .acc-content { max-height: 20000px; opacity: 1; padding-top: 1.5rem; padding-bottom: 1rem; }
-        .step-number { font-family: serif; font-style: italic; }
     </style>
 </head>
-<body class="tracking-wide">
+<body class="tracking-wide uppercase">
 
     <main class="max-w-4xl mx-auto p-6 md:p-12">
         <header class="mb-12 text-center">
             <div class="w-20 h-20 bg-amber-600 rounded-3xl mx-auto flex items-center justify-center font-black text-3xl text-white mb-6 shadow-xl shadow-amber-900/20">JS</div>
-            <h1 class="text-3xl md:text-4xl font-black text-white mb-2 uppercase">SIJAKON<span class="text-amber-500">.</span></h1>
-            <p class="text-[10px] font-bold text-slate-500 tracking-[0.3em] uppercase">PUPR BANGGAI KEPULAUAN</p>
+            <h1 class="text-3xl md:text-4xl font-black text-white mb-2">SIJAKON<span class="text-amber-500">.</span></h1>
+            <p class="text-[10px] font-bold text-slate-500 tracking-[0.3em]">PUPR BANGGAI KEPULAUAN</p>
         </header>
-
-        <section class="glass p-6 rounded-3xl border border-slate-800 mb-6 text-[10px] font-bold grid md:grid-cols-2 gap-4 uppercase">
-            <p><i class="fas fa-map-marker-alt text-red-500 mr-2"></i> JL. TRANS SULAWESI, BANGGAI KEPULAUAN</p>
-            <p><i class="fab fa-whatsapp text-green-500 mr-2"></i> WHATSAPP: 085394940435</p>
-            <p><i class="fab fa-instagram text-pink-500 mr-2"></i> INSTAGRAM: @JAKON_BANGKEP</p>
-            <a href="#" class="text-blue-400 hover:underline"><i class="fas fa-map-marked-alt mr-2"></i> LIHAT GOOGLE MAPS</a>
-        </section>
 
         <div class="space-y-4">
             
-            <div class="glass p-6 rounded-3xl border border-slate-800 uppercase">
+            <div class="glass p-6 rounded-3xl border border-slate-800">
                 <h3 class="text-amber-500 font-black text-xs mb-4">TUGAS POKOK DAN DASAR HUKUM</h3>
                 <div class="grid md:grid-cols-2 gap-6 text-[10px] font-bold opacity-80 leading-relaxed">
                     <ul class="list-disc pl-4 space-y-1">
@@ -47,76 +39,60 @@
             </div>
 
             <div class="accordion-item group">
-                <button onclick="toggleAcc(this)" class="w-full text-left p-6 rounded-3xl glass hover:bg-slate-800 transition-all flex justify-between items-center border border-slate-800 uppercase">
+                <button onclick="toggleAcc(this)" class="w-full text-left p-6 rounded-3xl glass hover:bg-slate-800 transition-all flex justify-between items-center border border-slate-800">
                     <span class="text-white font-bold text-xs"><i class="fas fa-chalkboard-teacher text-amber-500 mr-3"></i> PROGRAM PENGEMBANGAN JASA KONSTRUKSI</span>
                     <i class="fas fa-chevron-down text-amber-500 text-[10px]"></i>
                 </button>
-                <div class="acc-content glass px-6 rounded-3xl border border-slate-800 text-[9px] font-bold space-y-8 text-slate-300 uppercase">
-                    
-                    <div class="border-l-2 border-amber-600/30 pl-4">
-                        <h4 class="text-amber-500 mb-3 text-xs">01. PENYELENGGARAAN PELATIHAN TENAGA AHLI KONSTRUKSI</h4>
-                        <ul class="list-decimal pl-4 space-y-2">
-                            <li>PENYEDIAAN TRAINING NEED ASSESSMENT PELATIHAN TENAGA KERJA KONSTRUKSI</li>
-                            <li>FASILITASI SERTIFIKASI TENAGA KERJA KONSTRUKSI KUALIFIKASI JABATAN OPERATOR DAN TEKNISI ATAU ANALIS</li>
-                            <li>PEMBINAAN DAN PENINGKATAN KAPASITAS KELEMBAGAAN JASA KONSTRUKSI</li>
-                            <li>PENYEDIAAN INSTRUKTUR ATAU ASESOR ATAU PENYELENGGARA PELATIHAN TENAGA KERJA KONSTRUKSI</li>
-                            <li>IDENTIFIKASI POTENSI KERJA SAMA DAN PEMBERDAYAAN JASA KONSTRUKSI</li>
-                            <li>PEMANTAUAN DAN EVALUASI PELATIHAN TENAGA KERJA KONSTRUKSI KUALIFIKASI JABATAN OPERATOR DAN TEKNISI ATAU ANALIS</li>
-                            <li>PENYEDIAAN STANDAR OPERASIONAL PROSEDUR PENYELENGGARAAN PELATIHAN TENAGA KERJA KONSTRUKSI</li>
-                            <li>PELATIHAN TENAGA KERJA KONSTRUKSI KUALIFIKASI JABATAN OPERATOR DAN TEKNISI ATAU ANALIS</li>
-                        </ul>
-                    </div>
-
-                    <div class="border-l-2 border-amber-600/30 pl-4">
-                        <h4 class="text-amber-500 mb-3 text-xs">02. PENYELENGGARAAN SISTEM INFORMASI JASA KONSTRUKSI</h4>
-                        <ul class="list-decimal pl-4 space-y-2">
-                            <li>PENYEDIAAN PERANGKAT PENDUKUNG LAYANAN INFORMASI JASA KONSTRUKSI</li>
-                            <li>PENYEDIAAN DATA DAN INFORMASI JASA KONSTRUKSI CAKUPAN KABUPATEN ATAU KOTA</li>
-                            <li>PENINGKATAN KAPASITAS PENGELOLA SISTEM INFORMASI PELAKSANAAN JASA KONSTRUKSI</li>
-                            <li>OPERASIONALISASI LAYANAN INFORMASI JASA KONSTRUKSI</li>
-                        </ul>
-                    </div>
-
-                    <div class="border-l-2 border-amber-600/30 pl-4">
-                        <h4 class="text-amber-500 mb-3 text-xs">03. PENGAWASAN TERTIB USAHA DAN PENYELENGGARAAN</h4>
-                        <ul class="list-decimal pl-4 space-y-2">
-                            <li>PENGAWASAN DAN EVALUASI TERTIB PENYELENGGARAAN JASA KONSTRUKSI KABUPATEN ATAU KOTA</li>
-                            <li>PENGAWASAN DAN EVALUASI TERTIB PEMANFAATAN PRODUK JASA KONSTRUKSI KABUPATEN ATAU KOTA</li>
-                            <li>PEMBINAAN TERTIB USAHA, TERTIB PENYELENGGARAAN, DAN TERTIB PEMANFAATAN PRODUK JASA KONSTRUKSI</li>
-                            <li>PENGAWASAN DAN EVALUASI TERTIB USAHA JASA KONSTRUKSI KABUPATEN ATAU KOTA</li>
-                            <li>PENYUSUNAN PRODUK HUKUM DAERAH TERKAIT PENYELENGGARAAN JASA KONSTRUKSI DI KABUPATEN ATAU KOTA</li>
-                        </ul>
-                    </div>
+                <div class="acc-content glass px-6 rounded-3xl border border-slate-800 text-[9px] font-bold space-y-4 text-slate-300">
+                    <h4 class="text-amber-500 text-xs">01. PENYELENGGARAAN PELATIHAN TENAGA AHLI</h4>
+                    <p>PENYEDIAAN TRAINING NEED ASSESSMENT, SERTIFIKASI JABATAN KERJA OPERATOR/TEKNISI, PENINGKATAN KAPASITAS KELEMBAGAAN, DAN EVALUASI PELATIHAN.</p>
+                    <h4 class="text-amber-500 text-xs">02. PENYELENGGARAAN SISTEM INFORMASI JASA KONSTRUKSI</h4>
+                    <p>PENGELOLAAN DATA DAN INFORMASI JASA KONSTRUKSI CAKUPAN KABUPATEN/KOTA SERTA OPERASIONALISASI LAYANAN INFORMASI PUBLIK.</p>
+                    <h4 class="text-amber-500 text-xs">03. PENGAWASAN TERTIB USAHA DAN PENYELENGGARAAN</h4>
+                    <p>PENGAWASAN TERTIB PENYELENGGARAAN, TERTIB PEMANFAATAN PRODUK KONSTRUKSI, SERTA PENYUSUNAN PRODUK HUKUM DAERAH.</p>
                 </div>
             </div>
 
             <div class="accordion-item group">
-                <button onclick="toggleAcc(this)" class="w-full text-left p-6 rounded-3xl glass hover:bg-slate-800 transition-all flex justify-between items-center border border-slate-800 uppercase">
-                    <span class="text-white font-bold text-xs"><i class="fas fa-file-contract text-amber-500 mr-3"></i> ALUR SOP PEMINJAMAN ALAT BERAT</span>
+                <button onclick="toggleAcc(this)" class="w-full text-left p-6 rounded-3xl glass hover:bg-slate-800 transition-all flex justify-between items-center border border-slate-800">
+                    <span class="text-white font-bold text-xs"><i class="fas fa-graduation-cap text-amber-500 mr-3"></i> KEGIATAN DAN BIMTEK</span>
                     <i class="fas fa-chevron-down text-amber-500 text-[10px]"></i>
                 </button>
-                <div class="acc-content glass px-6 rounded-3xl border border-slate-800 space-y-4 pb-6 uppercase">
-                    <div class="flex gap-4 items-start"><span class="text-amber-500 font-black text-xs step-number">01</span><p class="text-[10px] font-bold">PENGAJUAN SURAT PERMOHONAN SEWA ALAT KE DINAS PEKERJAAN UMUM DAN PENATAAN RUANG.</p></div>
-                    <div class="flex gap-4 items-start"><span class="text-amber-500 font-black text-xs step-number">02</span><p class="text-[10px] font-bold">VERIFIKASI TEKNIS, DISPOSISI KEPALA DINAS, DAN PENERBITAN SURAT KETETAPAN RETRIBUSI DAERAH.</p></div>
-                    <div class="flex gap-4 items-start"><span class="text-amber-500 font-black text-xs step-number">03</span><p class="text-[10px] font-bold">PEMBERITAHUAN PERSETUJUAN OLEH KEPALA UNIT PELAKSANA TEKNIS DAERAH PERALATAN.</p></div>
-                    <div class="flex gap-4 items-start"><span class="text-amber-500 font-black text-xs step-number">04</span><p class="text-[10px] font-bold">PEMBERIAN RINCIAN BIAYA BERDASARKAN TARIF RETRIBUSI DAERAH.</p></div>
-                    <div class="flex gap-4 items-start"><span class="text-amber-500 font-black text-xs step-number">05</span><p class="text-[10px] font-bold">PEMBAYARAN OLEH PENYEWA KE BENDAHARA PENERIMA DINAS PEKERJAAN UMUM.</p></div>
-                    <div class="flex gap-4 items-start"><span class="text-amber-500 font-black text-xs step-number">06</span><p class="text-[10px] font-bold">PENYETORAN HASIL RETRIBUSI KE KAS DAERAH KABUPATEN.</p></div>
-                    <div class="flex gap-4 items-start"><span class="text-amber-500 font-black text-xs step-number">07</span><p class="text-[10px] font-bold">PENANDATANGANAN KONTRAK SEWA DAN SERAH TERIMA ALAT BERAT.</p></div>
-                    <div class="flex gap-4 items-start"><span class="text-amber-500 font-black text-xs step-number">08</span><p class="text-[10px] font-bold">PENGGUNAAN ALAT DENGAN TANGGUNG JAWAB PENUH OLEH PIHAK PENYEWA.</p></div>
+                <div class="acc-content glass p-6 rounded-3xl border border-slate-800 space-y-4">
+                    <p class="text-[10px] font-bold">AKSES SELURUH MATERI PELATIHAN DAN BIMBINGAN TEKNIS JASA KONSTRUKSI:</p>
+                    <a href="https://drive.google.com/drive/folders/1bEDRxrVCGJxh6fLQpvFV22dK4G06oSCd" target="_blank" class="block bg-amber-600 hover:bg-amber-700 text-white p-4 rounded-xl text-[10px] font-black text-center transition-all">
+                        <i class="fab fa-google-drive mr-2"></i> KLIK UNTUK AKSES MATERI GOOGLE DRIVE
+                    </a>
                 </div>
             </div>
 
             <div class="accordion-item group">
-                <button onclick="toggleAcc(this)" class="w-full text-left p-6 rounded-3xl glass hover:bg-slate-800 transition-all flex justify-between items-center border border-slate-800 uppercase">
-                    <span class="text-white font-bold text-xs"><i class="fas fa-users text-amber-500 mr-3"></i> DAFTAR PERSONEL BIDANG JASA KONSTRUKSI</span>
+                <button onclick="toggleAcc(this)" class="w-full text-left p-6 rounded-3xl glass hover:bg-slate-800 transition-all flex justify-between items-center border border-slate-800">
+                    <span class="text-white font-bold text-xs"><i class="fas fa-file-contract text-amber-500 mr-3"></i> SOP PEMINJAMAN ALAT BERAT</span>
                     <i class="fas fa-chevron-down text-amber-500 text-[10px]"></i>
                 </button>
-                <div class="acc-content glass p-4 rounded-3xl border border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-2 text-[8px] font-bold uppercase">
+                <div class="acc-content glass px-6 rounded-3xl border border-slate-800 space-y-3 pb-6 text-[10px] font-bold">
+                    <p>01. PENGAJUAN SURAT PERMOHONAN SEWA ALAT KE DINAS PUPR.</p>
+                    <p>02. VERIFIKASI TEKNIS, DISPOSISI KEPALA DINAS, DAN PENERBITAN SURAT KETETAPAN RETRIBUSI DAERAH.</p>
+                    <p>03. PEMBERITAHUAN PERSETUJUAN OLEH KEPALA UNIT PELAKSANA TEKNIS DAERAH PERALATAN.</p>
+                    <p>04. PEMBERIAN RINCIAN BIAYA BERDASARKAN TARIF RETRIBUSI DAERAH.</p>
+                    <p>05. PEMBAYARAN OLEH PENYEWA KE BENDAHARA PENERIMA DINAS PEKERJAAN UMUM.</p>
+                    <p>06. PENYETORAN HASIL RETRIBUSI KE KAS DAERAH KABUPATEN.</p>
+                    <p>07. PENANDATANGANAN KONTRAK SEWA DAN SERAH TERIMA ALAT BERAT.</p>
+                    <p>08. PENGGUNAAN ALAT DENGAN TANGGUNG JAWAB PENUH OLEH PIHAK PENYEWA.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item group">
+                <button onclick="toggleAcc(this)" class="w-full text-left p-6 rounded-3xl glass hover:bg-slate-800 transition-all flex justify-between items-center border border-slate-800">
+                    <span class="text-white font-bold text-xs"><i class="fas fa-users text-amber-500 mr-3"></i> DAFTAR PERSONEL</span>
+                    <i class="fas fa-chevron-down text-amber-500 text-[10px]"></i>
+                </button>
+                <div class="acc-content glass p-4 rounded-3xl border border-slate-800 grid grid-cols-1 md:grid-cols-2 gap-2 text-[8px] font-bold">
                     <div class="p-3 bg-white/5 rounded-xl border border-white/5">01. JASRUN HASAN, SARJANA TEKNIK, MAGISTER ADMINISTRASI PUBLIK <span class="block text-amber-500">KEPALA BIDANG JASA KONSTRUKSI</span></div>
                     <div class="p-3 bg-white/5 rounded-xl border border-white/5">03. JUFRI, SARJANA TEKNIK <span class="block text-amber-500">PEMBINA JASA KONSTRUKSI AHLI MUDA</span></div>
                     <div class="p-3 bg-white/5 rounded-xl border border-white/5">04. HENDRA MOIDADY, SARJANA TEKNIK <span class="block text-amber-500">PEMBINA JASA KONSTRUKSI AHLI MUDA</span></div>
-                    <div class="p-3 bg-white/5 rounded-xl border border-white/5">05. IKRAR, SARJANA TEKNIK <span class="block text-amber-500">PENGUJI LABORATORIUM, TANAH, ASPAL DAN BETON</span></div>
+                    <div class="p-3 bg-white/5 rounded-xl border border-white/5">05. IKRAR, SARJANA TEKNIK <span class="block text-amber-500">PENGUJI LABORATORIUM</span></div>
                     <div class="p-3 bg-white/5 rounded-xl border border-white/5">06. ARWING KARAU <span class="block text-amber-500">PEMELIHARA PERALATAN</span></div>
                     <div class="p-3 bg-white/5 rounded-xl border border-white/5">07. PUSPA SARI, SARJANA PERENCANAAN WILAYAH DAN KOTA <span class="block text-amber-500">PEMBINA JASA KONSTRUKSI AHLI MUDA</span></div>
                     <div class="p-3 bg-white/5 rounded-xl border border-white/5">08. NUR UTARI DEWI DAENG MANESSA, SARJANA TEKNIK <span class="block text-amber-500">PEMBINA JASA KONSTRUKSI AHLI MUDA</span></div>
@@ -136,7 +112,7 @@
                 </div>
             </div>
 
-            <div class="glass p-6 rounded-3xl border border-slate-800 uppercase">
+            <div class="glass p-6 rounded-3xl border border-slate-800">
                 <h3 class="text-amber-500 font-black text-xs mb-4">DAFTAR TARIF RETRIBUSI ALAT BERAT</h3>
                 <div class="grid grid-cols-2 gap-4 text-[9px] font-bold">
                     <div class="flex justify-between border-b border-white/5 pb-1"><span>LOADER</span><span class="text-amber-500">RP 215,813 / JAM</span></div>
@@ -149,11 +125,8 @@
             </div>
         </div>
 
-        <footer class="mt-12 text-center">
-            <a href="https://drive.google.com/drive/folders/1bEDRxrVCGJxh6fLQpvFV22dK4G06oSCd" target="_blank" class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-black text-[10px] px-10 py-5 rounded-2xl transition-all shadow-lg shadow-amber-900/40 uppercase italic">
-                <i class="fab fa-google-drive mr-2"></i> AKSES MATERI PELATIHAN DAN BIMTEK
-            </a>
-            <p class="mt-8 text-[8px] font-bold text-slate-600 tracking-widest italic opacity-50 uppercase">© 2026 SIJAKON - BIDANG JASA KONSTRUKSI DINAS PEKERJAAN UMUM DAN PENATAAN RUANG BANGGAI KEPULAUAN</p>
+        <footer class="mt-12 text-center text-[8px] font-bold text-slate-600 tracking-widest italic opacity-50 uppercase">
+            © 2026 SIJAKON - BIDANG JASA KONSTRUKSI DINAS PEKERJAAN UMUM DAN PENATAAN RUANG BANGGAI KEPULAUAN
         </footer>
     </main>
 
